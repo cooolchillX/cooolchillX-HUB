@@ -618,6 +618,13 @@ local args = {
 game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 
 end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
+end)
 end)
 
 HubSection:NewButton("Hotel Elephant", "Load The GUI", function()
@@ -912,6 +919,13 @@ local args = {
 
 game:GetService("ReplicatedStorage").ChangeTeam:InvokeServer(unpack(args))
 end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
+end)
 end)
 
 HubSection:NewButton("Spider", "Load The GUI", function()
@@ -973,6 +987,13 @@ end)
 GameSection:NewButton("Remove Main Trees", "Delete Em", function()
     game.Workspace.Map01_Cabin.Trees:Destroy()
 end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
+end)
 end)
 
 HubSection:NewButton("Universal", "Load The GUI", function()
@@ -998,6 +1019,13 @@ end)
 
 MainSection:NewButton("Infinite Yield", "Load It", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
 end)
 end)
 
@@ -1096,6 +1124,13 @@ end)
 
 MiscSection:NewButton("Remove Gates", "Deletes The Gates", function()
     game.Workspace.Prison_Fences:Destroy()
+end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
 end)
 end)
 
@@ -1228,6 +1263,13 @@ TPSection:NewButton("Smuggler's Bay", "TP There", function()
 
 game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.TeleportRequestEvent:FireServer(unpack(args))
 end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
+end)
 end)
 
 HubSection:NewButton("Dawn Of Aurora", "Load The GUI", function()
@@ -1329,6 +1371,13 @@ end)
 
 TPSection:NewButton("HEIST ESCAPE!!", "Escape Your Current Heist", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-916.440308, 326.267181, -2751.99854, 0.903316736, -1.18171062e-09, -0.428974241, 4.13436005e-08, 1, 8.43049577e-08, 0.428974241, -9.38894189e-08, 0.903316736)
+end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
 end)
 end)
 
@@ -1508,6 +1557,13 @@ end)
 SecondSection:NewButton("Escape Door", "TP To Escape Door", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(601.147034, 685.70874, -375.063232, -0.999313295, 0.00219365652, -0.0369873755, 2.32830616e-10, 0.998245955, 0.0592042133, 0.0370523669, 0.0591635592, -0.997560501)
 end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
+end)
 end)
 
 HubSection:NewButton("Brook Haven", "Load The GUI", function()
@@ -1564,6 +1620,13 @@ game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
  
 wait(2)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Leaked IP: Copied Country, (Saved Notes) Pinned: Street" ,"All")
+end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
 end)
 end)
 
@@ -1643,5 +1706,12 @@ game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
 game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
 game:GetService("ReplicatedStorage").SpawnRainbowBlock:FireServer()
 game:GetService("ReplicatedStorage").SpawnRainbowBlock:FireServer()
+end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
 end)
 end)
