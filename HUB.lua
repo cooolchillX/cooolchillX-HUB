@@ -1126,6 +1126,10 @@ MiscSection:NewButton("Remove Gates", "Deletes The Gates", function()
     game.Workspace.Prison_Fences:Destroy()
 end)
 
+MiscSection:NewButton("Delete Boundary", "No Limits", function()
+    game.Workspace.BOUNDARY:Destroy()
+end)
+
 local UI = Window:NewTab("UI Toggle")
 local UISection = UI:NewSection("Show/Hide")
 
