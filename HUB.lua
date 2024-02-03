@@ -1719,3 +1719,62 @@ UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, func
 	Library:ToggleUI()
 end)
 end)
+
+HubSection:NewButton("Epic Mining 2", "Load The GUI", function()
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("cooolchill_X GUI", "Synapse")
+
+game.StarterGui:SetCore("SendNotification", {Title = "Loading", Text = "Please wait...", Duration = 4,})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Epic Mining 2", Duration = 4,})
+game.StarterGui:SetCore("SendNotification", {Title = "Hello", Text = "cooolchill_X says hi", Duration = 4,})
+
+--MAIN
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Common Player Stuff")
+
+MainSection:NewSlider("WalkSpeed", "Move Faster", 200, 16, function(s) -- 200 (MaxValue) | 16 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MainSection:NewSlider("JumpPower", "Jump Higher", 200, 50, function(s) -- 200 (MaxValue) | 50 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local TP = Window:NewTab("Teleport")
+local TPSection = TP:NewSection("Teleport To Places")
+
+TPSection:NewButton("Spawn", "Go To Spawn", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(88.8524475, 8008.80176, -151.986847, -0.969872594, 0, 0.243612751, 0, 1, 0, -0.243612751, 0, -0.969872594)
+end)
+
+TPSection:NewButton("Cursed Mine", "Go To Cured Mines", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1783.14795, 8007.79883, -180.833481, 0.0467450172, 2.28230768e-08, -0.998906851, 2.29342678e-09, 1, 2.29553763e-08, 0.998906851, -3.36396933e-09, 0.0467450172)
+end)
+
+TPSection:NewButton("Sawmill", "Go To Sawmill", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-152.246902, 8009.95166, -211.284424, -0.051780697, -3.20881313e-08, -0.998658478, -1.64895244e-08, 1, -3.12762509e-08, 0.998658478, 1.48478971e-08, -0.051780697)
+end)
+
+TPSection:NewButton("Secret", "Secret Uranium??", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(292.745422, 8029.95361, -165.534225, 0.705783904, -0.106538557, 0.700370371, 0, 0.988627195, 0.150387436, -0.70842725, -0.106141031, 0.697757125)
+end)
+
+local Misc = Window:NewTab("Misc")
+local MiscSection = Misc:NewSection("Extra Things")
+
+MiscSection:NewButton("Delete Rock Boarder", "Delete Main Boarder", function()
+    game.Workspace.Mountains:Destroy()
+end)
+
+MiscSection:NewButton("Delete Cursed Rock Boarder", "Delete Cursed Boarder", function()
+    game.Workspace.WorldHauntedMine.Mountains:Destroy()
+end)
+
+local UI = Window:NewTab("UI Toggle")
+local UISection = UI:NewSection("Show/Hide")
+
+UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+	Library:ToggleUI()
+end)
+end)
