@@ -2043,7 +2043,7 @@ MiscSection:NewButton("No Furnace", "Easy Wood Selling", function()
 end)
 
 MiscSection:NewButton("Push Swamp Rock Bridge Attempt", "Attempt To Push It Down", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1674.47168, 408.493408, 730.942871, -0.246542543, -0.000233373328, 0.969132066, 1.8546416e-05, 1, 0.000245286239, -0.969132245, 7.85061784e-05, -0.246542498)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1673.7417, 399.595428, 740.901001, 0.301555753, 0.0311838761, -0.952938497, 0, 0.999465108, 0.032706406, 0.953448594, -0.00986280479, 0.301394403)
 end)
 
 local UI = Window:NewTab("UI Toggle")
