@@ -1247,6 +1247,39 @@ TPSection:NewButton("Smuggler's Bay", "TP There", function()
 game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.TeleportRequestEvent:FireServer(unpack(args))
 end)
 
+local Grind = Window:NewTab("Grinding")
+local GrindSection = Grind:NewSection("Grinding For Gems")
+
+GrindSection:NewButton("TP To Shipwreck attempt1", "Grinding", function()
+    i = workspace.ShipModel1.HitBox.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+end)
+
+GrindSection:NewButton("TP To Shipwreck attempt2", "Grinding", function()
+    i = workspace.ShipModel2.HitBox.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+end)
+
+GrindSection:NewButton("TP To Shipwreck attempt3", "Grinding", function()
+    i = workspace.ShipModel3.HitBox.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+end)
+
+GrindSection:NewButton("TP To Shipwreck attempt4", "Grinding", function()
+    i = workspace.ShipModel4.HitBox.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+end)
+
+GrindSection:NewButton("TP To Shipwreck attempt5", "Grinding", function()
+    i = workspace.ShipModel5.HitBox.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+end)
+
+GrindSection:NewButton("TP To Shipwreck attempt6", "Grinding", function()
+    i = workspace.ShipModel6.HitBox.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+end)
+
 local UI = Window:NewTab("UI Toggle")
 local UISection = UI:NewSection("Show/Hide")
 
@@ -2044,6 +2077,37 @@ end)
 
 MiscSection:NewButton("Push Swamp Rock Bridge Attempt", "Attempt To Push It Down", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1673.7417, 399.595428, 740.901001, 0.301555753, 0.0311838761, -0.952938497, 0, 0.999465108, 0.032706406, 0.953448594, -0.00986280479, 0.301394403)
+end)
+
+MiscSection:NewButton("Disable Volcano Boulder Spawn", "No Balls", function()
+    workspace.Region_Volcano.PartSpawner:Destroy()
+end)
+
+MiscSection:NewButton("Teleport Green Box To You", "Your success has been noted", function()
+    i = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    workspace.Region_Volcano.VolcanoWin.CFrame = i
+end)
+
+MiscSection:NewButton("Print Ferry Time In Console", "Check Console", function()
+    i = workspace.Ferry.TimeToDeparture.Value
+    print("Ferry Time Left")
+    print(i)
+end)
+
+MiscSection:NewButton("Print Bridge Time In Console", "Check Console", function()
+    i = workspace.Bridge.DownTime.Value
+    print("Bridge Time Left")
+    print(i)
+end)
+
+MiscSection:NewButton("Delete Snow In Snowy", "Find Loose Wood", function()
+    workspace.Region_Snow.Snow:Destroy()
+    workspace.Region_Snow.Snow:Destroy()
+    workspace.Region_Snow.Snow:Destroy()
+    workspace.Region_Snow.Snow:Destroy()
+    workspace.Region_Snow.Snow:Destroy()
+    workspace.Region_Snow.Snow:Destroy()
+    workspace.Region_Snow.Snow:Destroy()
 end)
 
 local UI = Window:NewTab("UI Toggle")
