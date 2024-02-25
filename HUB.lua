@@ -2494,25 +2494,17 @@ end)
 
 ESPSection:NewToggle("ESP Power Station", "Station ESP", function(state)
     if state then
-        a = true
-        while wait() do
-            if a == true then
-                local parentObject = game.Workspace.Map.PowerStation.StationFolder.StationParts
+        local parentObject = game.Workspace.Map.PowerStation.StationFolder.StationParts
 
-                for i, child in pairs(parentObject:GetChildren()) do
-                    if not child:FindFirstChild("Highlight") then
-                        local highlight = Instance.new("Highlight")
-                        highlight.Parent = child
-                        highlight.Name = "Highlight"
-                        highlight.FillColor = Color3.fromRGB(255, 255, 0)
-                    end
+            for i, child in pairs(parentObject:GetChildren()) do
+                if not child:FindFirstChild("Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Parent = child
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.fromRGB(255, 255, 0)
                 end
-            elseif a == false then
-                break
             end
-        end
     else
-        a = false
         local parentObject = game.Workspace.Map.PowerStation.StationFolder.StationParts
 
         for i, child in pairs(parentObject:GetChildren()) do
@@ -2526,25 +2518,17 @@ end)
 
 ESPSection:NewToggle("ESP Safehouse", "Safehouse ESP", function(state)
     if state then
-        a = true
-        while wait() do
-            if a == true then
-                local parentObject = workspace.Map.SafeHouse.Folder
+            local parentObject = workspace.Map.SafeHouse.Folder
 
-                for i, child in pairs(parentObject:GetChildren()) do
-                    if not child:FindFirstChild("Highlight") then
-                        local highlight = Instance.new("Highlight")
-                        highlight.Parent = child
-                        highlight.Name = "Highlight"
-                        highlight.FillColor = Color3.fromRGB(0, 255, 0)
-                    end
+            for i, child in pairs(parentObject:GetChildren()) do
+                if not child:FindFirstChild("Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Parent = child
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.fromRGB(0, 255, 0)
                 end
-            elseif a == false then
-                break
             end
-        end
     else
-        a = false
         local parentObject = workspace.Map.SafeHouse.Folder
 
         for i, child in pairs(parentObject:GetChildren()) do
@@ -2558,25 +2542,17 @@ end)
 
 ESPSection:NewToggle("ESP Shop", "Shop ESP", function(state)
     if state then
-        a = true
-        while wait() do
-            if a == true then
-                local parentObject = workspace.Map.Shack.Parts
+        local parentObject = workspace.Map.Shack.Parts
 
-                for i, child in pairs(parentObject:GetChildren()) do
-                    if not child:FindFirstChild("Highlight") then
-                        local highlight = Instance.new("Highlight")
-                        highlight.Parent = child
-                        highlight.Name = "Highlight"
-                        highlight.FillColor = Color3.fromRGB(0, 255, 255)
-                    end
+            for i, child in pairs(parentObject:GetChildren()) do
+                if not child:FindFirstChild("Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Parent = child
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.fromRGB(0, 255, 255)
                 end
-            elseif a == false then
-                break
             end
-        end
     else
-        a = false
         local parentObject = workspace.Map.Shack.Parts
 
         for i, child in pairs(parentObject:GetChildren()) do
@@ -2590,25 +2566,17 @@ end)
 
 ESPSection:NewToggle("ESP Tower", "Tower ESP", function(state)
     if state then
-        a = true
-        while wait() do
-            if a == true then
-                local parentObject = workspace.Map.ObservationTower.Parts
+        local parentObject = workspace.Map.ObservationTower.Parts
 
-                for i, child in pairs(parentObject:GetChildren()) do
-                    if not child:FindFirstChild("Highlight") then
-                        local highlight = Instance.new("Highlight")
-                        highlight.Parent = child
-                        highlight.Name = "Highlight"
-                        highlight.FillColor = Color3.fromRGB(255, 153, 51)
-                    end
+            for i, child in pairs(parentObject:GetChildren()) do
+                if not child:FindFirstChild("Highlight") then
+                    local highlight = Instance.new("Highlight")
+                    highlight.Parent = child
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.fromRGB(255, 153, 51)
                 end
-            elseif a == false then
-                break
             end
-        end
     else
-        a = false
         local parentObject = workspace.Map.ObservationTower.Parts
 
         for i, child in pairs(parentObject:GetChildren()) do
