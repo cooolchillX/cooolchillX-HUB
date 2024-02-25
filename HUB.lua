@@ -9,6 +9,21 @@ local InfoSection = Info:NewSection("Don't Be Blatent Or You'll Get Banned")
 local InfoSection = Info:NewSection("Not My Responsibility If You Do")
 local InfoSection = Info:NewSection("Use At Your Own Risk")
 local infoSection = Info:NewSection("Otherwise Enjoy :D")
+
+local Others = Window:NewTab("Others")
+local OthersSection = Others:NewSection("Hyper (My Student)")
+
+OthersSection:NewButton("Hyper Hub", "Load His Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/hiperpowe/Roblox-Hypers-HUB/main/HypersHUB.lua"))()
+end)
+
+OthersSection:NewButton("Copy Hyper Hub Link", "Go To His Github Page", function()
+    setclipboard("https://github.com/hiperpowe/Roblox-Hypers-HUB/blob/main/HypersHUB.lua")
+    game.StarterGui:SetCore("SendNotification", {Title = "Copied", Text = "Copied To Clipboard", Duration = 4,})
+end)
+
+local OthersSection = Others:NewSection("Executors Used: Fluxus, Evon, VegaX, Valyse")
+
 --Script Hub
 local Hub = Window:NewTab("Script Hub")
 local HubSection = Hub:NewSection("Choose A Game")
