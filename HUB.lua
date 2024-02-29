@@ -1146,8 +1146,60 @@ MainSection:NewSlider("JumpPower", "Jump Higher", 400, 50, function(s) -- 400 (M
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
+MainSection:NewSlider("HipHight", "Hip Point Higher", 400, 0, function(s) -- 400 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = s
+end)
+
 MainSection:NewButton("Infinite Yield", "Load It", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+MainSection:NewToggle("Loop 100 Walkspeed", "Loop Speed To 100", function(state)
+    if state then
+        i = true
+        while wait() do
+            if i == true then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100
+            elseif i == false then
+                break
+            end
+        end
+    else
+        i = false
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    end
+end)
+
+MainSection:NewToggle("Loop 100 JumpPower", "Loop Jump Height At 100", function(state)
+    if state then
+        i = true
+        while wait() do
+            if i == true then
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+            elseif i == false then
+                break
+            end
+        end
+    else
+        i = false
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+end)
+
+MainSection:NewToggle("Loop 100 HipHeight", "Loop HipHeight At 100", function(state)
+    if state then
+        i = true
+        while wait() do
+            if i == true then
+                game.Players.LocalPlayer.Character.Humanoid.HipHeight = 100
+            elseif i == false then
+                break
+            end
+        end
+    else
+        i = false
+        game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
+    end
 end)
 
 local ESP = Window:NewTab("ESP")
