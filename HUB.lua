@@ -24,6 +24,10 @@ end)
 
 local OthersSection = Others:NewSection("Executors Used: Fluxus, Evon, VegaX, Valyse")
 
+OthersSection:NewButton("CMD Hub", "A Little Fun Project I Did", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/main/CMD%20Hub.lua"))()
+end)
+
 --Script Hub
 local Hub = Window:NewTab("Script Hub")
 local HubSection = Hub:NewSection("Choose A Game")
