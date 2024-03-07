@@ -138,28 +138,6 @@ while wait() do
             list5.Parent = UI
             Input.Text = ""
         end
-
-        if Input.Text == "Light Mode" then
-            wait(1)
-            Input.TextColor3 = Color3.new(0, 0, 0)
-            ret.TextColor3 = Color3.new(0, 0, 0)
-            label.TextColor3 = Color3.new(0, 0, 0)
-            arrow.TextColor3 = Color3.new(0, 0, 0)
-            base.BackgroundColor3 = Color3.new(1, 1, 1)
-            help.BackgroundColor3 = Color3.new(1, 1, 1)
-            Input.Text = ""
-        end
-
-        if Input.Text == "Dark Mode" then
-            wait(1)
-            Input.TextColor3 = Color3.new(1, 1, 1)
-            ret.TextColor3 = Color3.new(1, 1, 1)
-            label.TextColor3 = Color3.new(1, 1, 1)
-            arrow.TextColor3 = Color3.new(1, 1, 1)
-            base.BackgroundColor3 = Color3.new(0, 0, 0)
-            help.BackgroundColor3 = Color3.new(0, 0, 0)
-            Input.Text = ""
-        end
     elseif i == false then
         break
     end
