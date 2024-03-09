@@ -28,6 +28,10 @@ OthersSection:NewButton("CMD Hub", "A Little Fun Project I Did", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/main/CMD%20Hub.lua"))()
 end)
 
+OthersSection:NewButton("Number Generator", "Another Fun Project", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/main/Number%20Generator.lua"))()
+end)
+
 --Script Hub
 local Hub = Window:NewTab("Script Hub")
 local HubSection = Hub:NewSection("Choose A Game")
@@ -1418,7 +1422,7 @@ MainSection:NewSlider("WalkSpeed", "Move Faster", 200, 16, function(s) -- 200 (M
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
 
-MainSection:NewSlider("JumpPower", "Jump High", 500, 50, function(s) -- 200 (MaxValue) | 50 (MinValue)
+MainSection:NewSlider("JumpPower", "Jump High", 200, 50, function(s) -- 200 (MaxValue) | 50 (MinValue)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
 
