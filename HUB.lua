@@ -1367,6 +1367,13 @@ IdentitySection:NewButton("Get The Game Id", "Send The Id In A Notification", fu
     sendNotificationWithValue()
 end)
 
+local Say = Window:NewTab("Speak")
+local SaySection = Say:NewSection("Say Things In Chat")
+
+SaySection:NewButton("Announce You're Using Cooolchill_X Hub", "Stupid Idea", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("is using cooolchill_X scripts", "All")
+end)
+
 local UI = Window:NewTab("UI Toggle")
 local UISection = UI:NewSection("Show/Hide")
 
@@ -2127,6 +2134,35 @@ end)
 
 MiscSection:NewButton("Delete Cursed Rock Boarder", "Delete Cursed Boarder", function()
     game.Workspace.WorldHauntedMine.Mountains:Destroy()
+end)
+
+local GameUI = Window:NewTab("Game UI")
+local GameUISection = GameUI:NewSection("Forge")
+
+GameUISection:NewButton("Open Forge UI", "Open The UI Where You Are", function()
+    local position = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(118.253883, 8009.00049, -214.649384, 0.996589124, 1.04997842e-08, 0.0825235099, -9.49712486e-09, 1, -1.25425297e-08, -0.0825235099, 1.17160122e-08, 0.996589124)
+    wait(0.5)
+    workspace.Forge.Interact.InteractEvent:FireServer()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = position
+end)
+
+local GameUISection = GameUI:NewSection("Sawmill")
+
+GameUISection:NewButton("Open Sawmill UI", "Open The UI Where You Are", function()
+    local position = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-170.239212, 8014.80859, -212.164581, 0.222848415, 2.17569909e-08, 0.974853098, 4.99681576e-08, 1, -3.37407933e-08, -0.974853098, 5.62306965e-08, 0.222848415)
+    wait(0.5)
+    workspace.Sawmill.SawbladeTrigger.Interact.InteractEvent:FireServer()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = position
+end)
+
+GameUISection:NewButton("Open Sawmill Fuel UI", "Open The UI Where You Are", function()
+    local position = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-173.347626, 8008.81348, -198.508377, 0.999888599, -2.99235587e-08, -0.0149241686, 3.07429566e-08, 1, 5.46748034e-08, 0.0149241686, -5.51275257e-08, 0.999888599)
+    wait(0.5)
+    workspace.Sawmill.FurnaceTrigger.Interact.InteractEvent:FireServer()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = position
 end)
 
 local UI = Window:NewTab("UI Toggle")
