@@ -1374,6 +1374,79 @@ SaySection:NewButton("Announce You're Using Cooolchill_X Hub", "Stupid Idea", fu
     game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("is using cooolchill_X scripts", "All")
 end)
 
+local Hit = Window:NewTab("Hitbox")
+local HitSection = Hit:NewSection("Change Stuff About The Hitbox")
+
+HitSection:NewToggle("Large Head Hitbox", "Make Everybodys Head Larger", function(state)
+    if state then
+        i = true
+        while wait() do
+            if i == true then
+                local Players = game.Players:GetPlayers()
+
+                for _, player in ipairs(Players) do
+                    if player ~= game.Players.LocalPlayer then
+                        local character = player.Character
+                        if character then
+                            local head = character:FindFirstChild("Head")
+                            if head then
+                                head.Size = Vector3.new(5, 5, 5)
+                            end
+                        end
+                    end
+                end
+            elseif i == false then
+                break
+            end
+        end
+    else
+        i = false
+        local Players = game.Players:GetPlayers()
+
+        for _, player in ipairs(Players) do
+            if player ~= game.Players.LocalPlayer then
+                local character = player.Character
+                if character then
+                    local head = character:FindFirstChild("Head")
+                    if head then
+                        head.Size = Vector3.new(2, 1, 1)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+local Mark = Window:NewTab("Marker")
+local MarkSection = Mark:NewSection("Drop A Marker On The Map")
+
+MarkSection:NewButton("Set Waypoint", "Make A Marker", function()
+    local a = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+    local point = Instance.new("Part")
+    point.Name = "Marker"
+    point.Size = Vector3.new(1, 1, 1)
+    point.Position = a
+    point.Anchored = true
+    point.Color = Color3.new(1, 1, 1)
+    point.CanCollide = false
+    point.Parent = game.workspace
+    local highlight = Instance.new("Highlight")
+    highlight.Name = "Highlight"
+    highlight.FillColor = Color3.fromRGB(0, 0, 255)
+    highlight.Parent = game.workspace.Marker
+end)
+
+MarkSection:NewButton("TP To Waypoint", "Tp", function()
+    local a = game.workspace.Marker.CFrame
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = a
+end)
+
+MarkSection:NewButton("Delete Waypoint", "Remove", function()
+    game.workspace.Marker:Destroy()
+end)
+
+
 local UI = Window:NewTab("UI Toggle")
 local UISection = UI:NewSection("Show/Hide")
 
