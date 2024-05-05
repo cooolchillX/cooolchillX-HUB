@@ -89,6 +89,10 @@ OthersSection:NewButton("Number Generator", "Another Fun Project", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/main/Number%20Generator.lua"))()
 end)
 
+OthersSection:NewButton("Lag Client", "How Much Can You Handle?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/main/Lag%20Client.lua"))()
+end)
+
 --Script Hub
 local Hub = Window:NewTab("Script Hub")
 local HubSection = Hub:NewSection("Choose A Game")
