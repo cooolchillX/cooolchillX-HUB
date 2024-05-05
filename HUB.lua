@@ -1380,7 +1380,7 @@ local HitSection = Hit:NewSection("Change Stuff About The Hitbox")
 HitSection:NewToggle("Large Head Hitbox", "Make Everybodys Head Larger", function(state)
     if state then
         i = true
-        while wait() do
+        while wait(0.5) do
             if i == true then
                 local Players = game.Players:GetPlayers()
 
