@@ -79,6 +79,17 @@ OthersSection:NewButton("Copy Hyper Hub Link", "Go To His Github Page", function
     game.StarterGui:SetCore("SendNotification", {Title = "Copied", Text = "Copied To Clipboard", Duration = 4,})
 end)
 
+local OthersSection = Others:NewSection("Laxy_X (My Second Student)")
+
+OthersSection:NewButton("Lazy_X Hub", "Load His Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JustMilk123/Lazy_X/main/Lazy_X.lua"))()
+end)
+
+OthersSection:NewButton("Copy Lazy_X Link", "Go To His Github Page", function()
+    setclipboard("https://github.com/JustMilk123/Lazy_X/blob/main/Lazy_X.lua")
+    game.StarterGui:SetCore("SendNotification", {Title = "Copied", Text = "Copied To Clipboard", Duration = 4,})
+end)
+
 local OthersSection = Others:NewSection("Executors Used: Fluxus, Evon, VegaX, Valyse")
 
 OthersSection:NewButton("CMD Hub", "A Little Fun Project I Did", function()
