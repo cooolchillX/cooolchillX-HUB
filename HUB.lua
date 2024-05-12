@@ -1382,13 +1382,6 @@ Yes.MouseButton1Click:Connect(function()
         sendNotificationWithValue()
     end)
 
-    local Say = Window:NewTab("Speak")
-    local SaySection = Say:NewSection("Say Things In Chat")
-
-    SaySection:NewButton("Announce You're Using Cooolchill_X Hub", "Stupid Idea", function()
-        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("is using cooolchill_X scripts", "All")
-    end)
-
     local Hit = Window:NewTab("Hitbox")
     local HitSection = Hit:NewSection("Change Stuff About The Hitbox")
 
