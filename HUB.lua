@@ -1289,49 +1289,79 @@ Yes.MouseButton1Click:Connect(function()
     local ESPSection = ESP:NewSection("ESP Players")
 
     ESPSection:NewButton("Player ESP", "ESP Other Players", function()
-        local Players = game:GetService("Players"):GetChildren()
-    local RunService = game:GetService("RunService")
-    local highlight = Instance.new("Highlight")
-    highlight.Name = "Highlight"
-
-    for i, v in pairs(Players) do
-        repeat wait() until v.Character
-        if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
-            local highlightClone = highlight:Clone()
-            highlightClone.Adornee = v.Character
-            highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
-            highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-            highlightClone.Name = "Highlight"
-        end
-    end
-
-    game.Players.PlayerAdded:Connect(function(player)
-        repeat wait() until player.Character
-        if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
-            local highlightClone = highlight:Clone()
-            highlightClone.Adornee = player.Character
-            highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart")
-            highlightClone.Name = "Highlight"
-        end
-    end)
-
-    game.Players.PlayerRemoving:Connect(function(playerRemoved)
-        playerRemoved.Character:FindFirstChild("HumanoidRootPart").Highlight:Destroy()
-    end)
-
-    RunService.Heartbeat:Connect(function()
-        for i, v in pairs(Players) do
-            repeat wait() until v.Character
-            if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then
-                local highlightClone = highlight:Clone()
-                highlightClone.Adornee = v.Character
-                highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart")
-                highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-                highlightClone.Name = "Highlight"
-                task.wait()
+        local People = game.Players:GetPlayers()
+        while wait(0.2) do
+            for _, Players in ipairs(People) do
+                if Players ~= game.Players.LocalPlayer then
+                    local Character = Players.Character
+                    if Character then
+                        local Head = Character.Head
+                        local HumanoidRootPart = Character.HumanoidRootPart
+                        local LeftArm = Character["Left Arm"]
+                        local LeftLeg = Character["Left Leg"]
+                        local RightArm = Character["Right Arm"]
+                        local RightLeg = Character['Right Leg']
+                        local Torso = Character.Torso
+                        if Head then
+                            if not Head:FindFirstChild("Highlight") then
+                                local highlight1 = Instance.new("Highlight")
+                                highlight1.Name = "Highlight"
+                                highlight1.FillColor = Color3.new(1, 0, 0)
+                                highlight1.Parent = Head
+                            end
+                        end
+                        if HumanoidRootPart then
+                            if not HumanoidRootPart:FindFirstChild("Highlight") then
+                                local highlight2 = Instance.new("Highlight")
+                                highlight2.Name = "Highlight"
+                                highlight2.FillColor = Color3.new(1, 0, 0)
+                                highlight2.Parent = HumanoidRootPart
+                            end
+                        end
+                        if LeftArm then
+                            if not LeftArm:FindFirstChild("Highlight") then
+                                local highlight3 = Instance.new("Highlight")
+                                highlight3.Name = "Highlight"
+                                highlight3.FillColor = Color3.new(1, 0, 0)
+                                highlight3.Parent = LeftArm
+                            end
+                        end
+                        if LeftLeg then
+                            if not LeftLeg:FindFirstChild("Highlight") then
+                                local highlight4 = Instance.new("Highlight")
+                                highlight4.Name = "Highlight"
+                                highlight4.FillColor = Color3.new(1, 0, 0)
+                                highlight4.Parent = LeftLeg
+                            end
+                        end
+                        if RightArm then
+                            if not RightArm:FindFirstChild("Highlight") then
+                                local highlight5 = Instance.new("Highlight")
+                                highlight5.Name = "Highlight"
+                                highlight5.FillColor = Color3.new(1, 0, 0)
+                                highlight5.Parent = RightArm
+                            end
+                        end
+                        if RightLeg then
+                            if not RightLeg:FindFirstChild("Highlight") then
+                                local highlight6 = Instance.new("Highlight")
+                                highlight6.Name = "Highlight"
+                                highlight6.FillColor = Color3.new(1, 0, 0)
+                                highlight6.Parent = RightLeg
+                            end
+                        end
+                        if Torso then
+                            if not Torso:FindFirstChild("Highlight") then
+                                local highlight7 = Instance.new("Highlight")
+                                highlight7.Name = "Highlight"
+                                highlight7.FillColor = Color3.new(1, 0, 0)
+                                highlight7.Parent = Torso
+                            end
+                        end
+                    end
+                end
             end
-    end
-    end)
+        end
     end)
 
     local Full = Window:NewTab("Fullbright")
@@ -1454,6 +1484,12 @@ Yes.MouseButton1Click:Connect(function()
         game.workspace.Marker:Destroy()
     end)
 
+    local FOV = Window:NewTab("FOV Changer")
+    local FOVSection = FOV:NewSection("Change Your FOV")
+
+    FOVSection:NewSlider("FOV", "Change Your Field Of View", 120, 70, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Workspace.Camera.FieldOfView = s
+    end)
 
     local UI = Window:NewTab("UI Toggle")
     local UISection = UI:NewSection("Show/Hide")
