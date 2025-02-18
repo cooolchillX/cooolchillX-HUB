@@ -3409,6 +3409,250 @@ Yes.MouseButton1Click:Connect(function()
             Library:ToggleUI()
         end)
         end)
+
+        HubSection:NewButton("Plinko RNG", "Load The GUI", function()
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            local Player = Window:NewTab("Player")
+            local PlayerSection = Player:NewSection("Change Things About Your Player")
+
+            PlayerSection:NewSlider("WalkSpeed", "Player Speed", 100, 16, function(s) -- 100 (MaxValue) | 16 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+
+            PlayerSection:NewSlider("JumpPower", "Player Jump Height", 100, 50, function(s) -- 100 (MaxValue) | 50 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+                game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
+            end)
+
+            PlayerSection:NewSlider("HipHeight", "Player From Ground Offset", 50, 2, function(s) -- 50 (MaxValue) | 2 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.HipHeight = s
+            end)
+
+            PlayerSection:NewSlider("Field Of View", "Player FOV", 120, 70, function(s) -- 120 (MaxValue) | 70 (MinValue)
+                game.Workspace.Camera.FieldOfView = s
+            end)
+
+            PlayerSection:NewSlider("Gravity", "Player Gravity", 1000, 10, function(s) -- 1000 (MaxValue) | 10 (MinValue)
+                game.Workspace.Gravity = s
+            end)
+
+            PlayerSection:NewButton("Reset Gravity", "Reset Your Gravity To Default", function()
+                game.Workspace.Gravity = 196.2
+            end)
+
+            local World = Window:NewTab("World")
+            local WorldSection = World:NewSection("Change Things In The World")
+
+            WorldSection:NewToggle("Disable Plinko Wall Collision", "Toggle Plinko Wall Collision", function(state)
+                if state then
+                    workspace.Map.Plinko.InvisPart.CanCollide = false
+                else
+                    workspace.Map.Plinko.InvisPart.CanCollide = true
+                end
+            end)
+
+            WorldSection:NewToggle("Disable Party Lounge Wall Collision", "Toggle Party Lounge Wall Collision", function(state)
+                if state then
+                    workspace.Map.PartyRoom.PartyDoor.CanCollide = false
+                else
+                    workspace.Map.PartyRoom.PartyDoor.CanCollide = true
+                end
+            end)
+
+            WorldSection:NewToggle("Disable VIP Obby Wall Collision", "Toggle VIP Obby Wall Collision", function(state)
+                if state then
+                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = false
+                else
+                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = true
+                end
+            end)
+
+            local Teleport = Window:NewTab("Teleport")
+            local TeleportSection = Teleport:NewSection("Teleport To Things")
+
+            TeleportSection:NewButton("Finish Normal Obby", "Teleport To The End", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-119.639793, 204.676941, -69.1610336, -0.0157014113, -0.0923430026, 0.995603502, -5.98375918e-05, 0.995726228, 0.0923534483, -0.999876678, 0.00139050512, -0.015639836)
+            end)
+
+            TeleportSection:NewButton("Finish Hard Obby", "Teleport To The End", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-265.082367, 206.294861, -45.6269684, -0.999600589, 0.00505645946, -0.02780338, -5.91019634e-05, 0.983485579, 0.180986404, 0.0282593723, 0.180915743, -0.983092606)
+            end)
+
+            TeleportSection:NewButton("Finish VIP Obby", "Teleport To The End", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(54.2365456, 206.945648, -33.8398781, -0.998574376, 0.00448406953, -0.0531873219, -5.98762417e-05, 0.996370137, 0.0851252601, 0.0533759706, 0.0850070938, -0.994949639)
+            end)
+
+            TeleportSection:NewButton("Teleport To Spawn", "Teleport To The Spawn", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-193.658997, 206.713623, 84.8002625, -0.0191400796, -9.77789227e-08, 0.999816835, 9.44088363e-09, 1, 9.79775692e-08, -0.999816835, 1.13144525e-08, -0.0191400796)
+            end)
+
+            local Mods = Window:NewTab("Ball Mods")
+            local ModsSection = Mods:NewSection("Change What The Balls Get You")
+
+            ModsSection:NewButton("All Balls Are 0.2x", "0.2x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["0.2"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 0.5x", "0.5x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["0.5"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 0.75x", "0.75x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["0.75"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 1x", "1x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["1"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 2x", "2x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["2"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 3x", "3x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["3"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 5x", "5x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["5"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 10x", "10x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["10"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 100x", "100x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["100"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            local Spawner = Window:NewTab("Spawner")
+            local SpawnerSection = Spawner:NewSection("Modify The Ball Spawners")
+
+            SpawnerSection:NewToggle("Make Spawners Visible", "Highlight The Spawners", function(state)
+                if state then
+                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 0
+
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.new(1, 0, 0)
+                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn1
+
+                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 0
+                    
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.new(0, 0, 1)
+                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                else
+                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 1
+
+                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Highlight:Destroy()
+
+                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 1
+                    
+                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Highlight:Destroy()
+                end
+            end)
+
+            local SpawnerSection = Spawner:NewSection("Spawner 1")
+
+            SpawnerSection:NewButton("Move Spawn 1 To The Left", "Move To The Left", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z - 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 1 To The Right", "Move To The Right", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z + 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 1 Up", "Move To The Up", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y + 1, spawn1.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 1 Down", "Move To The Down", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y - 1, spawn1.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Reset Spawn 1 Position", "Reset It", function()
+                workspace.Map.Plinko.PlinkoBoard.Spawn1.Position = Vector3.new(-264.43, 265.494, 84.961)
+            end)
+
+            local SpawnerSection = Spawner:NewSection("Spawner 2")
+
+            SpawnerSection:NewButton("Move Spawn 2 To The Left", "Move To The Left", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z - 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 2 To The Right", "Move To The Right", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z + 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 2 Up", "Move To The Up", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y + 1, spawn2.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 2 Down", "Move To The Down", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y - 1, spawn2.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Reset Spawn 2 Position", "Reset It", function()
+                workspace.Map.Plinko.PlinkoBoard.Spawn2.Position = Vector3.new(-264.43, 265.494, 82.961)
+            end)
+        end)
     end)
     
     AD.MouseButton1Click:Connect(function()
@@ -6350,6 +6594,250 @@ Yes.MouseButton1Click:Connect(function()
         
             UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
                 Library:ToggleUI()
+            end)
+        elseif game.PlaceId == 116295913939017 then
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Plinko RNG", Duration = 4,})
+
+            local Player = Window:NewTab("Player")
+            local PlayerSection = Player:NewSection("Change Things About Your Player")
+
+            PlayerSection:NewSlider("WalkSpeed", "Player Speed", 100, 16, function(s) -- 100 (MaxValue) | 16 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+
+            PlayerSection:NewSlider("JumpPower", "Player Jump Height", 100, 50, function(s) -- 100 (MaxValue) | 50 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+                game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
+            end)
+
+            PlayerSection:NewSlider("HipHeight", "Player From Ground Offset", 50, 2, function(s) -- 50 (MaxValue) | 2 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.HipHeight = s
+            end)
+
+            PlayerSection:NewSlider("Field Of View", "Player FOV", 120, 70, function(s) -- 120 (MaxValue) | 70 (MinValue)
+                game.Workspace.Camera.FieldOfView = s
+            end)
+
+            PlayerSection:NewSlider("Gravity", "Player Gravity", 1000, 10, function(s) -- 1000 (MaxValue) | 10 (MinValue)
+                game.Workspace.Gravity = s
+            end)
+
+            PlayerSection:NewButton("Reset Gravity", "Reset Your Gravity To Default", function()
+                game.Workspace.Gravity = 196.2
+            end)
+
+            local World = Window:NewTab("World")
+            local WorldSection = World:NewSection("Change Things In The World")
+
+            WorldSection:NewToggle("Disable Plinko Wall Collision", "Toggle Plinko Wall Collision", function(state)
+                if state then
+                    workspace.Map.Plinko.InvisPart.CanCollide = false
+                else
+                    workspace.Map.Plinko.InvisPart.CanCollide = true
+                end
+            end)
+
+            WorldSection:NewToggle("Disable Party Lounge Wall Collision", "Toggle Party Lounge Wall Collision", function(state)
+                if state then
+                    workspace.Map.PartyRoom.PartyDoor.CanCollide = false
+                else
+                    workspace.Map.PartyRoom.PartyDoor.CanCollide = true
+                end
+            end)
+
+            WorldSection:NewToggle("Disable VIP Obby Wall Collision", "Toggle VIP Obby Wall Collision", function(state)
+                if state then
+                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = false
+                else
+                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = true
+                end
+            end)
+
+            local Teleport = Window:NewTab("Teleport")
+            local TeleportSection = Teleport:NewSection("Teleport To Things")
+
+            TeleportSection:NewButton("Finish Normal Obby", "Teleport To The End", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-119.639793, 204.676941, -69.1610336, -0.0157014113, -0.0923430026, 0.995603502, -5.98375918e-05, 0.995726228, 0.0923534483, -0.999876678, 0.00139050512, -0.015639836)
+            end)
+
+            TeleportSection:NewButton("Finish Hard Obby", "Teleport To The End", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-265.082367, 206.294861, -45.6269684, -0.999600589, 0.00505645946, -0.02780338, -5.91019634e-05, 0.983485579, 0.180986404, 0.0282593723, 0.180915743, -0.983092606)
+            end)
+
+            TeleportSection:NewButton("Finish VIP Obby", "Teleport To The End", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(54.2365456, 206.945648, -33.8398781, -0.998574376, 0.00448406953, -0.0531873219, -5.98762417e-05, 0.996370137, 0.0851252601, 0.0533759706, 0.0850070938, -0.994949639)
+            end)
+
+            TeleportSection:NewButton("Teleport To Spawn", "Teleport To The Spawn", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-193.658997, 206.713623, 84.8002625, -0.0191400796, -9.77789227e-08, 0.999816835, 9.44088363e-09, 1, 9.79775692e-08, -0.999816835, 1.13144525e-08, -0.0191400796)
+            end)
+
+            local Mods = Window:NewTab("Ball Mods")
+            local ModsSection = Mods:NewSection("Change What The Balls Get You")
+
+            ModsSection:NewButton("All Balls Are 0.2x", "0.2x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["0.2"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 0.5x", "0.5x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["0.5"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 0.75x", "0.75x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["0.75"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 1x", "1x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["1"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 2x", "2x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["2"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 3x", "3x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["3"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 5x", "5x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["5"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 10x", "10x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["10"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            ModsSection:NewButton("All Balls Are 100x", "100x All Balls", function()
+                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                local endpoint = workspace.Map.Plinko.Slots["100"]
+
+                point1.Position = endpoint.Position
+                point2.Position = endpoint.Position
+            end)
+
+            local Spawner = Window:NewTab("Spawner")
+            local SpawnerSection = Spawner:NewSection("Modify The Ball Spawners")
+
+            SpawnerSection:NewToggle("Make Spawners Visible", "Highlight The Spawners", function(state)
+                if state then
+                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 0
+
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.new(1, 0, 0)
+                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn1
+
+                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 0
+                    
+                    local highlight = Instance.new("Highlight")
+                    highlight.Name = "Highlight"
+                    highlight.FillColor = Color3.new(0, 0, 1)
+                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                else
+                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 1
+
+                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Highlight:Destroy()
+
+                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 1
+                    
+                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Highlight:Destroy()
+                end
+            end)
+
+            local SpawnerSection = Spawner:NewSection("Spawner 1")
+
+            SpawnerSection:NewButton("Move Spawn 1 To The Left", "Move To The Left", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z - 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 1 To The Right", "Move To The Right", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z + 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 1 Up", "Move To The Up", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y + 1, spawn1.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 1 Down", "Move To The Down", function()
+                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
+                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y - 1, spawn1.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Reset Spawn 1 Position", "Reset It", function()
+                workspace.Map.Plinko.PlinkoBoard.Spawn1.Position = Vector3.new(-264.43, 265.494, 84.961)
+            end)
+
+            local SpawnerSection = Spawner:NewSection("Spawner 2")
+
+            SpawnerSection:NewButton("Move Spawn 2 To The Left", "Move To The Left", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z - 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 2 To The Right", "Move To The Right", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z + 1)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 2 Up", "Move To The Up", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y + 1, spawn2.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Move Spawn 2 Down", "Move To The Down", function()
+                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
+                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y - 1, spawn2.Position.Z)
+            end)
+
+            SpawnerSection:NewButton("Reset Spawn 2 Position", "Reset It", function()
+                workspace.Map.Plinko.PlinkoBoard.Spawn2.Position = Vector3.new(-264.43, 265.494, 82.961)
             end)
         else
             local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
