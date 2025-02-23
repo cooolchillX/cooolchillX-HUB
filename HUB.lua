@@ -3653,6 +3653,434 @@ Yes.MouseButton1Click:Connect(function()
                 workspace.Map.Plinko.PlinkoBoard.Spawn2.Position = Vector3.new(-264.43, 265.494, 82.961)
             end)
         end)
+
+        HubSection:NewButton("Refinery Caves 2", "Load The GUI", function()
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Refinery Caves 2", Duration = 4,})
+
+            local Player = Window:NewTab("Player")
+            local PlayerSection = Player:NewSection("Change Things About Your Player")
+
+            PlayerSection:NewSlider("WalkSpeed", "Player Speed", 100, 16, function(s) -- 100 (MaxValue) | 16 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+
+            PlayerSection:NewSlider("JumpPower", "Player Jump Height", 100, 50, function(s) -- 100 (MaxValue) | 50 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+                game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
+            end)
+
+            PlayerSection:NewSlider("HipHeight", "Player From Ground Offset", 50, 0, function(s) -- 50 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.HipHeight = s
+            end)
+
+            PlayerSection:NewSlider("Field Of View", "Player FOV", 120, 70, function(s) -- 120 (MaxValue) | 70 (MinValue)
+                game.Workspace.Camera.FieldOfView = s
+            end)
+
+            PlayerSection:NewSlider("Gravity", "Player Gravity", 1000, 0, function(s) -- 1000 (MaxValue) | 0 (MinValue)
+                game.Workspace.Gravity = s
+            end)
+
+            PlayerSection:NewButton("Reset Gravity", "Reset Your Gravity To Default", function()
+                game.Workspace.Gravity = 196.2
+            end)
+
+            local World = Window:NewTab("World")
+            local WorldSection = World:NewSection("Modify The Environment")
+
+            WorldSection:NewToggle("Walk/Drive On Water", "Walk And Drive On Water", function(state)
+                if state then
+                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
+                        if v.Name == "Tile" then
+                            v.Plane.CanCollide = true
+                        end
+                    end
+                else
+                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
+                        if v.Name == "Tile" then
+                            v.Plane.CanCollide = false
+                        end
+                    end
+                end
+            end)
+
+            WorldSection:NewButton("Delete Water", "Remove All Water", function()
+                workspace.MouseIgnore.Water:Destroy()
+            end)
+
+            WorldSection:NewToggle("Toggle Crystalized Abyss Bridge", "Toggle If It Exists", function(state)
+                if state then
+                    workspace.Map.Structures.LightBridge.Bridge.Transparency = 0.5
+                    workspace.Map.Structures.LightBridge.Bridge.CanCollide = true
+                else
+                    workspace.Map.Structures.LightBridge.Bridge.Transparency = 1
+                    workspace.Map.Structures.LightBridge.Bridge.CanCollide = false
+                end
+            end)
+
+            WorldSection:NewButton("Delete Street Lamps", "Remove Them", function()
+                workspace.Map.Objects.Lamps:Destroy()
+            end)
+
+            local Teleport = Window:NewTab("Teleport")
+            local TeleportSection = Teleport:NewSection("Teleport To Places")
+
+            TeleportSection:NewButton("Teleport To Wizard", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Wizard.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To BlueCorridor", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.BlueCorridor.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Cat", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cat.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Cloudnite", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cloudnite.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Crystal", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Crystal.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Dealership", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Dealership.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To DuneAltar", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DuneAltar.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To DustyPassages", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DustyPassages.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Enchant", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Enchant.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Field", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Field.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Furniture", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Furniture.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Lab", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Lab.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LandAgency", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LandAgency.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Layer3", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Layer3.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LightBridge", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LightBridge.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Logics", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Logics.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LumenaTree", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LumenaTree.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LushAltar", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushAltar.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LushCave", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushCave.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LushShop", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushShop.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaCave", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaCave.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaDocks", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaDocks2", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks2.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaFerry", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaFerry.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Peak", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Peak.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Pond", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Pond.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To RoseFerry", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseFerry.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To RoseLift", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To RoseLift2", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift2.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Rosewell", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Rosewell.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Saltcave", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Saltcave.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Sarcophagos", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sarcophagos.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Sellary", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sellary.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Shack", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Shack.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Spawn", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Spawn.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Swamp", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Swamp.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Tutorial", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Tutorial.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To UCS", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.UCS.CFrame
+            end)
+
+            local ItemTeleport = Window:NewTab("Teleport Items")
+            local ItemTeleportSection = ItemTeleport:NewSection("Teleport Materials")
+
+            ItemTeleportSection:NewButton("Create TP Point", "Make The Point", function()
+                local a = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+                local point = Instance.new("Part")
+                point.Name = "TpPoint"
+                point.Size = Vector3.new(1, 1, 1)
+                point.Position = a
+                point.Anchored = true
+                point.Color = Color3.new(1, 1, 1)
+                point.CanCollide = false
+                point.Parent = game.workspace
+                local highlight = Instance.new("Highlight")
+                highlight.Name = "Highlight"
+                highlight.FillColor = Color3.fromRGB(0, 0, 255)
+                highlight.Parent = game.workspace.TpPoint
+            end)
+
+            ItemTeleportSection:NewButton("Delete TP Point", "Remove The Point", function()
+                game.workspace.TpPoint:Destroy()
+            end)
+
+            ItemTeleportSection:NewButton("TP To Point", "Tp You To The Point", function()
+                local a = game.workspace.TpPoint.CFrame
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = a
+            end)
+
+            local ItemTeleportSection = ItemTeleport:NewSection("Click On The Item First")
+            ItemTeleportSection:NewButton("TP Tree To Point", "TP It To A Point", function()
+                local items = game.Workspace.Grab
+                for _, v in ipairs(items:GetChildren()) do
+                    if v.Name == "WoodPart" then
+                        local owner = v:FindFirstChild("Owner")
+                        local bottomWound = v:GetAttribute("BottomWound")
+                        
+                        if owner and owner.Value and tostring(owner.Value) == game.Players.LocalPlayer.Character.Name then
+                            if bottomWound == true then
+                                local part = v:FindFirstChild("Part")
+                                if part then
+                                    part.CFrame = game.workspace.TpPoint.CFrame
+                                else
+                                    warn("WoodPart is missing 'Part' inside it!")
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+
+            ItemTeleportSection:NewButton("TP Stone To Point", "TP It To A Point", function()
+                local items = game.Workspace.Grab
+                for _, v in ipairs(items:GetChildren()) do
+                    if v.Name == "MaterialPart" then
+                        local owner = v:FindFirstChild("Owner")
+                        
+                        if owner and owner.Value and tostring(owner.Value) == game.Players.LocalPlayer.Character.Name then
+                            local part = v:FindFirstChild("Part")
+                            if part then
+                                part.CFrame = game.workspace.TpPoint.CFrame
+                            else
+                                warn("MaterialPart is missing 'Part' inside it!")
+                            end
+                        end
+                    end
+                end
+            end)
+
+            local ESP = Window:NewTab("ESP")
+            local ESPSection = ESP:NewSection("ESP Things")
+
+            ESPSection:NewToggle("Ore ESP", "See Ore Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.WorldSpawn.Ores:GetChildren()) do
+                                local stonename = v.Name
+                                if not v.Hitbox:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v.Hitbox
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.new(1, 0, 0)
+                                    textLabel.Text = stonename
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.WorldSpawn.Ores:GetChildren()) do
+                        local stonename = v.Name
+                        if v.Hitbox:FindFirstChild("ESPBillboard") then
+                            v.Hitbox.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Tree ESP", "See Tree Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.WorldSpawn.Trees:GetChildren()) do
+                                local treename = v.Name
+                                if not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.new(0, 0, 1)
+                                    textLabel.Text = treename
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.WorldSpawn.Trees:GetChildren()) do
+                        local treename = v.Name
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Player ESP", "See Player Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(game.workspace.Live:GetChildren()) do
+                                local playername = v.Name
+                                if playername ~= game.Players.LocalPlayer.Name then
+                                    if not v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
+                                        local billboard = Instance.new("BillboardGui")
+                                        billboard.Name = "ESPBillboard"
+                                        billboard.Size = UDim2.new(0, 50, 0, 50)
+                                        billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                        billboard.AlwaysOnTop = true
+                                        billboard.Parent = v.HumanoidRootPart
+
+                                        local textLabel = Instance.new("TextLabel")
+                                        textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                        textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                        textLabel.BackgroundTransparency = 1
+                                        textLabel.TextColor3 = Color3.new(0, 1, 0)
+                                        textLabel.Text = playername
+                                        textLabel.Parent = billboard
+                                    end
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(game.workspace.Live:GetChildren()) do
+                        local playername = v.Name
+                        if v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
+                            v.HumanoidRootPart.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            local UI = Window:NewTab("UI Toggle")
+            local UISection = UI:NewSection("Show/Hide")
+
+            UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+                Library:ToggleUI()
+            end)
+        end)
     end)
     
     AD.MouseButton1Click:Connect(function()
@@ -6838,6 +7266,432 @@ Yes.MouseButton1Click:Connect(function()
 
             SpawnerSection:NewButton("Reset Spawn 2 Position", "Reset It", function()
                 workspace.Map.Plinko.PlinkoBoard.Spawn2.Position = Vector3.new(-264.43, 265.494, 82.961)
+            end)
+        elseif game.PlaceId == 12196278347 then
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Refinery Caves 2", Duration = 4,})
+
+            local Player = Window:NewTab("Player")
+            local PlayerSection = Player:NewSection("Change Things About Your Player")
+
+            PlayerSection:NewSlider("WalkSpeed", "Player Speed", 100, 16, function(s) -- 100 (MaxValue) | 16 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+
+            PlayerSection:NewSlider("JumpPower", "Player Jump Height", 100, 50, function(s) -- 100 (MaxValue) | 50 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+                game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
+            end)
+
+            PlayerSection:NewSlider("HipHeight", "Player From Ground Offset", 50, 0, function(s) -- 50 (MaxValue) | 0 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.HipHeight = s
+            end)
+
+            PlayerSection:NewSlider("Field Of View", "Player FOV", 120, 70, function(s) -- 120 (MaxValue) | 70 (MinValue)
+                game.Workspace.Camera.FieldOfView = s
+            end)
+
+            PlayerSection:NewSlider("Gravity", "Player Gravity", 1000, 0, function(s) -- 1000 (MaxValue) | 0 (MinValue)
+                game.Workspace.Gravity = s
+            end)
+
+            PlayerSection:NewButton("Reset Gravity", "Reset Your Gravity To Default", function()
+                game.Workspace.Gravity = 196.2
+            end)
+
+            local World = Window:NewTab("World")
+            local WorldSection = World:NewSection("Modify The Environment")
+
+            WorldSection:NewToggle("Walk/Drive On Water", "Walk And Drive On Water", function(state)
+                if state then
+                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
+                        if v.Name == "Tile" then
+                            v.Plane.CanCollide = true
+                        end
+                    end
+                else
+                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
+                        if v.Name == "Tile" then
+                            v.Plane.CanCollide = false
+                        end
+                    end
+                end
+            end)
+
+            WorldSection:NewButton("Delete Water", "Remove All Water", function()
+                workspace.MouseIgnore.Water:Destroy()
+            end)
+
+            WorldSection:NewToggle("Toggle Crystalized Abyss Bridge", "Toggle If It Exists", function(state)
+                if state then
+                    workspace.Map.Structures.LightBridge.Bridge.Transparency = 0.5
+                    workspace.Map.Structures.LightBridge.Bridge.CanCollide = true
+                else
+                    workspace.Map.Structures.LightBridge.Bridge.Transparency = 1
+                    workspace.Map.Structures.LightBridge.Bridge.CanCollide = false
+                end
+            end)
+
+            WorldSection:NewButton("Delete Street Lamps", "Remove Them", function()
+                workspace.Map.Objects.Lamps:Destroy()
+            end)
+
+            local Teleport = Window:NewTab("Teleport")
+            local TeleportSection = Teleport:NewSection("Teleport To Places")
+
+            TeleportSection:NewButton("Teleport To Wizard", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Wizard.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To BlueCorridor", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.BlueCorridor.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Cat", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cat.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Cloudnite", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cloudnite.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Crystal", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Crystal.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Dealership", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Dealership.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To DuneAltar", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DuneAltar.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To DustyPassages", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DustyPassages.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Enchant", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Enchant.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Field", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Field.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Furniture", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Furniture.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Lab", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Lab.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LandAgency", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LandAgency.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Layer3", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Layer3.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LightBridge", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LightBridge.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Logics", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Logics.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LumenaTree", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LumenaTree.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LushAltar", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushAltar.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LushCave", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushCave.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To LushShop", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushShop.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaCave", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaCave.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaDocks", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaDocks2", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks2.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To NovaFerry", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaFerry.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Peak", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Peak.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Pond", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Pond.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To RoseFerry", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseFerry.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To RoseLift", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To RoseLift2", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift2.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Rosewell", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Rosewell.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Saltcave", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Saltcave.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Sarcophagos", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sarcophagos.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Sellary", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sellary.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Shack", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Shack.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Spawn", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Spawn.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Swamp", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Swamp.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To Tutorial", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Tutorial.CFrame
+            end)
+
+            TeleportSection:NewButton("Teleport To UCS", "Teleport There", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.UCS.CFrame
+            end)
+
+            local ItemTeleport = Window:NewTab("Teleport Items")
+            local ItemTeleportSection = ItemTeleport:NewSection("Teleport Materials")
+
+            ItemTeleportSection:NewButton("Create TP Point", "Make The Point", function()
+                local a = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+
+                local point = Instance.new("Part")
+                point.Name = "TpPoint"
+                point.Size = Vector3.new(1, 1, 1)
+                point.Position = a
+                point.Anchored = true
+                point.Color = Color3.new(1, 1, 1)
+                point.CanCollide = false
+                point.Parent = game.workspace
+                local highlight = Instance.new("Highlight")
+                highlight.Name = "Highlight"
+                highlight.FillColor = Color3.fromRGB(0, 0, 255)
+                highlight.Parent = game.workspace.TpPoint
+            end)
+
+            ItemTeleportSection:NewButton("Delete TP Point", "Remove The Point", function()
+                game.workspace.TpPoint:Destroy()
+            end)
+
+            ItemTeleportSection:NewButton("TP To Point", "Tp You To The Point", function()
+                local a = game.workspace.TpPoint.CFrame
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = a
+            end)
+
+            local ItemTeleportSection = ItemTeleport:NewSection("Click On The Item First")
+            ItemTeleportSection:NewButton("TP Tree To Point", "TP It To A Point", function()
+                local items = game.Workspace.Grab
+                for _, v in ipairs(items:GetChildren()) do
+                    if v.Name == "WoodPart" then
+                        local owner = v:FindFirstChild("Owner")
+                        local bottomWound = v:GetAttribute("BottomWound")
+                        
+                        if owner and owner.Value and tostring(owner.Value) == game.Players.LocalPlayer.Character.Name then
+                            if bottomWound == true then
+                                local part = v:FindFirstChild("Part")
+                                if part then
+                                    part.CFrame = game.workspace.TpPoint.CFrame
+                                else
+                                    warn("WoodPart is missing 'Part' inside it!")
+                                end
+                            end
+                        end
+                    end
+                end
+            end)
+
+            ItemTeleportSection:NewButton("TP Stone To Point", "TP It To A Point", function()
+                local items = game.Workspace.Grab
+                for _, v in ipairs(items:GetChildren()) do
+                    if v.Name == "MaterialPart" then
+                        local owner = v:FindFirstChild("Owner")
+                        
+                        if owner and owner.Value and tostring(owner.Value) == game.Players.LocalPlayer.Character.Name then
+                            local part = v:FindFirstChild("Part")
+                            if part then
+                                part.CFrame = game.workspace.TpPoint.CFrame
+                            else
+                                warn("MaterialPart is missing 'Part' inside it!")
+                            end
+                        end
+                    end
+                end
+            end)
+
+            local ESP = Window:NewTab("ESP")
+            local ESPSection = ESP:NewSection("ESP Things")
+
+            ESPSection:NewToggle("Ore ESP", "See Ore Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.WorldSpawn.Ores:GetChildren()) do
+                                local stonename = v.Name
+                                if not v.Hitbox:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v.Hitbox
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.new(1, 0, 0)
+                                    textLabel.Text = stonename
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.WorldSpawn.Ores:GetChildren()) do
+                        local stonename = v.Name
+                        if v.Hitbox:FindFirstChild("ESPBillboard") then
+                            v.Hitbox.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Tree ESP", "See Tree Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.WorldSpawn.Trees:GetChildren()) do
+                                local treename = v.Name
+                                if not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.new(0, 0, 1)
+                                    textLabel.Text = treename
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.WorldSpawn.Trees:GetChildren()) do
+                        local treename = v.Name
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Player ESP", "See Player Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(game.workspace.Live:GetChildren()) do
+                                local playername = v.Name
+                                if playername ~= game.Players.LocalPlayer.Name then
+                                    if not v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
+                                        local billboard = Instance.new("BillboardGui")
+                                        billboard.Name = "ESPBillboard"
+                                        billboard.Size = UDim2.new(0, 50, 0, 50)
+                                        billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                        billboard.AlwaysOnTop = true
+                                        billboard.Parent = v.HumanoidRootPart
+
+                                        local textLabel = Instance.new("TextLabel")
+                                        textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                        textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                        textLabel.BackgroundTransparency = 1
+                                        textLabel.TextColor3 = Color3.new(0, 1, 0)
+                                        textLabel.Text = playername
+                                        textLabel.Parent = billboard
+                                    end
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(game.workspace.Live:GetChildren()) do
+                        local playername = v.Name
+                        if v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
+                            v.HumanoidRootPart.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            local UI = Window:NewTab("UI Toggle")
+            local UISection = UI:NewSection("Show/Hide")
+
+            UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+                Library:ToggleUI()
             end)
         else
             local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
