@@ -1639,168 +1639,242 @@ Yes.MouseButton1Click:Connect(function()
         end)
     
         HubSection:NewButton("Fishing Simulator", "Load The GUI", function()
-            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
         local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
-    
+
         game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Fishing Simulator", Duration = 4,})
-    
+
         --MAIN
         local Main = Window:NewTab("Main")
         local MainSection = Main:NewSection("Usual Stuff")
-    
+
         MainSection:NewSlider("WalkSpeed", "Move Faster", 200, 16, function(s) -- 200 (MaxValue) | 16 (MinValue)
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
         end)
-    
+
         MainSection:NewSlider("JumpPower", "Jump High", 200, 50, function(s) -- 200 (MaxValue) | 50 (MinValue)
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
         end)
-    
+
         MainSection:NewButton("Infinite Yield", "Load It", function()
             loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
         end)
-    
+
         --FISH
         local Fish = Window:NewTab("Fish Stuff")
         local FishSection = Fish:NewSection("Mainly Gotta Do With Fish")
-    
+
         FishSection:NewButton("Instant Bite", "Fish Will Bite The Rod", function()
-        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishBiting:InvokeServer()
-    
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishBiting"):InvokeServer()
         end)
-    
+
         FishSection:NewButton("Catch Fish", "Catches The Fish", function()
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishCaught"):FireServer()
         end)
-    
+
         FishSection:NewButton("Sell All Fish", "Sell All Your Fish", function()
-        local args = {
-            [1] = "SellEverything"
-        }
-    
-        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer(unpack(args))
-    
+            local args = {
+            "SellEverything"
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer(unpack(args))
         end)
-    
+
         FishSection:NewButton("Delete Water", "Delete The Water, Good For Boating", function()
             game.Workspace.OceanWaves:Destroy()
         end)
-    
+
+        FishSection:NewToggle("Walk On Water (Sort Of)", "Jesus", function(state)
+            if state then
+                workspace.OceanWaves.Plane.CanCollide = true
+            else
+                workspace.OceanWaves.Plane.CanCollide = false
+            end
+        end)
+
         local Test = Window:NewTab("KeyBind")
         local TestSection = Test:NewSection("Test It")
-    
+
         TestSection:NewKeybind("Instant Bite", "Bite Instantly", Enum.KeyCode.Z, function()
-        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishBiting:InvokeServer()
-    
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishBiting"):InvokeServer()
         end)
-    
+
         TestSection:NewKeybind("Catch Fish", "Catch It", Enum.KeyCode.X, function()
-        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
-    
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishCaught"):FireServer()
         end)
-    
+
         TestSection:NewKeybind("Sell All Fish", "Sell Items In Inventory", Enum.KeyCode.C, function()
             local args = {
-                [1] = "SellEverything"
+            "SellEverything"
             }
-            
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer(unpack(args))
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer(unpack(args))
         end)
-    
+
         --Teleports
         local TP = Window:NewTab("Teleport")
         local TPSection = TP:NewSection("Island Teleports")
-    
+
         TPSection:NewButton("Port Jackson", "TP There", function()
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.0651207, 49.3202972, 17.5893974, 0.0374373235, -1.62951999e-08, -0.99929899, -9.16979701e-08, 1, -1.97419663e-08, 0.99929899, 9.23727725e-08, 0.0374373235)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.92533493, 54.7303085, -125.37075, 0.00349852955, -6.52402292e-08, 0.999993861, -1.13667307e-08, 1, 6.52803962e-08, -0.999993861, -1.15950467e-08, 0.00349852955)
         end)
-    
+
         TPSection:NewButton("Monster's Borough", "TP There", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3208.61475, 41.6322098, 2732.29199, 0.0118128713, -1.34102898e-08, -0.999930203, 9.39091738e-09, 1, -1.33002844e-08, 0.999930203, -9.23314758e-09, 0.0118128713)
         end)
-    
+
         TPSection:NewButton("Eruption Island", "TP There", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2917.44849, 46.6815796, 1487.82544, -0.478020757, 5.67471758e-08, 0.878348529, 4.9678178e-08, 1, -3.75704836e-08, -0.878348529, 2.56752823e-08, -0.478020757)
         end)
-    
+
         TPSection:NewButton("Shadow Isles", "TP There", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2238.30688, 160.352386, -2382.46436, -0.419304878, 8.87802898e-09, 0.907845497, 2.58804018e-08, 1, 2.1741029e-09, -0.907845497, 2.44070169e-08, -0.419304878)
         end)
-    
+
         TPSection:NewButton("Ancient Shores", "TP There", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2460.42261, 44.1133499, -1779.42993, -0.405590564, 4.25247748e-09, -0.914054871, -5.46513981e-08, 1, 2.89026083e-08, 0.914054871, 6.16769995e-08, -0.405590564)
         end)
-    
+
         TPSection:NewButton("Pharaoh's Dunes", "TP There", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4216.44189, 49.6530342, 361.791901, -0.0456423573, 0.000128529966, -0.998957932, -0.000632887997, 0.99999994, 0.000157590955, 0.998957753, 0.00063942105, -0.0456422642)
         end)
-    
+
         local TPSection = TP:NewSection("Ocean")
-    
+
         TPSection:NewButton("Smuggler's Bay", "TP There", function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-233.537033, 49.8551636, -47.3619614, 0.0340561084, 5.96809926e-08, -0.999419928, -6.92355897e-08, 1, 5.73563703e-08, 0.999419928, 6.72420981e-08, 0.0340561084)
         end)
-    
+
         local TPSection = TP:NewSection("Game Teleports")
-    
+
         TPSection:NewButton("Port Jackson", "TP There", function()
             local args = {
-            [1] = {
-                ["islandName"] = "PortJackson",
-                ["oceanNum"] = 1
+            {
+                islandName = "PortJackson",
+                oceanNum = 1
             }
-        }
-    
-        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.TeleportRequestEvent:FireServer(unpack(args))
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("TeleportRequestEvent"):FireServer(unpack(args))
         end)
-    
-        TPSection:NewButton("Smuggler's Bay", "TP There", function()
+
+        TPSection:NewButton("Timeless Tides", "TP There", function()
             local args = {
-            [1] = {
-                ["islandName"] = "SmugglersBay",
-                ["oceanNum"] = 2
+            {
+                islandName = "SmugglersBay",
+                oceanNum = 2
             }
-        }
-    
-        game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.TeleportRequestEvent:FireServer(unpack(args))
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("TeleportRequestEvent"):FireServer(unpack(args))
         end)
-    
+
         local Grind = Window:NewTab("Grinding")
         local GrindSection = Grind:NewSection("Grinding For Gems")
-    
-        GrindSection:NewButton("TP To Shipwreck attempt1", "Grinding", function()
-            i = workspace.ShipModel1.HitBox.CFrame
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+        GrindSection:NewButton("TP To Shipwreck", "Grinding", function()
+            local cantp = true
+            if workspace:FindFirstChild("ShipModel1") and cantp then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel1.HitBox.CFrame
+                cantp = false
+            elseif workspace:FindFirstChild("ShipModel2") and cantp then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel2.HitBox.CFrame
+                cantp = false
+            elseif workspace:FindFirstChild("ShipModel3") and cantp then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel3.HitBox.CFrame
+                cantp = false
+            elseif workspace:FindFirstChild("ShipModel4") and cantp then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel4.HitBox.CFrame
+                cantp = false
+            elseif workspace:FindFirstChild("ShipModel5") and cantp then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel5.HitBox.CFrame
+                cantp = false
+            elseif workspace:FindFirstChild("ShipModel6") and cantp then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel6.HitBox.CFrame
+                cantp = false
+            end
         end)
-    
-        GrindSection:NewButton("TP To Shipwreck attempt2", "Grinding", function()
-            i = workspace.ShipModel2.HitBox.CFrame
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+        GrindSection:NewButton("TP To Treasure Chests", "Grinding", function()
+            i = workspace.RandomChests
+            for _, v in pairs(i:GetChildren()) do
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+            end
         end)
-    
-        GrindSection:NewButton("TP To Shipwreck attempt3", "Grinding", function()
-            i = workspace.ShipModel3.HitBox.CFrame
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+        GrindSection:NewButton("TP To Container", "Grinding", function()
+            for _, v in pairs(game.Workspace:GetChildren()) do
+                if string.find(string.lower(v.Name), "abandonedcontainers") then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Anchor.Part.CFrame
+                end
+            end
         end)
-    
-        GrindSection:NewButton("TP To Shipwreck attempt4", "Grinding", function()
-            i = workspace.ShipModel4.HitBox.CFrame
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+        GrindSection:NewButton("TP To Shark Loot", "Grinding", function()
+            for _, v in pairs(game.Workspace.DroppedItems:GetChildren()) do
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:GetPivot()
+            end
         end)
-    
-        GrindSection:NewButton("TP To Shipwreck attempt5", "Grinding", function()
-            i = workspace.ShipModel5.HitBox.CFrame
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+        local ESP = Window:NewTab("ESP")
+        local ESPSection = ESP:NewSection("ESP For Things")
+
+        ESPSection:NewToggle("ESP Sea Creatures", "See Their Name", function(state)
+            if state then
+                i = true
+                while wait(0.1) do
+                    if i == true then
+                        for _, v in pairs(workspace:GetChildren()) do
+                            if v.Name == "GreatWhiteShark" or v.Name == "BigGreatWhiteShark" or v.Name == "NeonGreatWhiteShark" or v.Name == "KillerWhale" or v.Name == "NeonKillerWhale" or v.Name == "HammerheadShark" or v.Name == "VoidHammerheadShark" or v.Name == "ArmoredShark" or v.Name == "NeonArmoredShark" or v.Name == "CorruptedArmoredShark" or v.Name == "Piranha" or v.Name == "NeonPiranha" or v.Name == "ElephantSeal" or v.Name == "NeonElephantSeal" or v.Name == "CorruptedElephantSeal" or v.Name == "GinormousTrout" or v.Name == "UmbralSkimmer" or v.Name == "SweetTooth" then
+                                if v:IsA("Model") then
+                                    for _, v2 in pairs(v:GetChildren()) do
+                                        if v2.Name == "Hitbox" then
+                                            if not v2:FindFirstChild("ESPBillboard") then
+                                                local billboard = Instance.new("BillboardGui")
+                                                billboard.Name = "ESPBillboard"
+                                                billboard.Size = UDim2.new(0, 50, 0, 50)
+                                                billboard.StudsOffset = Vector3.new(0, 0, 0)
+                                                billboard.AlwaysOnTop = true
+                                                billboard.Parent = v2
+
+                                                local label = Instance.new("TextLabel")
+                                                label.Size = UDim2.new(1, 0, 0.25, 0)
+                                                label.Position = UDim2.new(0, 0, 0, 0)
+                                                label.BackgroundTransparency = 1
+                                                label.TextColor3 = Color3.new(0, 1, 0)
+                                                label.TextScaled = true
+                                                label.Text = v.Name
+                                                label.Parent = billboard
+                                            end
+                                            if v2:FindFirstChild("ESPBillboard") then
+                                                v2.ESPBillboard.TextLabel.Text = v.Name
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    elseif i == false then
+                        break
+                    end
+                end
+            else
+                i = false
+                for _, v in pairs(workspace:GetChildren()) do
+                    if v.Name == "GreatWhiteShark" or v.Name == "BigGreatWhiteShark" or v.Name == "NeonGreatWhiteShark" or v.Name == "KillerWhale" or v.Name == "NeonKillerWhale" or v.Name == "HammerheadShark" or v.Name == "VoidHammerheadShark" or v.Name == "ArmoredShark" or v.Name == "NeonArmoredShark" or v.Name == "CorruptedArmoredShark" or v.Name == "Piranha" or v.Name == "NeonPiranha" or v.Name == "ElephantSeal" or v.Name == "NeonElephantSeal" or v.Name == "CorruptedElephantSeal" or v.Name == "GinormousTrout" or v.Name == "UmbralSkimmer" or v.Name == "SweetTooth" then
+                        if v:IsA("Model") then
+                            for _, v2 in pairs(v:GetChildren()) do
+                                if v2.Name == "Hitbox" then
+                                    if v2:FindFirstChild("ESPBillboard") then
+                                        v2.ESPBillboard:Destroy()
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
         end)
-    
-        GrindSection:NewButton("TP To Shipwreck attempt6", "Grinding", function()
-            i = workspace.ShipModel6.HitBox.CFrame
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
-        end)
-    
+
         local UI = Window:NewTab("UI Toggle")
         local UISection = UI:NewSection("Show/Hide")
-    
+
         UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
             Library:ToggleUI()
         end)
@@ -3409,251 +3483,6 @@ Yes.MouseButton1Click:Connect(function()
             Library:ToggleUI()
         end)
         end)
-
-        HubSection:NewButton("Plinko RNG", "Load The GUI", function()
-            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
-
-            local Player = Window:NewTab("Player")
-            local PlayerSection = Player:NewSection("Change Things About Your Player")
-
-            PlayerSection:NewSlider("WalkSpeed", "Player Speed", 100, 16, function(s) -- 100 (MaxValue) | 16 (MinValue)
-                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-            end)
-
-            PlayerSection:NewSlider("JumpPower", "Player Jump Height", 100, 50, function(s) -- 100 (MaxValue) | 50 (MinValue)
-                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-                game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
-            end)
-
-            PlayerSection:NewSlider("HipHeight", "Player From Ground Offset", 50, 2, function(s) -- 50 (MaxValue) | 2 (MinValue)
-                game.Players.LocalPlayer.Character.Humanoid.HipHeight = s
-            end)
-
-            PlayerSection:NewSlider("Field Of View", "Player FOV", 120, 70, function(s) -- 120 (MaxValue) | 70 (MinValue)
-                game.Workspace.Camera.FieldOfView = s
-            end)
-
-            PlayerSection:NewSlider("Gravity", "Player Gravity", 1000, 10, function(s) -- 1000 (MaxValue) | 10 (MinValue)
-                game.Workspace.Gravity = s
-            end)
-
-            PlayerSection:NewButton("Reset Gravity", "Reset Your Gravity To Default", function()
-                game.Workspace.Gravity = 196.2
-            end)
-
-            local World = Window:NewTab("World")
-            local WorldSection = World:NewSection("Change Things In The World")
-
-            WorldSection:NewToggle("Disable Plinko Wall Collision", "Toggle Plinko Wall Collision", function(state)
-                if state then
-                    workspace.Map.Plinko.InvisPart.CanCollide = false
-                else
-                    workspace.Map.Plinko.InvisPart.CanCollide = true
-                end
-            end)
-
-            WorldSection:NewToggle("Disable Party Lounge Wall Collision", "Toggle Party Lounge Wall Collision", function(state)
-                if state then
-                    workspace.Map.PartyRoom.PartyDoor.CanCollide = false
-                else
-                    workspace.Map.PartyRoom.PartyDoor.CanCollide = true
-                end
-            end)
-
-            WorldSection:NewToggle("Disable VIP Obby Wall Collision", "Toggle VIP Obby Wall Collision", function(state)
-                if state then
-                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = false
-                else
-                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = true
-                end
-            end)
-
-            local Teleport = Window:NewTab("Teleport")
-            local TeleportSection = Teleport:NewSection("Teleport To Things")
-
-            TeleportSection:NewButton("Finish Normal Obby", "Teleport To The End", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-119.639793, 204.676941, -69.1610336, -0.0157014113, -0.0923430026, 0.995603502, -5.98375918e-05, 0.995726228, 0.0923534483, -0.999876678, 0.00139050512, -0.015639836)
-            end)
-
-            TeleportSection:NewButton("Finish Hard Obby", "Teleport To The End", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-265.082367, 206.294861, -45.6269684, -0.999600589, 0.00505645946, -0.02780338, -5.91019634e-05, 0.983485579, 0.180986404, 0.0282593723, 0.180915743, -0.983092606)
-            end)
-
-            TeleportSection:NewButton("Finish VIP Obby", "Teleport To The End", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(54.2365456, 206.945648, -33.8398781, -0.998574376, 0.00448406953, -0.0531873219, -5.98762417e-05, 0.996370137, 0.0851252601, 0.0533759706, 0.0850070938, -0.994949639)
-            end)
-
-            TeleportSection:NewButton("Teleport To Spawn", "Teleport To The Spawn", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-193.658997, 206.713623, 84.8002625, -0.0191400796, -9.77789227e-08, 0.999816835, 9.44088363e-09, 1, 9.79775692e-08, -0.999816835, 1.13144525e-08, -0.0191400796)
-            end)
-
-            local Mods = Window:NewTab("Ball Mods")
-            local ModsSection = Mods:NewSection("Change What The Balls Get You")
-
-            ModsSection:NewButton("All Balls Are 0.2x", "0.2x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["0.2"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 0.5x", "0.5x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["0.5"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 0.75x", "0.75x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["0.75"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 1x", "1x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["1"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 2x", "2x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["2"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 3x", "3x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["3"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 5x", "5x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["5"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 10x", "10x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["10"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 100x", "100x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["100"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            local Spawner = Window:NewTab("Spawner")
-            local SpawnerSection = Spawner:NewSection("Modify The Ball Spawners")
-
-            SpawnerSection:NewToggle("Make Spawners Visible", "Highlight The Spawners", function(state)
-                if state then
-                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 0
-
-                    local highlight = Instance.new("Highlight")
-                    highlight.Name = "Highlight"
-                    highlight.FillColor = Color3.new(1, 0, 0)
-                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn1
-
-                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 0
-                    
-                    local highlight = Instance.new("Highlight")
-                    highlight.Name = "Highlight"
-                    highlight.FillColor = Color3.new(0, 0, 1)
-                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                else
-                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 1
-
-                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Highlight:Destroy()
-
-                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 1
-                    
-                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Highlight:Destroy()
-                end
-            end)
-
-            local SpawnerSection = Spawner:NewSection("Spawner 1")
-
-            SpawnerSection:NewButton("Move Spawn 1 To The Left", "Move To The Left", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z - 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 1 To The Right", "Move To The Right", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z + 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 1 Up", "Move To The Up", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y + 1, spawn1.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 1 Down", "Move To The Down", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y - 1, spawn1.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Reset Spawn 1 Position", "Reset It", function()
-                workspace.Map.Plinko.PlinkoBoard.Spawn1.Position = Vector3.new(-264.43, 265.494, 84.961)
-            end)
-
-            local SpawnerSection = Spawner:NewSection("Spawner 2")
-
-            SpawnerSection:NewButton("Move Spawn 2 To The Left", "Move To The Left", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z - 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 2 To The Right", "Move To The Right", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z + 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 2 Up", "Move To The Up", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y + 1, spawn2.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 2 Down", "Move To The Down", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y - 1, spawn2.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Reset Spawn 2 Position", "Reset It", function()
-                workspace.Map.Plinko.PlinkoBoard.Spawn2.Position = Vector3.new(-264.43, 265.494, 82.961)
-            end)
-        end)
-
         HubSection:NewButton("Refinery Caves 2", "Load The GUI", function()
             local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
             local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
@@ -4069,6 +3898,572 @@ Yes.MouseButton1Click:Connect(function()
                         local playername = v.Name
                         if v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
                             v.HumanoidRootPart.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            local UI = Window:NewTab("UI Toggle")
+            local UISection = UI:NewSection("Show/Hide")
+
+            UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+                Library:ToggleUI()
+            end)
+        end)
+
+        HubSection:NewButton("Criminality", "Load The GUI", function()
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Criminality", Duration = 4,})
+
+            local Main = Window:NewTab("Main")
+            local MainSection = Main:NewSection("Common Things")
+
+            MainSection:NewButton("Inf Yield", "Build Apon", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+            end)
+
+            MainSection:NewButton("Unnamed ESP", "Build Apon", function()
+                pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+            end)
+
+            MainSection:NewButton("Aimbot", "Build Apon", function()
+                local select = select
+                local pcall, getgenv, next, Vector2, math_clamp, type, mouse_move_rel = 
+                    select(1, pcall, getgenv, next, Vector2.new, math.clamp, type, mousemoverel or (Input and Input.MouseMove))
+
+                local Players = game:GetService("Players")
+                local Camera = workspace.CurrentCamera
+                local UIS = game:GetService("UserInputService")
+                local TweenService = game:GetService("TweenService")
+                local LocalPlayer = Players.LocalPlayer
+                local runService = game:GetService("RunService")
+
+                pcall(function()
+                    getgenv().Aimbot.Functions:Exit()
+                end)
+
+                getgenv().Aimbot = {}
+                local Environment = getgenv().Aimbot
+
+                local RequiredDistance, Typing, Running, Animation, ServiceConnections = 2000, false, false, nil, {}
+
+
+                Environment.Settings = {
+                    Enabled = true,
+                    TeamCheck = false,
+                    AliveCheck = true,
+                    WallCheck = false,
+                    Sensitivity = 0,
+                    ThirdPerson = false,
+                    ThirdPersonSensitivity = 3,
+                    TriggerKey = "MouseButton2",
+                    Toggle = false,
+                    LockPart = "Head"
+                }
+
+                Environment.FOVSettings = {
+                    Enabled = true,
+                    Visible = true,
+                    Amount = 90,
+                    Color = Color3.fromRGB(255, 255, 255),
+                    LockedColor = Color3.fromRGB(255, 70, 70),
+                    Transparency = 0.5,
+                    Sides = 60,
+                    Thickness = 1,
+                    Filled = false
+                }
+
+                Environment.FOVCircle = Drawing.new("Circle")
+
+
+                local function CancelLock()
+                    Environment.Locked = nil
+                    if Animation then Animation:Cancel() end
+                    Environment.FOVCircle.Color = Environment.FOVSettings.Color
+                end
+
+                local function GetClosestPlayer()
+                    if not Environment.Locked then
+                        RequiredDistance = (Environment.FOVSettings.Enabled and Environment.FOVSettings.Amount or 2000)
+
+                        for _, v in next, Players:GetPlayers() do
+                            if v ~= LocalPlayer then
+                                if v.Character and v.Character:FindFirstChild(Environment.Settings.LockPart) and v.Character:FindFirstChildOfClass("Humanoid") then
+                                    if Environment.Settings.TeamCheck and v.Team == LocalPlayer.Team then continue end
+                                    if Environment.Settings.AliveCheck and v.Character:FindFirstChildOfClass("Humanoid").Health <= 0 then continue end
+                                    if Environment.Settings.WallCheck and #(Camera:GetPartsObscuringTarget({v.Character[Environment.Settings.LockPart].Position}, v.Character:GetDescendants())) > 0 then continue end
+
+                                    local Vector, OnScreen = Camera:WorldToViewportPoint(v.Character[Environment.Settings.LockPart].Position)
+                                    local Distance = (Vector2(UIS:GetMouseLocation().X, UIS:GetMouseLocation().Y) - Vector2(Vector.X, Vector.Y)).Magnitude
+
+                                    if Distance < RequiredDistance and OnScreen then
+                                        RequiredDistance = Distance
+                                        Environment.Locked = v
+                                    end
+                                end
+                            end
+                        end
+                    elseif (Vector2(UIS:GetMouseLocation().X, UIS:GetMouseLocation().Y) - 
+                            Vector2(Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position).X, 
+                                    Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position).Y)).Magnitude > RequiredDistance then
+                        CancelLock()
+                    end
+                end
+
+
+                ServiceConnections.TypingStartedConnection = UIS.TextBoxFocused:Connect(function()
+                    Typing = true
+                end)
+
+                ServiceConnections.TypingEndedConnection = UIS.TextBoxFocusReleased:Connect(function()
+                    Typing = false
+                end)
+
+
+                local function Load()
+                    ServiceConnections.RenderSteppedConnection = runService.RenderStepped:Connect(function()
+                        if Environment.FOVSettings.Enabled and Environment.Settings.Enabled then
+                            Environment.FOVCircle.Radius = Environment.FOVSettings.Amount
+                            Environment.FOVCircle.Thickness = Environment.FOVSettings.Thickness
+                            Environment.FOVCircle.Filled = Environment.FOVSettings.Filled
+                            Environment.FOVCircle.NumSides = Environment.FOVSettings.Sides
+                            Environment.FOVCircle.Color = Environment.FOVSettings.Color
+                            Environment.FOVCircle.Transparency = Environment.FOVSettings.Transparency
+                            Environment.FOVCircle.Visible = Environment.FOVSettings.Visible
+                            Environment.FOVCircle.Position = Vector2(UIS:GetMouseLocation().X, UIS:GetMouseLocation().Y)
+                        else
+                            Environment.FOVCircle.Visible = false
+                        end
+
+                        if Running and Environment.Settings.Enabled then
+                            GetClosestPlayer()
+
+                            if Environment.Locked then
+                                if Environment.Settings.ThirdPerson then
+                                    Environment.Settings.ThirdPersonSensitivity = math_clamp(Environment.Settings.ThirdPersonSensitivity, 0.1, 5)
+
+                                    local Vector = Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position)
+                                    mouse_move_rel((Vector.X - UIS:GetMouseLocation().X) * Environment.Settings.ThirdPersonSensitivity, 
+                                                    (Vector.Y - UIS:GetMouseLocation().Y) * Environment.Settings.ThirdPersonSensitivity)
+                                else
+                                    if Environment.Settings.Sensitivity > 0 then
+                                        Animation = TweenService:Create(Camera, TweenInfo.new(Environment.Settings.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), 
+                                                        {CFrame = CFrame.new(Camera.CFrame.Position, Environment.Locked.Character[Environment.Settings.LockPart].Position)})
+                                        Animation:Play()
+                                    else
+                                        Camera.CFrame = CFrame.new(Camera.CFrame.Position, Environment.Locked.Character[Environment.Settings.LockPart].Position)
+                                    end
+                                end
+
+                                Environment.FOVCircle.Color = Environment.FOVSettings.LockedColor
+                            end
+                        end
+                    end)
+
+                    ServiceConnections.InputBeganConnection = UIS.InputBegan:Connect(function(Input)
+                        if not Typing then
+                            pcall(function()
+                                if Input.KeyCode == Enum.KeyCode[Environment.Settings.TriggerKey] then
+                                    if Environment.Settings.Toggle then
+                                        Running = not Running
+                                        if not Running then
+                                            CancelLock()
+                                        end
+                                    else
+                                        Running = true
+                                    end
+                                end
+                            end)
+
+                            pcall(function()
+                                if Input.UserInputType == Enum.UserInputType[Environment.Settings.TriggerKey] then
+                                    if Environment.Settings.Toggle then
+                                        Running = not Running
+                                        if not Running then
+                                            CancelLock()
+                                        end
+                                    else
+                                        Running = true
+                                    end
+                                end
+                            end)
+                        end
+                    end)
+
+                    ServiceConnections.InputEndedConnection = UIS.InputEnded:Connect(function(Input)
+                        if not Typing then
+                            if not Environment.Settings.Toggle then
+                                pcall(function()
+                                    if Input.KeyCode == Enum.KeyCode[Environment.Settings.TriggerKey] then
+                                        Running = false; CancelLock()
+                                    end
+                                end)
+
+                                pcall(function()
+                                    if Input.UserInputType == Enum.UserInputType[Environment.Settings.TriggerKey] then
+                                        Running = false; CancelLock()
+                                    end
+                                end)
+                            end
+                        end
+                    end)
+                end
+
+                Environment.Functions = {}
+
+                function Environment.Functions:Exit()
+                    for _, v in next, ServiceConnections do
+                        v:Disconnect()
+                    end
+
+                    if Environment.FOVCircle.Remove then Environment.FOVCircle:Remove() end
+
+                    getgenv().Aimbot.Functions = nil
+                    getgenv().Aimbot = nil
+                    
+                    Load = nil; GetClosestPlayer = nil; CancelLock = nil
+                end
+
+                function Environment.Functions:Restart()
+                    for _, v in next, ServiceConnections do
+                        v:Disconnect()
+                    end
+
+                    Load()
+                end
+
+                function Environment.Functions:ResetSettings()
+                    Environment.Settings = {
+                        Enabled = true,
+                        TeamCheck = false,
+                        AliveCheck = true,
+                        WallCheck = false,
+                        Sensitivity = 0,
+                        ThirdPerson = false,
+                        ThirdPersonSensitivity = 3,
+                        TriggerKey = "MouseButton2",
+                        Toggle = false,
+                        LockPart = "Head"
+                    }
+
+                    Environment.FOVSettings = {
+                        Enabled = true,
+                        Visible = true,
+                        Amount = 90,
+                        Color = Color3.fromRGB(255, 255, 255),
+                        LockedColor = Color3.fromRGB(255, 70, 70),
+                        Transparency = 0.5,
+                        Sides = 60,
+                        Thickness = 1,
+                        Filled = false
+                    }
+                end
+
+                Load()
+            end)
+
+            local ESP = Window:NewTab("ESP")
+            local ESPSection = ESP:NewSection("See Things Through Walls")
+
+            ESPSection:NewToggle("Safe And Register ESP", "See Through Walls", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if not i then break end
+
+                        local containers = workspace.Map.BredMakurz
+                        local player = game.Players.LocalPlayer
+                        local char = player.Character
+                        local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                        for _, v in pairs(containers:GetChildren()) do
+                            if not v:IsA("Model") or not v:FindFirstChild("Values") or not v.Values:FindFirstChild("Broken") then
+                                continue
+                            end
+
+                            local isBroken = v.Values.Broken.Value
+                            local isInRange = hrp and v.PrimaryPart and (v.PrimaryPart.Position - hrp.Position).Magnitude <= 50
+
+                            if isBroken then
+                                if v:FindFirstChild("ESPBillboard") then
+                                    v.ESPBillboard:Destroy()
+                                end
+                                if v:FindFirstChild("ESPHighlight") then
+                                    v.ESPHighlight:Destroy()
+                                end
+                                continue
+                            end
+
+                            if not v:FindFirstChild("ESPBillboard") then
+                                local billboard = Instance.new("BillboardGui")
+                                billboard.Name = "ESPBillboard"
+                                billboard.Size = UDim2.new(0, 50, 0, 50)
+                                billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                billboard.AlwaysOnTop = true
+                                billboard.Parent = v
+
+                                local textLabel = Instance.new("TextLabel")
+                                textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                textLabel.BackgroundTransparency = 1
+                                textLabel.TextColor3 = Color3.fromRGB(85, 107, 47)
+
+                                if v.Name:find("Register") then
+                                    textLabel.Text = "Register"
+                                elseif v.Name:find("SmallSafe") then
+                                    textLabel.Text = "SmallSafe"
+                                elseif v.Name:find("MediumSafe") then
+                                    textLabel.Text = "MediumSafe"
+                                else
+                                    textLabel.Text = v.Name
+                                end
+
+                                textLabel.Parent = billboard
+                            end
+
+                            if isInRange then
+                                if not v:FindFirstChild("ESPHighlight") then
+                                    local highlight = Instance.new("Highlight")
+                                    highlight.Name = "ESPHighlight"
+                                    highlight.Adornee = v
+                                    highlight.FillTransparency = 0.5
+                                    highlight.FillColor = Color3.fromRGB(85, 107, 47)
+                                    highlight.OutlineTransparency = 0
+                                    highlight.OutlineColor = Color3.fromRGB(85, 107, 47)
+                                    highlight.Parent = v
+                                end
+                            else
+                                if v:FindFirstChild("ESPHighlight") then
+                                    v.ESPHighlight:Destroy()
+                                end
+                            end
+                        end
+                    end
+                else
+                    i = false
+                    local containers = workspace.Map.BredMakurz
+                    for _, v in pairs(containers:GetChildren()) do
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                        if v:FindFirstChild("ESPHighlight") then
+                            v.ESPHighlight:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Scrap ESP", "See Scrap Through Walls", function(state)
+                if state then
+                    j = true
+                    while wait(1) do
+                        if j == true then
+                            local scraps = game:GetService("Workspace").Filter.SpawnedPiles
+                            local player = game.Players.LocalPlayer
+                            local char = player.Character
+                            local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                            for _, v in pairs(scraps:GetChildren()) do
+                                if v:IsA("Model") and not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local scrapName = "Scrap"
+                                    if v.Name == "S1" then
+                                        scrapName = "Scrap_Tier_1"
+                                    elseif v.Name == "S2" then
+                                        scrapName = "Scrap_Tier_2"
+                                    end
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.fromRGB(0, 0, 139)
+                                    textLabel.Text = scrapName
+                                    textLabel.Parent = billboard
+                                end
+
+                                if hrp and v.PrimaryPart and (v.PrimaryPart.Position - hrp.Position).Magnitude <= 50 then
+                                    if not v:FindFirstChild("ESPHighlight") then
+                                        local highlight = Instance.new("Highlight")
+                                        highlight.Name = "ESPHighlight"
+                                        highlight.Adornee = v
+                                        highlight.FillTransparency = 0.5
+                                        highlight.FillColor = Color3.fromRGB(0, 0, 139)
+                                        highlight.OutlineTransparency = 0
+                                        highlight.OutlineColor = Color3.fromRGB(0, 0, 139)
+                                        highlight.Parent = v
+                                    end
+                                else
+                                    if v:FindFirstChild("ESPHighlight") then
+                                        v.ESPHighlight:Destroy()
+                                    end
+                                end
+                            end
+                        elseif j == false then
+                            break
+                        end
+                    end
+                else
+                    j = false
+                    local scraps = workspace.Filter.SpawnedPiles
+                    for _, v in pairs(scraps:GetChildren()) do
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                        if v:FindFirstChild("ESPHighlight") then
+                            v.ESPHighlight:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Crate ESP", "See Crates Through Walls", function(state)
+                if state then
+                    k = true
+                    while wait(1) do
+                        if k == true then
+                            local crates = game:GetService("Workspace").Filter.SpawnedPiles
+                            local player = game.Players.LocalPlayer
+                            local char = player.Character
+                            local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                            for _, v in pairs(crates:GetChildren()) do
+                                if v:IsA("Model") and v.Name == "C1" then
+                                    if not v:FindFirstChild("ESPBillboard") then
+                                        local billboard = Instance.new("BillboardGui")
+                                        billboard.Name = "ESPBillboard"
+                                        billboard.Size = UDim2.new(0, 50, 0, 50)
+                                        billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                        billboard.AlwaysOnTop = true
+                                        billboard.Parent = v
+
+                                        local textLabel = Instance.new("TextLabel")
+                                        textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                        textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                        textLabel.BackgroundTransparency = 1
+                                        textLabel.TextColor3 = Color3.fromRGB(139, 69, 19)
+                                        textLabel.Text = "Crate"
+                                        textLabel.Parent = billboard
+                                    end
+
+                                    if hrp and v.PrimaryPart and (v.PrimaryPart.Position - hrp.Position).Magnitude <= 50 then
+                                        if not v:FindFirstChild("ESPHighlight") then
+                                            local highlight = Instance.new("Highlight")
+                                            highlight.Name = "ESPHighlight"
+                                            highlight.Adornee = v
+                                            highlight.FillTransparency = 0.5
+                                            highlight.FillColor = Color3.fromRGB(139, 69, 19)
+                                            highlight.OutlineTransparency = 0
+                                            highlight.OutlineColor = Color3.fromRGB(139, 69, 19)
+                                            highlight.Parent = v
+                                        end
+                                    else
+                                        if v:FindFirstChild("ESPHighlight") then
+                                            v.ESPHighlight:Destroy()
+                                        end
+                                    end
+                                end
+                            end
+                        else
+                            break
+                        end
+                    end
+                else
+                    k = false
+                    local crates = workspace.Filter.SpawnedPiles
+                    for _, v in pairs(crates:GetChildren()) do
+                        if v:IsA("Model") and v.Name == "C1" then
+                            if v:FindFirstChild("ESPBillboard") then
+                                v.ESPBillboard:Destroy()
+                            end
+                            if v:FindFirstChild("ESPHighlight") then
+                                v.ESPHighlight:Destroy()
+                            end
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Dealer ESP", "See Dealers Through Walls", function(state)
+                if state then
+                    d = true
+                    while wait(1) do
+                        if not d then break end
+
+                        local shopz = workspace.Map.Shopz
+                        local player = game.Players.LocalPlayer
+                        local char = player.Character
+                        local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                        for _, shop in pairs(shopz:GetChildren()) do
+                            for _, npcName in pairs({"DealerMan", "ArmoryMan"}) do
+                                local npc = shop:FindFirstChild(npcName)
+
+                                if npc and npc:IsA("Model") then
+                                    if not npc.PrimaryPart then
+                                        local head = npc:FindFirstChild("Head") or npc:FindFirstChildWhichIsA("BasePart")
+                                        if head then npc.PrimaryPart = head end
+                                    end
+
+                                    if not npc:FindFirstChild("ESPBillboard") then
+                                        local billboard = Instance.new("BillboardGui")
+                                        billboard.Name = "ESPBillboard"
+                                        billboard.Size = UDim2.new(0, 50, 0, 50)
+                                        billboard.StudsOffset = Vector3.new(0, 2, 0)
+                                        billboard.AlwaysOnTop = true
+                                        billboard.Parent = npc
+
+                                        local label = Instance.new("TextLabel")
+                                        label.Size = UDim2.new(1, 0, 0.5, 0)
+                                        label.Position = UDim2.new(0, 0, 0, 0)
+                                        label.BackgroundTransparency = 1
+                                        label.TextColor3 = Color3.fromRGB(173, 216, 230)
+                                        label.Font = Enum.Font.Gotham
+                                        label.TextSize = 12
+                                        label.TextTransparency = 0.15
+                                        label.Text = (npcName == "DealerMan") and "Dealer" or "ArmoryDealer"
+                                        label.Parent = billboard
+                                    end
+
+                                    if hrp and npc.PrimaryPart and (npc.PrimaryPart.Position - hrp.Position).Magnitude <= 50 then
+                                        if not npc:FindFirstChild("ESPHighlight") then
+                                            local highlight = Instance.new("Highlight")
+                                            highlight.Name = "ESPHighlight"
+                                            highlight.Adornee = npc
+                                            highlight.FillTransparency = 0.5
+                                            highlight.FillColor = Color3.fromRGB(173, 216, 230)
+                                            highlight.OutlineTransparency = 0
+                                            highlight.OutlineColor = Color3.fromRGB(173, 216, 230)
+                                            highlight.Parent = npc
+                                        end
+                                    elseif npc:FindFirstChild("ESPHighlight") then
+                                        npc.ESPHighlight:Destroy()
+                                    end
+                                end
+                            end
+                        end
+                    end
+                else
+                    d = false
+                    for _, shop in pairs(workspace.Map.Shopz:GetChildren()) do
+                        for _, npcName in pairs({"DealerMan", "ArmoryMan"}) do
+                            local npc = shop:FindFirstChild(npcName)
+                            if npc then
+                                if npc:FindFirstChild("ESPBillboard") then
+                                    npc.ESPBillboard:Destroy()
+                                end
+                                if npc:FindFirstChild("ESPHighlight") then
+                                    npc.ESPHighlight:Destroy()
+                                end
+                            end
                         end
                     end
                 end
@@ -5285,166 +5680,240 @@ Yes.MouseButton1Click:Connect(function()
         elseif game.PlaceId == 2866967438 then
             local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
             local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
-        
+
             game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Fishing Simulator", Duration = 4,})
-        
+
             --MAIN
             local Main = Window:NewTab("Main")
             local MainSection = Main:NewSection("Usual Stuff")
-        
+
             MainSection:NewSlider("WalkSpeed", "Move Faster", 200, 16, function(s) -- 200 (MaxValue) | 16 (MinValue)
                 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
             end)
-        
+
             MainSection:NewSlider("JumpPower", "Jump High", 200, 50, function(s) -- 200 (MaxValue) | 50 (MinValue)
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
             end)
-        
+
             MainSection:NewButton("Infinite Yield", "Load It", function()
                 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
             end)
-        
+
             --FISH
             local Fish = Window:NewTab("Fish Stuff")
             local FishSection = Fish:NewSection("Mainly Gotta Do With Fish")
-        
+
             FishSection:NewButton("Instant Bite", "Fish Will Bite The Rod", function()
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishBiting:InvokeServer()
-        
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishBiting"):InvokeServer()
             end)
-        
+
             FishSection:NewButton("Catch Fish", "Catches The Fish", function()
-                game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishCaught"):FireServer()
             end)
-        
+
             FishSection:NewButton("Sell All Fish", "Sell All Your Fish", function()
-            local args = {
-                [1] = "SellEverything"
-            }
-        
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer(unpack(args))
-        
+                local args = {
+                "SellEverything"
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer(unpack(args))
             end)
-        
+
             FishSection:NewButton("Delete Water", "Delete The Water, Good For Boating", function()
                 game.Workspace.OceanWaves:Destroy()
             end)
-        
+
+            FishSection:NewToggle("Walk On Water (Sort Of)", "Jesus", function(state)
+                if state then
+                    workspace.OceanWaves.Plane.CanCollide = true
+                else
+                    workspace.OceanWaves.Plane.CanCollide = false
+                end
+            end)
+
             local Test = Window:NewTab("KeyBind")
             local TestSection = Test:NewSection("Test It")
-        
+
             TestSection:NewKeybind("Instant Bite", "Bite Instantly", Enum.KeyCode.Z, function()
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishBiting:InvokeServer()
-        
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishBiting"):InvokeServer()
             end)
-        
+
             TestSection:NewKeybind("Catch Fish", "Catch It", Enum.KeyCode.X, function()
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.FishCaught:FireServer()
-        
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("FishCaught"):FireServer()
             end)
-        
+
             TestSection:NewKeybind("Sell All Fish", "Sell Items In Inventory", Enum.KeyCode.C, function()
                 local args = {
-                    [1] = "SellEverything"
+                "SellEverything"
                 }
-                
-                game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.processGameItemSold:InvokeServer(unpack(args))
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer(unpack(args))
             end)
-        
+
             --Teleports
             local TP = Window:NewTab("Teleport")
             local TPSection = TP:NewSection("Island Teleports")
-        
+
             TPSection:NewButton("Port Jackson", "TP There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.0651207, 49.3202972, 17.5893974, 0.0374373235, -1.62951999e-08, -0.99929899, -9.16979701e-08, 1, -1.97419663e-08, 0.99929899, 9.23727725e-08, 0.0374373235)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1.92533493, 54.7303085, -125.37075, 0.00349852955, -6.52402292e-08, 0.999993861, -1.13667307e-08, 1, 6.52803962e-08, -0.999993861, -1.15950467e-08, 0.00349852955)
             end)
-        
+
             TPSection:NewButton("Monster's Borough", "TP There", function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3208.61475, 41.6322098, 2732.29199, 0.0118128713, -1.34102898e-08, -0.999930203, 9.39091738e-09, 1, -1.33002844e-08, 0.999930203, -9.23314758e-09, 0.0118128713)
             end)
-        
+
             TPSection:NewButton("Eruption Island", "TP There", function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2917.44849, 46.6815796, 1487.82544, -0.478020757, 5.67471758e-08, 0.878348529, 4.9678178e-08, 1, -3.75704836e-08, -0.878348529, 2.56752823e-08, -0.478020757)
             end)
-        
+
             TPSection:NewButton("Shadow Isles", "TP There", function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2238.30688, 160.352386, -2382.46436, -0.419304878, 8.87802898e-09, 0.907845497, 2.58804018e-08, 1, 2.1741029e-09, -0.907845497, 2.44070169e-08, -0.419304878)
             end)
-        
+
             TPSection:NewButton("Ancient Shores", "TP There", function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2460.42261, 44.1133499, -1779.42993, -0.405590564, 4.25247748e-09, -0.914054871, -5.46513981e-08, 1, 2.89026083e-08, 0.914054871, 6.16769995e-08, -0.405590564)
             end)
-        
+
             TPSection:NewButton("Pharaoh's Dunes", "TP There", function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4216.44189, 49.6530342, 361.791901, -0.0456423573, 0.000128529966, -0.998957932, -0.000632887997, 0.99999994, 0.000157590955, 0.998957753, 0.00063942105, -0.0456422642)
             end)
-        
+
             local TPSection = TP:NewSection("Ocean")
-        
+
             TPSection:NewButton("Smuggler's Bay", "TP There", function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-233.537033, 49.8551636, -47.3619614, 0.0340561084, 5.96809926e-08, -0.999419928, -6.92355897e-08, 1, 5.73563703e-08, 0.999419928, 6.72420981e-08, 0.0340561084)
             end)
-        
+
             local TPSection = TP:NewSection("Game Teleports")
-        
+
             TPSection:NewButton("Port Jackson", "TP There", function()
                 local args = {
-                [1] = {
-                    ["islandName"] = "PortJackson",
-                    ["oceanNum"] = 1
+                {
+                    islandName = "PortJackson",
+                    oceanNum = 1
                 }
-            }
-        
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.TeleportRequestEvent:FireServer(unpack(args))
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("TeleportRequestEvent"):FireServer(unpack(args))
             end)
-        
+
             TPSection:NewButton("Smuggler's Bay", "TP There", function()
                 local args = {
-                [1] = {
-                    ["islandName"] = "SmugglersBay",
-                    ["oceanNum"] = 2
+                {
+                    islandName = "SmugglersBay",
+                    oceanNum = 2
                 }
-            }
-        
-            game:GetService("ReplicatedStorage").CloudFrameShared.DataStreams.TeleportRequestEvent:FireServer(unpack(args))
+                }
+                game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("TeleportRequestEvent"):FireServer(unpack(args))
             end)
-        
+
             local Grind = Window:NewTab("Grinding")
             local GrindSection = Grind:NewSection("Grinding For Gems")
-        
-            GrindSection:NewButton("TP To Shipwreck attempt1", "Grinding", function()
-                i = workspace.ShipModel1.HitBox.CFrame
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+            GrindSection:NewButton("TP To Shipwreck", "Grinding", function()
+                local cantp = true
+                if workspace:FindFirstChild("ShipModel1") and cantp then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel1.HitBox.CFrame
+                    cantp = false
+                elseif workspace:FindFirstChild("ShipModel2") and cantp then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel2.HitBox.CFrame
+                    cantp = false
+                elseif workspace:FindFirstChild("ShipModel3") and cantp then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel3.HitBox.CFrame
+                    cantp = false
+                elseif workspace:FindFirstChild("ShipModel4") and cantp then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel4.HitBox.CFrame
+                    cantp = false
+                elseif workspace:FindFirstChild("ShipModel5") and cantp then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel5.HitBox.CFrame
+                    cantp = false
+                elseif workspace:FindFirstChild("ShipModel6") and cantp then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ShipModel6.HitBox.CFrame
+                    cantp = false
+                end
             end)
-        
-            GrindSection:NewButton("TP To Shipwreck attempt2", "Grinding", function()
-                i = workspace.ShipModel2.HitBox.CFrame
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+            GrindSection:NewButton("TP To Treasure Chests", "Grinding", function()
+                i = workspace.RandomChests
+                for _, v in pairs(i:GetChildren()) do
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                end
             end)
-        
-            GrindSection:NewButton("TP To Shipwreck attempt3", "Grinding", function()
-                i = workspace.ShipModel3.HitBox.CFrame
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+            GrindSection:NewButton("TP To Container", "Grinding", function()
+                for _, v in pairs(game.Workspace:GetChildren()) do
+                    if string.find(string.lower(v.Name), "abandonedcontainers") then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Anchor.Part.CFrame
+                    end
+                end
             end)
-        
-            GrindSection:NewButton("TP To Shipwreck attempt4", "Grinding", function()
-                i = workspace.ShipModel4.HitBox.CFrame
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+            GrindSection:NewButton("TP To Shark Loot", "Grinding", function()
+                for _, v in pairs(game.Workspace.DroppedItems:GetChildren()) do
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v:GetPivot()
+                end
             end)
-        
-            GrindSection:NewButton("TP To Shipwreck attempt5", "Grinding", function()
-                i = workspace.ShipModel5.HitBox.CFrame
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
+
+            local ESP = Window:NewTab("ESP")
+            local ESPSection = ESP:NewSection("ESP For Things")
+
+            ESPSection:NewToggle("ESP Sea Creatures", "See Their Name", function(state)
+                if state then
+                    i = true
+                    while wait(0.1) do
+                        if i == true then
+                            for _, v in pairs(workspace:GetChildren()) do
+                                if v.Name == "GreatWhiteShark" or v.Name == "BigGreatWhiteShark" or v.Name == "NeonGreatWhiteShark" or v.Name == "KillerWhale" or v.Name == "NeonKillerWhale" or v.Name == "HammerheadShark" or v.Name == "VoidHammerheadShark" or v.Name == "ArmoredShark" or v.Name == "NeonArmoredShark" or v.Name == "CorruptedArmoredShark" or v.Name == "Piranha" or v.Name == "NeonPiranha" or v.Name == "ElephantSeal" or v.Name == "NeonElephantSeal" or v.Name == "CorruptedElephantSeal" or v.Name == "GinormousTrout" or v.Name == "UmbralSkimmer" or v.Name == "SweetTooth" then
+                                    if v:IsA("Model") then
+                                        for _, v2 in pairs(v:GetChildren()) do
+                                            if v2.Name == "Hitbox" then
+                                                if not v2:FindFirstChild("ESPBillboard") then
+                                                    local billboard = Instance.new("BillboardGui")
+                                                    billboard.Name = "ESPBillboard"
+                                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                                    billboard.StudsOffset = Vector3.new(0, 0, 0)
+                                                    billboard.AlwaysOnTop = true
+                                                    billboard.Parent = v2
+
+                                                    local label = Instance.new("TextLabel")
+                                                    label.Size = UDim2.new(1, 0, 0.25, 0)
+                                                    label.Position = UDim2.new(0, 0, 0, 0)
+                                                    label.BackgroundTransparency = 1
+                                                    label.TextColor3 = Color3.new(0, 1, 0)
+                                                    label.TextScaled = true
+                                                    label.Text = v.Name
+                                                    label.Parent = billboard
+                                                end
+                                                if v2:FindFirstChild("ESPBillboard") then
+                                                    v2.ESPBillboard.TextLabel.Text = v.Name
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    for _, v in pairs(workspace:GetChildren()) do
+                        if v.Name == "GreatWhiteShark" or v.Name == "BigGreatWhiteShark" or v.Name == "NeonGreatWhiteShark" or v.Name == "KillerWhale" or v.Name == "NeonKillerWhale" or v.Name == "HammerheadShark" or v.Name == "VoidHammerheadShark" or v.Name == "ArmoredShark" or v.Name == "NeonArmoredShark" or v.Name == "CorruptedArmoredShark" or v.Name == "Piranha" or v.Name == "NeonPiranha" or v.Name == "ElephantSeal" or v.Name == "NeonElephantSeal" or v.Name == "CorruptedElephantSeal" or v.Name == "GinormousTrout" or v.Name == "UmbralSkimmer" or v.Name == "SweetTooth" then
+                            if v:IsA("Model") then
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2.Name == "Hitbox" then
+                                        if v2:FindFirstChild("ESPBillboard") then
+                                            v2.ESPBillboard:Destroy()
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
             end)
-        
-            GrindSection:NewButton("TP To Shipwreck attempt6", "Grinding", function()
-                i = workspace.ShipModel6.HitBox.CFrame
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = i
-            end)
-        
+
             local UI = Window:NewTab("UI Toggle")
             local UISection = UI:NewSection("Show/Hide")
-        
+
             UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
                 Library:ToggleUI()
             end)
@@ -7023,250 +7492,6 @@ Yes.MouseButton1Click:Connect(function()
             UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
                 Library:ToggleUI()
             end)
-        elseif game.PlaceId == 116295913939017 then
-            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
-
-            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Plinko RNG", Duration = 4,})
-
-            local Player = Window:NewTab("Player")
-            local PlayerSection = Player:NewSection("Change Things About Your Player")
-
-            PlayerSection:NewSlider("WalkSpeed", "Player Speed", 100, 16, function(s) -- 100 (MaxValue) | 16 (MinValue)
-                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-            end)
-
-            PlayerSection:NewSlider("JumpPower", "Player Jump Height", 100, 50, function(s) -- 100 (MaxValue) | 50 (MinValue)
-                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-                game.Players.LocalPlayer.Character.Humanoid.JumpHeight = s
-            end)
-
-            PlayerSection:NewSlider("HipHeight", "Player From Ground Offset", 50, 2, function(s) -- 50 (MaxValue) | 2 (MinValue)
-                game.Players.LocalPlayer.Character.Humanoid.HipHeight = s
-            end)
-
-            PlayerSection:NewSlider("Field Of View", "Player FOV", 120, 70, function(s) -- 120 (MaxValue) | 70 (MinValue)
-                game.Workspace.Camera.FieldOfView = s
-            end)
-
-            PlayerSection:NewSlider("Gravity", "Player Gravity", 1000, 10, function(s) -- 1000 (MaxValue) | 10 (MinValue)
-                game.Workspace.Gravity = s
-            end)
-
-            PlayerSection:NewButton("Reset Gravity", "Reset Your Gravity To Default", function()
-                game.Workspace.Gravity = 196.2
-            end)
-
-            local World = Window:NewTab("World")
-            local WorldSection = World:NewSection("Change Things In The World")
-
-            WorldSection:NewToggle("Disable Plinko Wall Collision", "Toggle Plinko Wall Collision", function(state)
-                if state then
-                    workspace.Map.Plinko.InvisPart.CanCollide = false
-                else
-                    workspace.Map.Plinko.InvisPart.CanCollide = true
-                end
-            end)
-
-            WorldSection:NewToggle("Disable Party Lounge Wall Collision", "Toggle Party Lounge Wall Collision", function(state)
-                if state then
-                    workspace.Map.PartyRoom.PartyDoor.CanCollide = false
-                else
-                    workspace.Map.PartyRoom.PartyDoor.CanCollide = true
-                end
-            end)
-
-            WorldSection:NewToggle("Disable VIP Obby Wall Collision", "Toggle VIP Obby Wall Collision", function(state)
-                if state then
-                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = false
-                else
-                    workspace.Map.Obby.VIPObby.VIPObby.CanCollide = true
-                end
-            end)
-
-            local Teleport = Window:NewTab("Teleport")
-            local TeleportSection = Teleport:NewSection("Teleport To Things")
-
-            TeleportSection:NewButton("Finish Normal Obby", "Teleport To The End", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-119.639793, 204.676941, -69.1610336, -0.0157014113, -0.0923430026, 0.995603502, -5.98375918e-05, 0.995726228, 0.0923534483, -0.999876678, 0.00139050512, -0.015639836)
-            end)
-
-            TeleportSection:NewButton("Finish Hard Obby", "Teleport To The End", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-265.082367, 206.294861, -45.6269684, -0.999600589, 0.00505645946, -0.02780338, -5.91019634e-05, 0.983485579, 0.180986404, 0.0282593723, 0.180915743, -0.983092606)
-            end)
-
-            TeleportSection:NewButton("Finish VIP Obby", "Teleport To The End", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(54.2365456, 206.945648, -33.8398781, -0.998574376, 0.00448406953, -0.0531873219, -5.98762417e-05, 0.996370137, 0.0851252601, 0.0533759706, 0.0850070938, -0.994949639)
-            end)
-
-            TeleportSection:NewButton("Teleport To Spawn", "Teleport To The Spawn", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-193.658997, 206.713623, 84.8002625, -0.0191400796, -9.77789227e-08, 0.999816835, 9.44088363e-09, 1, 9.79775692e-08, -0.999816835, 1.13144525e-08, -0.0191400796)
-            end)
-
-            local Mods = Window:NewTab("Ball Mods")
-            local ModsSection = Mods:NewSection("Change What The Balls Get You")
-
-            ModsSection:NewButton("All Balls Are 0.2x", "0.2x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["0.2"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 0.5x", "0.5x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["0.5"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 0.75x", "0.75x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["0.75"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 1x", "1x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["1"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 2x", "2x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["2"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 3x", "3x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["3"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 5x", "5x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["5"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 10x", "10x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["10"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            ModsSection:NewButton("All Balls Are 100x", "100x All Balls", function()
-                local point1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                local point2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                local endpoint = workspace.Map.Plinko.Slots["100"]
-
-                point1.Position = endpoint.Position
-                point2.Position = endpoint.Position
-            end)
-
-            local Spawner = Window:NewTab("Spawner")
-            local SpawnerSection = Spawner:NewSection("Modify The Ball Spawners")
-
-            SpawnerSection:NewToggle("Make Spawners Visible", "Highlight The Spawners", function(state)
-                if state then
-                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 0
-
-                    local highlight = Instance.new("Highlight")
-                    highlight.Name = "Highlight"
-                    highlight.FillColor = Color3.new(1, 0, 0)
-                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn1
-
-                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 0
-                    
-                    local highlight = Instance.new("Highlight")
-                    highlight.Name = "Highlight"
-                    highlight.FillColor = Color3.new(0, 0, 1)
-                    highlight.Parent = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                else
-                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Transparency = 1
-
-                    workspace.Map.Plinko.PlinkoBoard.Spawn1.Highlight:Destroy()
-
-                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Transparency = 1
-                    
-                    workspace.Map.Plinko.PlinkoBoard.Spawn2.Highlight:Destroy()
-                end
-            end)
-
-            local SpawnerSection = Spawner:NewSection("Spawner 1")
-
-            SpawnerSection:NewButton("Move Spawn 1 To The Left", "Move To The Left", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z - 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 1 To The Right", "Move To The Right", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y, spawn1.Position.Z + 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 1 Up", "Move To The Up", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y + 1, spawn1.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 1 Down", "Move To The Down", function()
-                local spawn1 = workspace.Map.Plinko.PlinkoBoard.Spawn1
-                spawn1.Position = Vector3.new(spawn1.Position.X, spawn1.Position.Y - 1, spawn1.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Reset Spawn 1 Position", "Reset It", function()
-                workspace.Map.Plinko.PlinkoBoard.Spawn1.Position = Vector3.new(-264.43, 265.494, 84.961)
-            end)
-
-            local SpawnerSection = Spawner:NewSection("Spawner 2")
-
-            SpawnerSection:NewButton("Move Spawn 2 To The Left", "Move To The Left", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z - 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 2 To The Right", "Move To The Right", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y, spawn2.Position.Z + 1)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 2 Up", "Move To The Up", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y + 1, spawn2.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Move Spawn 2 Down", "Move To The Down", function()
-                local spawn2 = workspace.Map.Plinko.PlinkoBoard.Spawn2
-                spawn2.Position = Vector3.new(spawn2.Position.X, spawn2.Position.Y - 1, spawn2.Position.Z)
-            end)
-
-            SpawnerSection:NewButton("Reset Spawn 2 Position", "Reset It", function()
-                workspace.Map.Plinko.PlinkoBoard.Spawn2.Position = Vector3.new(-264.43, 265.494, 82.961)
-            end)
         elseif game.PlaceId == 12196278347 then
             local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
             local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
@@ -7682,6 +7907,570 @@ Yes.MouseButton1Click:Connect(function()
                         local playername = v.Name
                         if v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
                             v.HumanoidRootPart.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            local UI = Window:NewTab("UI Toggle")
+            local UISection = UI:NewSection("Show/Hide")
+
+            UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+                Library:ToggleUI()
+            end)
+        elseif game.PlaceId == 4588604953 then
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "Criminality", Duration = 4,})
+
+            local Main = Window:NewTab("Main")
+            local MainSection = Main:NewSection("Common Things")
+
+            MainSection:NewButton("Inf Yield", "Build Apon", function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+            end)
+
+            MainSection:NewButton("Unnamed ESP", "Build Apon", function()
+                pcall(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))() end)
+            end)
+
+            MainSection:NewButton("Aimbot", "Build Apon", function()
+                local select = select
+                local pcall, getgenv, next, Vector2, math_clamp, type, mouse_move_rel = 
+                    select(1, pcall, getgenv, next, Vector2.new, math.clamp, type, mousemoverel or (Input and Input.MouseMove))
+
+                local Players = game:GetService("Players")
+                local Camera = workspace.CurrentCamera
+                local UIS = game:GetService("UserInputService")
+                local TweenService = game:GetService("TweenService")
+                local LocalPlayer = Players.LocalPlayer
+                local runService = game:GetService("RunService")
+
+                pcall(function()
+                    getgenv().Aimbot.Functions:Exit()
+                end)
+
+                getgenv().Aimbot = {}
+                local Environment = getgenv().Aimbot
+
+                local RequiredDistance, Typing, Running, Animation, ServiceConnections = 2000, false, false, nil, {}
+
+
+                Environment.Settings = {
+                    Enabled = true,
+                    TeamCheck = false,
+                    AliveCheck = true,
+                    WallCheck = false,
+                    Sensitivity = 0,
+                    ThirdPerson = false,
+                    ThirdPersonSensitivity = 3,
+                    TriggerKey = "MouseButton2",
+                    Toggle = false,
+                    LockPart = "Head"
+                }
+
+                Environment.FOVSettings = {
+                    Enabled = true,
+                    Visible = true,
+                    Amount = 90,
+                    Color = Color3.fromRGB(255, 255, 255),
+                    LockedColor = Color3.fromRGB(255, 70, 70),
+                    Transparency = 0.5,
+                    Sides = 60,
+                    Thickness = 1,
+                    Filled = false
+                }
+
+                Environment.FOVCircle = Drawing.new("Circle")
+
+
+                local function CancelLock()
+                    Environment.Locked = nil
+                    if Animation then Animation:Cancel() end
+                    Environment.FOVCircle.Color = Environment.FOVSettings.Color
+                end
+
+                local function GetClosestPlayer()
+                    if not Environment.Locked then
+                        RequiredDistance = (Environment.FOVSettings.Enabled and Environment.FOVSettings.Amount or 2000)
+
+                        for _, v in next, Players:GetPlayers() do
+                            if v ~= LocalPlayer then
+                                if v.Character and v.Character:FindFirstChild(Environment.Settings.LockPart) and v.Character:FindFirstChildOfClass("Humanoid") then
+                                    if Environment.Settings.TeamCheck and v.Team == LocalPlayer.Team then continue end
+                                    if Environment.Settings.AliveCheck and v.Character:FindFirstChildOfClass("Humanoid").Health <= 0 then continue end
+                                    if Environment.Settings.WallCheck and #(Camera:GetPartsObscuringTarget({v.Character[Environment.Settings.LockPart].Position}, v.Character:GetDescendants())) > 0 then continue end
+
+                                    local Vector, OnScreen = Camera:WorldToViewportPoint(v.Character[Environment.Settings.LockPart].Position)
+                                    local Distance = (Vector2(UIS:GetMouseLocation().X, UIS:GetMouseLocation().Y) - Vector2(Vector.X, Vector.Y)).Magnitude
+
+                                    if Distance < RequiredDistance and OnScreen then
+                                        RequiredDistance = Distance
+                                        Environment.Locked = v
+                                    end
+                                end
+                            end
+                        end
+                    elseif (Vector2(UIS:GetMouseLocation().X, UIS:GetMouseLocation().Y) - 
+                            Vector2(Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position).X, 
+                                    Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position).Y)).Magnitude > RequiredDistance then
+                        CancelLock()
+                    end
+                end
+
+
+                ServiceConnections.TypingStartedConnection = UIS.TextBoxFocused:Connect(function()
+                    Typing = true
+                end)
+
+                ServiceConnections.TypingEndedConnection = UIS.TextBoxFocusReleased:Connect(function()
+                    Typing = false
+                end)
+
+
+                local function Load()
+                    ServiceConnections.RenderSteppedConnection = runService.RenderStepped:Connect(function()
+                        if Environment.FOVSettings.Enabled and Environment.Settings.Enabled then
+                            Environment.FOVCircle.Radius = Environment.FOVSettings.Amount
+                            Environment.FOVCircle.Thickness = Environment.FOVSettings.Thickness
+                            Environment.FOVCircle.Filled = Environment.FOVSettings.Filled
+                            Environment.FOVCircle.NumSides = Environment.FOVSettings.Sides
+                            Environment.FOVCircle.Color = Environment.FOVSettings.Color
+                            Environment.FOVCircle.Transparency = Environment.FOVSettings.Transparency
+                            Environment.FOVCircle.Visible = Environment.FOVSettings.Visible
+                            Environment.FOVCircle.Position = Vector2(UIS:GetMouseLocation().X, UIS:GetMouseLocation().Y)
+                        else
+                            Environment.FOVCircle.Visible = false
+                        end
+
+                        if Running and Environment.Settings.Enabled then
+                            GetClosestPlayer()
+
+                            if Environment.Locked then
+                                if Environment.Settings.ThirdPerson then
+                                    Environment.Settings.ThirdPersonSensitivity = math_clamp(Environment.Settings.ThirdPersonSensitivity, 0.1, 5)
+
+                                    local Vector = Camera:WorldToViewportPoint(Environment.Locked.Character[Environment.Settings.LockPart].Position)
+                                    mouse_move_rel((Vector.X - UIS:GetMouseLocation().X) * Environment.Settings.ThirdPersonSensitivity, 
+                                                    (Vector.Y - UIS:GetMouseLocation().Y) * Environment.Settings.ThirdPersonSensitivity)
+                                else
+                                    if Environment.Settings.Sensitivity > 0 then
+                                        Animation = TweenService:Create(Camera, TweenInfo.new(Environment.Settings.Sensitivity, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), 
+                                                        {CFrame = CFrame.new(Camera.CFrame.Position, Environment.Locked.Character[Environment.Settings.LockPart].Position)})
+                                        Animation:Play()
+                                    else
+                                        Camera.CFrame = CFrame.new(Camera.CFrame.Position, Environment.Locked.Character[Environment.Settings.LockPart].Position)
+                                    end
+                                end
+
+                                Environment.FOVCircle.Color = Environment.FOVSettings.LockedColor
+                            end
+                        end
+                    end)
+
+                    ServiceConnections.InputBeganConnection = UIS.InputBegan:Connect(function(Input)
+                        if not Typing then
+                            pcall(function()
+                                if Input.KeyCode == Enum.KeyCode[Environment.Settings.TriggerKey] then
+                                    if Environment.Settings.Toggle then
+                                        Running = not Running
+                                        if not Running then
+                                            CancelLock()
+                                        end
+                                    else
+                                        Running = true
+                                    end
+                                end
+                            end)
+
+                            pcall(function()
+                                if Input.UserInputType == Enum.UserInputType[Environment.Settings.TriggerKey] then
+                                    if Environment.Settings.Toggle then
+                                        Running = not Running
+                                        if not Running then
+                                            CancelLock()
+                                        end
+                                    else
+                                        Running = true
+                                    end
+                                end
+                            end)
+                        end
+                    end)
+
+                    ServiceConnections.InputEndedConnection = UIS.InputEnded:Connect(function(Input)
+                        if not Typing then
+                            if not Environment.Settings.Toggle then
+                                pcall(function()
+                                    if Input.KeyCode == Enum.KeyCode[Environment.Settings.TriggerKey] then
+                                        Running = false; CancelLock()
+                                    end
+                                end)
+
+                                pcall(function()
+                                    if Input.UserInputType == Enum.UserInputType[Environment.Settings.TriggerKey] then
+                                        Running = false; CancelLock()
+                                    end
+                                end)
+                            end
+                        end
+                    end)
+                end
+
+                Environment.Functions = {}
+
+                function Environment.Functions:Exit()
+                    for _, v in next, ServiceConnections do
+                        v:Disconnect()
+                    end
+
+                    if Environment.FOVCircle.Remove then Environment.FOVCircle:Remove() end
+
+                    getgenv().Aimbot.Functions = nil
+                    getgenv().Aimbot = nil
+                    
+                    Load = nil; GetClosestPlayer = nil; CancelLock = nil
+                end
+
+                function Environment.Functions:Restart()
+                    for _, v in next, ServiceConnections do
+                        v:Disconnect()
+                    end
+
+                    Load()
+                end
+
+                function Environment.Functions:ResetSettings()
+                    Environment.Settings = {
+                        Enabled = true,
+                        TeamCheck = false,
+                        AliveCheck = true,
+                        WallCheck = false,
+                        Sensitivity = 0,
+                        ThirdPerson = false,
+                        ThirdPersonSensitivity = 3,
+                        TriggerKey = "MouseButton2",
+                        Toggle = false,
+                        LockPart = "Head"
+                    }
+
+                    Environment.FOVSettings = {
+                        Enabled = true,
+                        Visible = true,
+                        Amount = 90,
+                        Color = Color3.fromRGB(255, 255, 255),
+                        LockedColor = Color3.fromRGB(255, 70, 70),
+                        Transparency = 0.5,
+                        Sides = 60,
+                        Thickness = 1,
+                        Filled = false
+                    }
+                end
+
+                Load()
+            end)
+
+            local ESP = Window:NewTab("ESP")
+            local ESPSection = ESP:NewSection("See Things Through Walls")
+
+            ESPSection:NewToggle("Safe And Register ESP", "See Through Walls", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if not i then break end
+
+                        local containers = workspace.Map.BredMakurz
+                        local player = game.Players.LocalPlayer
+                        local char = player.Character
+                        local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                        for _, v in pairs(containers:GetChildren()) do
+                            if not v:IsA("Model") or not v:FindFirstChild("Values") or not v.Values:FindFirstChild("Broken") then
+                                continue
+                            end
+
+                            local isBroken = v.Values.Broken.Value
+                            local isInRange = hrp and v.PrimaryPart and (v.PrimaryPart.Position - hrp.Position).Magnitude <= 50
+
+                            if isBroken then
+                                if v:FindFirstChild("ESPBillboard") then
+                                    v.ESPBillboard:Destroy()
+                                end
+                                if v:FindFirstChild("ESPHighlight") then
+                                    v.ESPHighlight:Destroy()
+                                end
+                                continue
+                            end
+
+                            if not v:FindFirstChild("ESPBillboard") then
+                                local billboard = Instance.new("BillboardGui")
+                                billboard.Name = "ESPBillboard"
+                                billboard.Size = UDim2.new(0, 50, 0, 50)
+                                billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                billboard.AlwaysOnTop = true
+                                billboard.Parent = v
+
+                                local textLabel = Instance.new("TextLabel")
+                                textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                textLabel.BackgroundTransparency = 1
+                                textLabel.TextColor3 = Color3.fromRGB(85, 107, 47)
+
+                                if v.Name:find("Register") then
+                                    textLabel.Text = "Register"
+                                elseif v.Name:find("SmallSafe") then
+                                    textLabel.Text = "SmallSafe"
+                                elseif v.Name:find("MediumSafe") then
+                                    textLabel.Text = "MediumSafe"
+                                else
+                                    textLabel.Text = v.Name
+                                end
+
+                                textLabel.Parent = billboard
+                            end
+
+                            if isInRange then
+                                if not v:FindFirstChild("ESPHighlight") then
+                                    local highlight = Instance.new("Highlight")
+                                    highlight.Name = "ESPHighlight"
+                                    highlight.Adornee = v
+                                    highlight.FillTransparency = 0.5
+                                    highlight.FillColor = Color3.fromRGB(85, 107, 47)
+                                    highlight.OutlineTransparency = 0
+                                    highlight.OutlineColor = Color3.fromRGB(85, 107, 47)
+                                    highlight.Parent = v
+                                end
+                            else
+                                if v:FindFirstChild("ESPHighlight") then
+                                    v.ESPHighlight:Destroy()
+                                end
+                            end
+                        end
+                    end
+                else
+                    i = false
+                    local containers = workspace.Map.BredMakurz
+                    for _, v in pairs(containers:GetChildren()) do
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                        if v:FindFirstChild("ESPHighlight") then
+                            v.ESPHighlight:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Scrap ESP", "See Scrap Through Walls", function(state)
+                if state then
+                    j = true
+                    while wait(1) do
+                        if j == true then
+                            local scraps = game:GetService("Workspace").Filter.SpawnedPiles
+                            local player = game.Players.LocalPlayer
+                            local char = player.Character
+                            local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                            for _, v in pairs(scraps:GetChildren()) do
+                                if v:IsA("Model") and not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local scrapName = "Scrap"
+                                    if v.Name == "S1" then
+                                        scrapName = "Scrap_Tier_1"
+                                    elseif v.Name == "S2" then
+                                        scrapName = "Scrap_Tier_2"
+                                    end
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.fromRGB(0, 0, 139)
+                                    textLabel.Text = scrapName
+                                    textLabel.Parent = billboard
+                                end
+
+                                if hrp and v.PrimaryPart and (v.PrimaryPart.Position - hrp.Position).Magnitude <= 50 then
+                                    if not v:FindFirstChild("ESPHighlight") then
+                                        local highlight = Instance.new("Highlight")
+                                        highlight.Name = "ESPHighlight"
+                                        highlight.Adornee = v
+                                        highlight.FillTransparency = 0.5
+                                        highlight.FillColor = Color3.fromRGB(0, 0, 139)
+                                        highlight.OutlineTransparency = 0
+                                        highlight.OutlineColor = Color3.fromRGB(0, 0, 139)
+                                        highlight.Parent = v
+                                    end
+                                else
+                                    if v:FindFirstChild("ESPHighlight") then
+                                        v.ESPHighlight:Destroy()
+                                    end
+                                end
+                            end
+                        elseif j == false then
+                            break
+                        end
+                    end
+                else
+                    j = false
+                    local scraps = workspace.Filter.SpawnedPiles
+                    for _, v in pairs(scraps:GetChildren()) do
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                        if v:FindFirstChild("ESPHighlight") then
+                            v.ESPHighlight:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Crate ESP", "See Crates Through Walls", function(state)
+                if state then
+                    k = true
+                    while wait(1) do
+                        if k == true then
+                            local crates = game:GetService("Workspace").Filter.SpawnedPiles
+                            local player = game.Players.LocalPlayer
+                            local char = player.Character
+                            local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                            for _, v in pairs(crates:GetChildren()) do
+                                if v:IsA("Model") and v.Name == "C1" then
+                                    if not v:FindFirstChild("ESPBillboard") then
+                                        local billboard = Instance.new("BillboardGui")
+                                        billboard.Name = "ESPBillboard"
+                                        billboard.Size = UDim2.new(0, 50, 0, 50)
+                                        billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                        billboard.AlwaysOnTop = true
+                                        billboard.Parent = v
+
+                                        local textLabel = Instance.new("TextLabel")
+                                        textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                        textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                        textLabel.BackgroundTransparency = 1
+                                        textLabel.TextColor3 = Color3.fromRGB(139, 69, 19)
+                                        textLabel.Text = "Crate"
+                                        textLabel.Parent = billboard
+                                    end
+
+                                    if hrp and v.PrimaryPart and (v.PrimaryPart.Position - hrp.Position).Magnitude <= 50 then
+                                        if not v:FindFirstChild("ESPHighlight") then
+                                            local highlight = Instance.new("Highlight")
+                                            highlight.Name = "ESPHighlight"
+                                            highlight.Adornee = v
+                                            highlight.FillTransparency = 0.5
+                                            highlight.FillColor = Color3.fromRGB(139, 69, 19)
+                                            highlight.OutlineTransparency = 0
+                                            highlight.OutlineColor = Color3.fromRGB(139, 69, 19)
+                                            highlight.Parent = v
+                                        end
+                                    else
+                                        if v:FindFirstChild("ESPHighlight") then
+                                            v.ESPHighlight:Destroy()
+                                        end
+                                    end
+                                end
+                            end
+                        else
+                            break
+                        end
+                    end
+                else
+                    k = false
+                    local crates = workspace.Filter.SpawnedPiles
+                    for _, v in pairs(crates:GetChildren()) do
+                        if v:IsA("Model") and v.Name == "C1" then
+                            if v:FindFirstChild("ESPBillboard") then
+                                v.ESPBillboard:Destroy()
+                            end
+                            if v:FindFirstChild("ESPHighlight") then
+                                v.ESPHighlight:Destroy()
+                            end
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Dealer ESP", "See Dealers Through Walls", function(state)
+                if state then
+                    d = true
+                    while wait(1) do
+                        if not d then break end
+
+                        local shopz = workspace.Map.Shopz
+                        local player = game.Players.LocalPlayer
+                        local char = player.Character
+                        local hrp = char and char:FindFirstChild("HumanoidRootPart")
+
+                        for _, shop in pairs(shopz:GetChildren()) do
+                            for _, npcName in pairs({"DealerMan", "ArmoryMan"}) do
+                                local npc = shop:FindFirstChild(npcName)
+
+                                if npc and npc:IsA("Model") then
+                                    if not npc.PrimaryPart then
+                                        local head = npc:FindFirstChild("Head") or npc:FindFirstChildWhichIsA("BasePart")
+                                        if head then npc.PrimaryPart = head end
+                                    end
+
+                                    if not npc:FindFirstChild("ESPBillboard") then
+                                        local billboard = Instance.new("BillboardGui")
+                                        billboard.Name = "ESPBillboard"
+                                        billboard.Size = UDim2.new(0, 50, 0, 50)
+                                        billboard.StudsOffset = Vector3.new(0, 2, 0)
+                                        billboard.AlwaysOnTop = true
+                                        billboard.Parent = npc
+
+                                        local label = Instance.new("TextLabel")
+                                        label.Size = UDim2.new(1, 0, 0.5, 0)
+                                        label.Position = UDim2.new(0, 0, 0, 0)
+                                        label.BackgroundTransparency = 1
+                                        label.TextColor3 = Color3.fromRGB(173, 216, 230)
+                                        label.Font = Enum.Font.Gotham
+                                        label.TextSize = 12
+                                        label.TextTransparency = 0.15
+                                        label.Text = (npcName == "DealerMan") and "Dealer" or "ArmoryDealer"
+                                        label.Parent = billboard
+                                    end
+
+                                    if hrp and npc.PrimaryPart and (npc.PrimaryPart.Position - hrp.Position).Magnitude <= 50 then
+                                        if not npc:FindFirstChild("ESPHighlight") then
+                                            local highlight = Instance.new("Highlight")
+                                            highlight.Name = "ESPHighlight"
+                                            highlight.Adornee = npc
+                                            highlight.FillTransparency = 0.5
+                                            highlight.FillColor = Color3.fromRGB(173, 216, 230)
+                                            highlight.OutlineTransparency = 0
+                                            highlight.OutlineColor = Color3.fromRGB(173, 216, 230)
+                                            highlight.Parent = npc
+                                        end
+                                    elseif npc:FindFirstChild("ESPHighlight") then
+                                        npc.ESPHighlight:Destroy()
+                                    end
+                                end
+                            end
+                        end
+                    end
+                else
+                    d = false
+                    for _, shop in pairs(workspace.Map.Shopz:GetChildren()) do
+                        for _, npcName in pairs({"DealerMan", "ArmoryMan"}) do
+                            local npc = shop:FindFirstChild(npcName)
+                            if npc then
+                                if npc:FindFirstChild("ESPBillboard") then
+                                    npc.ESPBillboard:Destroy()
+                                end
+                                if npc:FindFirstChild("ESPHighlight") then
+                                    npc.ESPHighlight:Destroy()
+                                end
+                            end
                         end
                     end
                 end
