@@ -5168,7 +5168,7 @@ Yes.MouseButton1Click:Connect(function()
                     stroke.Parent = label
                     while wait(1) do
                         if i == true then
-                            label.Text = tostring(energy.Value)
+                            label.Text = "Energy: " .. tostring(energy.Value)
                         elseif i == false then
                             break
                         end
@@ -5266,8 +5266,8 @@ Yes.MouseButton1Click:Connect(function()
 
             EventSection:NewButton("Tp To Train Floor 50 Event", "Get Ahead", function()
                 for _, v in pairs(game.workspace:GetDescendants()) do
-                    if v.Name == "floor_35" then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.event.zherdochka.glavni.KaloPriemnik.CFrame
+                    if v.Name == "floor_50" then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.event.kpkpk.Graffiti.CFrame
                     end
                 end
             end)
@@ -5279,6 +5279,33 @@ Yes.MouseButton1Click:Connect(function()
                 for _, v in pairs(game.workspace:GetDescendants()) do
                     if v.Name == "TRAHATEL" and v:FindFirstChild("TouchInterest") then
                         v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    end
+                end
+            end)
+
+            local Optimize = Window:NewTab("Optimization")
+            local OptimizeSection = Optimize:NewSection("MUST PASS THE EVENT OR THE GAME BREAKS")
+
+            OptimizeSection:NewButton("Delete Floors 1-10", "Remove Them", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_1" or v.Name == "floor_2" or v.Name == "floor_3" or v.Name == "floor_4" or v.Name == "floor_5" or v.Name == "floor_6" or v.Name == "floor_7" or v.Name == "floor_8" or v.Name == "floor_9" or v.Name == "floor_10" then
+                        v:Destroy()
+                    end
+                end
+            end)
+
+            OptimizeSection:NewButton("Delete Floors 11-20", "Remove Them", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_11" or v.Name == "floor_12" or v.Name == "floor_13" or v.Name == "floor_14" or v.Name == "floor_15" or v.Name == "floor_16" or v.Name == "floor_17" or v.Name == "floor_18" or v.Name == "floor_19" or v.Name == "floor_20" then
+                        v:Destroy()
+                    end
+                end
+            end)
+
+            OptimizeSection:NewButton("Delete Floors 21-34", "Remove Them", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_21" or v.Name == "floor_22" or v.Name == "floor_23" or v.Name == "floor_24" or v.Name == "floor_25" or v.Name == "floor_26" or v.Name == "floor_27" or v.Name == "floor_28" or v.Name == "floor_29" or v.Name == "floor_30" or v.Name == "floor_31" or v.Name == "floor_32" or v.Name == "floor_33" or v.Name == "floor_34" then
+                        v:Destroy()
                     end
                 end
             end)
@@ -9987,7 +10014,7 @@ Yes.MouseButton1Click:Connect(function()
                     stroke.Parent = label
                     while wait(1) do
                         if i == true then
-                            label.Text = tostring(energy.Value)
+                            label.Text = "Energy: " .. tostring(energy.Value)
                         elseif i == false then
                             break
                         end
@@ -10085,8 +10112,8 @@ Yes.MouseButton1Click:Connect(function()
 
             EventSection:NewButton("Tp To Train Floor 50 Event", "Get Ahead", function()
                 for _, v in pairs(game.workspace:GetDescendants()) do
-                    if v.Name == "floor_35" then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.event.zherdochka.glavni.KaloPriemnik.CFrame
+                    if v.Name == "floor_50" then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.event.kpkpk.Graffiti.CFrame
                     end
                 end
             end)
@@ -10098,6 +10125,33 @@ Yes.MouseButton1Click:Connect(function()
                 for _, v in pairs(game.workspace:GetDescendants()) do
                     if v.Name == "TRAHATEL" and v:FindFirstChild("TouchInterest") then
                         v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    end
+                end
+            end)
+
+            local Optimize = Window:NewTab("Optimization")
+            local OptimizeSection = Optimize:NewSection("MUST PASS THE EVENT OR THE GAME BREAKS")
+
+            OptimizeSection:NewButton("Delete Floors 1-10", "Remove Them", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_1" or v.Name == "floor_2" or v.Name == "floor_3" or v.Name == "floor_4" or v.Name == "floor_5" or v.Name == "floor_6" or v.Name == "floor_7" or v.Name == "floor_8" or v.Name == "floor_9" or v.Name == "floor_10" then
+                        v:Destroy()
+                    end
+                end
+            end)
+
+            OptimizeSection:NewButton("Delete Floors 11-20", "Remove Them", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_11" or v.Name == "floor_12" or v.Name == "floor_13" or v.Name == "floor_14" or v.Name == "floor_15" or v.Name == "floor_16" or v.Name == "floor_17" or v.Name == "floor_18" or v.Name == "floor_19" or v.Name == "floor_20" then
+                        v:Destroy()
+                    end
+                end
+            end)
+
+            OptimizeSection:NewButton("Delete Floors 21-34", "Remove Them", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_21" or v.Name == "floor_22" or v.Name == "floor_23" or v.Name == "floor_24" or v.Name == "floor_25" or v.Name == "floor_26" or v.Name == "floor_27" or v.Name == "floor_28" or v.Name == "floor_29" or v.Name == "floor_30" or v.Name == "floor_31" or v.Name == "floor_32" or v.Name == "floor_33" or v.Name == "floor_34" then
+                        v:Destroy()
                     end
                 end
             end)
