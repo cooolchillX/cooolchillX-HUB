@@ -6669,7 +6669,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -6709,7 +6709,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -6749,7 +6749,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -6789,7 +6789,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -6829,7 +6829,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -6867,7 +6867,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -13084,7 +13084,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -13124,7 +13124,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -13164,7 +13164,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -13204,7 +13204,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -13244,7 +13244,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
@@ -13282,7 +13282,7 @@ Yes.MouseButton1Click:Connect(function()
                         for _, obj in ipairs(floor:GetChildren()) do
                             local door = obj:FindFirstChild("door_nachalo_eventa")
                             if door and door:IsA("BasePart") then
-                                hrp.CFrame = door.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = door.CFrame
                                 doorTeleported = true
                                 break
                             end
