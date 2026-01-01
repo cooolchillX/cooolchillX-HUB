@@ -5316,8 +5316,37 @@ Yes.MouseButton1Click:Connect(function()
             AutoSection:NewButton("Auto Go Door 50", "Fastest Method", function()
                 local VirtualInputManager = game:GetService("VirtualInputManager")
                 local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_3" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5328,8 +5357,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5347,9 +5377,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_4" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5360,8 +5391,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5379,9 +5411,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_5" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5392,8 +5425,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5411,9 +5445,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_6" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5424,8 +5459,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5443,9 +5479,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_7" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5456,8 +5493,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5475,9 +5513,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_8" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5488,8 +5527,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5507,9 +5547,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_9" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5520,8 +5561,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5539,9 +5581,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_12" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5552,8 +5595,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5571,9 +5615,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_13" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5584,8 +5629,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5603,9 +5649,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_14" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5616,8 +5663,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5635,9 +5683,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_15" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5648,8 +5697,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5667,9 +5717,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_16" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5680,8 +5731,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5699,9 +5751,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_17" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5712,8 +5765,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5731,9 +5785,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_18" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5744,8 +5799,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5763,9 +5819,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_19" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5776,8 +5833,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5795,9 +5853,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_22" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5808,8 +5867,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5827,9 +5887,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_23" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5840,8 +5901,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5859,9 +5921,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_24" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5872,8 +5935,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5891,9 +5955,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_25" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5904,8 +5969,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5923,9 +5989,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_26" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5936,8 +6003,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5955,9 +6023,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_27" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -5968,8 +6037,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -5987,9 +6057,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_28" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6000,8 +6071,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6019,9 +6091,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_29" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6032,8 +6105,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6051,9 +6125,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_30" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6064,8 +6139,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6083,9 +6159,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_31" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6096,8 +6173,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6115,9 +6193,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_32" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6128,8 +6207,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6147,9 +6227,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_33" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6160,8 +6241,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6179,9 +6261,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_34" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6192,8 +6275,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6211,9 +6295,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_37" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6224,8 +6309,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6243,9 +6329,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_38" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6256,8 +6343,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6275,9 +6363,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_39" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6288,8 +6377,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6307,9 +6397,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_40" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6320,8 +6411,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6339,9 +6431,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_41" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6352,8 +6445,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6371,9 +6465,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_42" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6384,8 +6479,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6403,9 +6499,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_43" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6416,8 +6513,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6435,9 +6533,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_44" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6448,8 +6547,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6467,9 +6567,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_45" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6480,8 +6581,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6499,9 +6601,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_46" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6512,8 +6615,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6531,9 +6635,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_47" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6544,8 +6649,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6563,9 +6669,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_48" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6576,8 +6683,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6595,9 +6703,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_49" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -6608,8 +6717,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -6627,21 +6737,52 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_50" then
+                        label.Text = v.Name
                         for _, v2 in pairs(v:GetChildren()) do
                             if v2:FindFirstChild("door_nachalo_eventa") then
-                                hrp.CFrame = v2.door_nachalo_eventa.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = v2.door_nachalo_eventa.CFrame
                             end
                         end
                     end
                 end
+                wait(3)
+                screenGui:Destroy()
             end)
 
             local AutoSection = Auto:NewSection("Run Only When At Door 50")
 
             AutoSection:NewButton("Grab All Gagun", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -6654,8 +6795,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, banka in ipairs(bankas) do
+                local total = #bankas
+
+                for index, banka in ipairs(bankas) do
                     if banka and banka:IsDescendantOf(workspace) then
+                        label.Text = "Gagun: " .. index .. "/" .. total
                         hrp.CFrame = banka.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(banka.ProximityPrompt)
@@ -6677,11 +6821,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All bankas visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Of Both Battery Types", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -6694,8 +6868,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, battery in ipairs(batteries) do
+                local total = #batteries
+
+                for index, battery in ipairs(batteries) do
                     if battery and battery:IsDescendantOf(workspace) then
+                        label.Text = "Battery: " .. index .. "/" .. total
                         hrp.CFrame = battery.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(battery.ProximityPrompt)
@@ -6717,11 +6894,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All battery_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Adrenaline", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -6734,8 +6941,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, adr in ipairs(adrPickups) do
+                local total = #adrPickups
+
+                for index, adr in ipairs(adrPickups) do
                     if adr and adr:IsDescendantOf(workspace) then
+                        label.Text = "Adrenaline: " .. index .. "/" .. total
                         hrp.CFrame = adr.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(adr.ProximityPrompt)
@@ -6757,11 +6967,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All adrenaline_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Bandages", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -6774,8 +7014,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, bandage in ipairs(bandages) do
+                local total = #bandages
+
+                for index, bandage in ipairs(bandages) do
                     if bandage and bandage:IsDescendantOf(workspace) then
+                        label.Text = "Bandage: " .. index .. "/" .. total
                         hrp.CFrame = bandage.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(bandage.ProximityPrompt)
@@ -6797,11 +7040,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All bandage_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Health Bottles", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -6814,8 +7087,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, bottle in ipairs(healthBottles) do
+                local total = #healthBottles
+
+                for index, bottle in ipairs(healthBottles) do
                     if bottle and bottle:IsDescendantOf(workspace) then
+                        label.Text = "HealthBottle: " .. index .. "/" .. total
                         hrp.CFrame = bottle.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(bottle.ProximityPrompt)
@@ -6837,11 +7113,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All healthbottle_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Open All Sub Doors", "Open All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -6854,8 +7160,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, Door in ipairs(Doors) do
+                local total = #Doors
+
+                for index, Door in ipairs(Doors) do
                     if Door and Door:IsDescendantOf(workspace) then
+                        label.Text = "Door: " .. index .. "/" .. total
                         hrp.CFrame = Door.CFrame
                         task.wait(0.2)
                     end
@@ -6875,8 +7184,1767 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All door objects visited, loop ended.")
+            end)
+
+            local AutoSection = Auto:NewSection("Ones For Using All Batteries")
+
+            AutoSection:NewButton("Auto Go Door 49", "Fastest Method", function()
+                local VirtualInputManager = game:GetService("VirtualInputManager")
+                local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_3" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_4" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_5" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_6" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_7" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_8" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_9" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_12" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_13" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_14" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_15" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_16" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_17" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_18" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_19" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_22" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_23" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_24" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_25" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_26" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_27" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_28" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_29" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_30" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_31" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_32" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_33" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_34" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_37" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_38" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_39" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_40" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_41" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_42" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_43" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_44" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_45" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_46" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_47" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_48" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_49" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                screenGui:Destroy()
+            end)
+
+            AutoSection:NewButton("Open All Sub Doors Door 49 Method", "Open All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local Doors = {}
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "doorhitbox" and v:IsA("BasePart") then
+                        table.insert(Doors, v)
+                    end
+                end
+
+                local total = #Doors
+
+                for index, Door in ipairs(Doors) do
+                    if Door and Door:IsDescendantOf(workspace) then
+                        label.Text = "Door: " .. index .. "/" .. total
+                        hrp.CFrame = Door.CFrame
+                        task.wait(0.2)
+                    end
+                end
+
+                local doorTeleported = false
+                for _, floor in ipairs(workspace:GetChildren()) do
+                    if floor.Name == "floor_49" then
+                        for _, obj in ipairs(floor:GetChildren()) do
+                            local door = obj:FindFirstChild("door_zamok")
+                            if door and door:IsA("BasePart") then
+                                hrp.CFrame = door.CFrame
+                                doorTeleported = true
+                                break
+                            end
+                        end
+                    end
+                    if doorTeleported then break end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("All door objects visited, loop ended.")
+            end)
+
+            AutoSection:NewButton("Grab All Gagun Door 49 Method", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local bankas = {}
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "banka" and v:IsA("BasePart") then
+                        table.insert(bankas, v)
+                    end
+                end
+
+                local total = #bankas
+
+                for index, banka in ipairs(bankas) do
+                    if banka and banka:IsDescendantOf(workspace) then
+                        label.Text = "Gagun: " .. index .. "/" .. total
+                        hrp.CFrame = banka.CFrame + Vector3.new(0, 1, 0)
+                        task.wait(0.2)
+                        fireproximityprompt(banka.ProximityPrompt)
+                        task.wait(0.2)
+                    end
+                end
+
+                local doorTeleported = false
+                for _, floor in ipairs(workspace:GetChildren()) do
+                    if floor.Name == "floor_49" then
+                        for _, obj in ipairs(floor:GetChildren()) do
+                            local door = obj:FindFirstChild("door_zamok")
+                            if door and door:IsA("BasePart") then
+                                hrp.CFrame = door.CFrame
+                                doorTeleported = true
+                                break
+                            end
+                        end
+                    end
+                    if doorTeleported then break end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("All bankas visited, loop ended.")
+            end)
+
+            AutoSection:NewButton("Grab All Of Both Battery Types Door 49 Method", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local batteries = {}
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "battery_pick" or v.Name == "batteryX2_pick" and v:IsA("BasePart") then
+                        table.insert(batteries, v)
+                    end
+                end
+
+                local total = #batteries
+
+                for index, battery in ipairs(batteries) do
+                    if battery and battery:IsDescendantOf(workspace) then
+                        label.Text = "Battery: " .. index .. "/" .. total
+                        hrp.CFrame = battery.CFrame + Vector3.new(0, 1, 0)
+                        task.wait(0.2)
+                        fireproximityprompt(battery.ProximityPrompt)
+                        task.wait(0.2)
+                    end
+                end
+
+                local doorTeleported = false
+                for _, floor in ipairs(workspace:GetChildren()) do
+                    if floor.Name == "floor_49" then
+                        for _, obj in ipairs(floor:GetChildren()) do
+                            local door = obj:FindFirstChild("door_zamok")
+                            if door and door:IsA("BasePart") then
+                                hrp.CFrame = door.CFrame
+                                doorTeleported = true
+                                break
+                            end
+                        end
+                    end
+                    if doorTeleported then break end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("All battery_pick objects visited, loop ended.")
+            end)
+
+            local AutoSection = Auto:NewSection("Hold Out Battery And Make Sure Power Is Decreasing")
+
+            local maximum
+            AutoSection:NewTextBox("Battery Count", "Input Total Batteries Of 1 Varient", function(text)
+            maximum = tonumber(text)
+            end)
+
+            AutoSection:NewButton("Use All Batteries", "Use Them All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local count = 0
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "schetok" and v:IsA("Model") then
+                        local batr = v:FindFirstChild("batr")
+                        local batrx2 = v:FindFirstChild("batrx2")
+
+                        local skip = false
+
+                        if batr and batr:IsA("BasePart") and batr.Transparency == 0 then
+                            skip = true
+                        end
+
+                        if batrx2 and batrx2:IsA("BasePart") and batrx2.Transparency == 0 then
+                            skip = true
+                        end
+
+                        if not skip then
+                            count += 1
+
+                            label.Text = "Input: " .. count .. "/" .. maximum
+                            hrp.CFrame = v:FindFirstChild("Cube.001").CFrame
+                            task.wait(0.2)
+                            fireproximityprompt(v["Cube.001"].energy.ProximityPrompt)
+                            task.wait(1)
+
+                            if count >= maximum then
+                                for _, floor in ipairs(workspace:GetChildren()) do
+                                    if floor.Name == "floor_49" then
+                                        for _, obj in ipairs(floor:GetChildren()) do
+                                            local door = obj:FindFirstChild("door_zamok")
+                                            if door and door:IsA("BasePart") then
+                                                hrp.CFrame = door.CFrame
+                                                break
+                                            end
+                                        end
+                                    end
+                                end
+                                print("Reached maximum, stopping loop.")
+                                break
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("Finished. Total teleports:" .. count)
+            end)
+
+            AutoSection:NewButton("Teleport To Lobby", "To Cut Chains To Enable Power", function()
+                for _, v in pairs(workspace:GetChildren()) do
+                    if v.Name == "helper" then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    end
+                end
+            end)
+
+            AutoSection:NewButton("Teleport To Floor 50", "To Finish The Run", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_50" then
+                        for _, v2 in pairs(v:GetChildren()) do
+                            if v2:FindFirstChild("door_nachalo_eventa") then
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v2.door_nachalo_eventa.CFrame
+                            end
+                        end
+                    end
+                end
             end)
 
             local UI = Window:NewTab("UI Toggle")
@@ -11731,8 +13799,37 @@ Yes.MouseButton1Click:Connect(function()
             AutoSection:NewButton("Auto Go Door 50", "Fastest Method", function()
                 local VirtualInputManager = game:GetService("VirtualInputManager")
                 local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_3" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11743,8 +13840,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11762,9 +13860,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_4" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11775,8 +13874,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11794,9 +13894,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_5" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11807,8 +13908,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11826,9 +13928,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_6" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11839,8 +13942,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11858,9 +13962,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_7" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11871,8 +13976,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11890,9 +13996,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_8" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11903,8 +14010,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11922,9 +14030,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_9" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11935,8 +14044,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11954,9 +14064,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_12" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11967,8 +14078,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -11986,9 +14098,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_13" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -11999,8 +14112,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12018,9 +14132,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_14" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12031,8 +14146,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12050,9 +14166,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_15" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12063,8 +14180,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12082,9 +14200,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_16" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12095,8 +14214,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12114,9 +14234,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_17" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12127,8 +14248,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12146,9 +14268,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_18" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12159,8 +14282,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12178,9 +14302,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_19" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12191,8 +14316,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12210,9 +14336,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_22" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12223,8 +14350,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12242,9 +14370,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_23" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12255,8 +14384,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12274,9 +14404,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_24" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12287,8 +14418,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12306,9 +14438,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_25" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12319,8 +14452,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12338,9 +14472,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_26" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12351,8 +14486,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12370,9 +14506,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_27" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12383,8 +14520,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12402,9 +14540,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_28" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12415,8 +14554,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12434,9 +14574,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_29" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12447,8 +14588,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12466,9 +14608,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_30" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12479,8 +14622,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12498,9 +14642,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_31" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12511,8 +14656,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12530,9 +14676,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_32" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12543,8 +14690,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12562,9 +14710,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_33" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12575,8 +14724,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12594,9 +14744,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_34" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12607,8 +14758,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12626,9 +14778,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_37" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12639,8 +14792,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12658,9 +14812,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_38" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12671,8 +14826,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12690,9 +14846,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_39" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12703,8 +14860,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12722,9 +14880,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_40" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12735,8 +14894,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12754,9 +14914,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_41" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12767,8 +14928,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12786,9 +14948,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_42" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12799,8 +14962,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12818,9 +14982,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_43" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12831,8 +14996,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12850,9 +15016,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_44" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12863,8 +15030,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12882,9 +15050,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_45" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12895,8 +15064,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12914,9 +15084,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_46" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12927,8 +15098,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12946,9 +15118,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_47" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12959,8 +15132,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -12978,9 +15152,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_48" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -12991,8 +15166,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -13010,9 +15186,10 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_49" then
+                        label.Text = v.Name
                         for _, check in pairs(v:GetDescendants()) do
                             if check.Name == "kusachki_pik" then
                                 hrp.CFrame = check.CFrame
@@ -13023,8 +15200,9 @@ Yes.MouseButton1Click:Connect(function()
                                         hrp.CFrame = v2.door_zamok.CFrame
                                         for _, check2 in pairs(v:GetDescendants()) do
                                             if check2.Name == "pr" then
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
-                                                wait(0.1)
+                                                wait(0.2)
                                                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
                                                 wait(0.5)
                                                 fireproximityprompt(check2)
@@ -13042,21 +15220,52 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
-                wait(2.5)
+                wait(3)
                 for _, v in pairs(game.workspace:GetChildren()) do
                     if v.Name == "floor_50" then
+                        label.Text = v.Name
                         for _, v2 in pairs(v:GetChildren()) do
                             if v2:FindFirstChild("door_nachalo_eventa") then
-                                hrp.CFrame = v2.door_nachalo_eventa.CFrame + Vector3.new(0, 3, 0)
+                                hrp.CFrame = v2.door_nachalo_eventa.CFrame
                             end
                         end
                     end
                 end
+                wait(3)
+                screenGui:Destroy()
             end)
 
             local AutoSection = Auto:NewSection("Run Only When At Door 50")
 
             AutoSection:NewButton("Grab All Gagun", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -13069,8 +15278,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, banka in ipairs(bankas) do
+                local total = #bankas
+
+                for index, banka in ipairs(bankas) do
                     if banka and banka:IsDescendantOf(workspace) then
+                        label.Text = "Gagun: " .. index .. "/" .. total
                         hrp.CFrame = banka.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(banka.ProximityPrompt)
@@ -13092,11 +15304,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All bankas visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Of Both Battery Types", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -13109,8 +15351,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, battery in ipairs(batteries) do
+                local total = #batteries
+
+                for index, battery in ipairs(batteries) do
                     if battery and battery:IsDescendantOf(workspace) then
+                        label.Text = "Battery: " .. index .. "/" .. total
                         hrp.CFrame = battery.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(battery.ProximityPrompt)
@@ -13132,11 +15377,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All battery_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Adrenaline", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -13149,8 +15424,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, adr in ipairs(adrPickups) do
+                local total = #adrPickups
+
+                for index, adr in ipairs(adrPickups) do
                     if adr and adr:IsDescendantOf(workspace) then
+                        label.Text = "Adrenaline: " .. index .. "/" .. total
                         hrp.CFrame = adr.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(adr.ProximityPrompt)
@@ -13172,11 +15450,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All adrenaline_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Bandages", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -13189,8 +15497,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, bandage in ipairs(bandages) do
+                local total = #bandages
+
+                for index, bandage in ipairs(bandages) do
                     if bandage and bandage:IsDescendantOf(workspace) then
+                        label.Text = "Bandage: " .. index .. "/" .. total
                         hrp.CFrame = bandage.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(bandage.ProximityPrompt)
@@ -13212,11 +15523,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All bandage_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Grab All Health Bottles", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -13229,8 +15570,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, bottle in ipairs(healthBottles) do
+                local total = #healthBottles
+
+                for index, bottle in ipairs(healthBottles) do
                     if bottle and bottle:IsDescendantOf(workspace) then
+                        label.Text = "HealthBottle: " .. index .. "/" .. total
                         hrp.CFrame = bottle.CFrame + Vector3.new(0, 1, 0)
                         task.wait(0.2)
                         fireproximityprompt(bottle.ProximityPrompt)
@@ -13252,11 +15596,41 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All healthbottle_pick objects visited, loop ended.")
             end)
 
             AutoSection:NewButton("Open All Sub Doors", "Open All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
                 local player = game.Players.LocalPlayer
                 local char = player.Character or player.CharacterAdded:Wait()
                 local hrp = char:WaitForChild("HumanoidRootPart")
@@ -13269,8 +15643,11 @@ Yes.MouseButton1Click:Connect(function()
                     end
                 end
 
-                for _, Door in ipairs(Doors) do
+                local total = #Doors
+
+                for index, Door in ipairs(Doors) do
                     if Door and Door:IsDescendantOf(workspace) then
+                        label.Text = "Door: " .. index .. "/" .. total
                         hrp.CFrame = Door.CFrame
                         task.wait(0.2)
                     end
@@ -13290,8 +15667,1767 @@ Yes.MouseButton1Click:Connect(function()
                     end
                     if doorTeleported then break end
                 end
+                wait(3)
+                screenGui:Destroy()
 
                 print("All door objects visited, loop ended.")
+            end)
+
+            local AutoSection = Auto:NewSection("Ones For Using All Batteries")
+
+            AutoSection:NewButton("Auto Go Door 49", "Fastest Method", function()
+                local VirtualInputManager = game:GetService("VirtualInputManager")
+                local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_3" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_4" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_5" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_6" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_7" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_8" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_9" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_12" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_13" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_14" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_15" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_16" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_17" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_18" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_19" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_22" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_23" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_24" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_25" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_26" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_27" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_28" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_29" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_30" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_31" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_32" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_33" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_34" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_37" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_38" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_39" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_40" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_41" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_42" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_43" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_44" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_45" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_46" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_47" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_48" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_49" then
+                        label.Text = v.Name
+                        for _, check in pairs(v:GetDescendants()) do
+                            if check.Name == "kusachki_pik" then
+                                hrp.CFrame = check.CFrame
+                                wait(0.5)
+                                fireproximityprompt(check.ProximityPrompt)
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                        for _, check2 in pairs(v:GetDescendants()) do
+                                            if check2.Name == "pr" then
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.One, false, game)
+                                                wait(0.2)
+                                                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.One, false, game)
+                                                wait(0.5)
+                                                fireproximityprompt(check2)
+                                            end
+                                        end
+                                    end
+                                end
+                            else
+                                for _, v2 in pairs(v:GetChildren()) do
+                                    if v2:FindFirstChild("door_zamok") then
+                                        hrp.CFrame = v2.door_zamok.CFrame
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                screenGui:Destroy()
+            end)
+
+            AutoSection:NewButton("Open All Sub Doors Door 49 Method", "Open All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local Doors = {}
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "doorhitbox" and v:IsA("BasePart") then
+                        table.insert(Doors, v)
+                    end
+                end
+
+                local total = #Doors
+
+                for index, Door in ipairs(Doors) do
+                    if Door and Door:IsDescendantOf(workspace) then
+                        label.Text = "Door: " .. index .. "/" .. total
+                        hrp.CFrame = Door.CFrame
+                        task.wait(0.2)
+                    end
+                end
+
+                local doorTeleported = false
+                for _, floor in ipairs(workspace:GetChildren()) do
+                    if floor.Name == "floor_49" then
+                        for _, obj in ipairs(floor:GetChildren()) do
+                            local door = obj:FindFirstChild("door_zamok")
+                            if door and door:IsA("BasePart") then
+                                hrp.CFrame = door.CFrame
+                                doorTeleported = true
+                                break
+                            end
+                        end
+                    end
+                    if doorTeleported then break end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("All door objects visited, loop ended.")
+            end)
+
+            AutoSection:NewButton("Grab All Gagun Door 49 Method", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local bankas = {}
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "banka" and v:IsA("BasePart") then
+                        table.insert(bankas, v)
+                    end
+                end
+
+                local total = #bankas
+
+                for index, banka in ipairs(bankas) do
+                    if banka and banka:IsDescendantOf(workspace) then
+                        label.Text = "Gagun: " .. index .. "/" .. total
+                        hrp.CFrame = banka.CFrame + Vector3.new(0, 1, 0)
+                        task.wait(0.2)
+                        fireproximityprompt(banka.ProximityPrompt)
+                        task.wait(0.2)
+                    end
+                end
+
+                local doorTeleported = false
+                for _, floor in ipairs(workspace:GetChildren()) do
+                    if floor.Name == "floor_49" then
+                        for _, obj in ipairs(floor:GetChildren()) do
+                            local door = obj:FindFirstChild("door_zamok")
+                            if door and door:IsA("BasePart") then
+                                hrp.CFrame = door.CFrame
+                                doorTeleported = true
+                                break
+                            end
+                        end
+                    end
+                    if doorTeleported then break end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("All bankas visited, loop ended.")
+            end)
+
+            AutoSection:NewButton("Grab All Of Both Battery Types Door 49 Method", "Grab All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local batteries = {}
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "battery_pick" or v.Name == "batteryX2_pick" and v:IsA("BasePart") then
+                        table.insert(batteries, v)
+                    end
+                end
+
+                local total = #batteries
+
+                for index, battery in ipairs(batteries) do
+                    if battery and battery:IsDescendantOf(workspace) then
+                        label.Text = "Battery: " .. index .. "/" .. total
+                        hrp.CFrame = battery.CFrame + Vector3.new(0, 1, 0)
+                        task.wait(0.2)
+                        fireproximityprompt(battery.ProximityPrompt)
+                        task.wait(0.2)
+                    end
+                end
+
+                local doorTeleported = false
+                for _, floor in ipairs(workspace:GetChildren()) do
+                    if floor.Name == "floor_49" then
+                        for _, obj in ipairs(floor:GetChildren()) do
+                            local door = obj:FindFirstChild("door_zamok")
+                            if door and door:IsA("BasePart") then
+                                hrp.CFrame = door.CFrame
+                                doorTeleported = true
+                                break
+                            end
+                        end
+                    end
+                    if doorTeleported then break end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("All battery_pick objects visited, loop ended.")
+            end)
+
+            local AutoSection = Auto:NewSection("Hold Out Battery And Make Sure Power Is Decreasing")
+
+            local maximum
+            AutoSection:NewTextBox("Battery Count", "Input Total Batteries Of 1 Varient", function(text)
+            maximum = tonumber(text)
+            end)
+
+            AutoSection:NewButton("Use All Batteries", "Use Them All", function()
+                local player = game.Players.LocalPlayer
+                local screenGui = Instance.new("ScreenGui")
+                screenGui.Name = "AutoTopCenterLabel"
+                screenGui.ResetOnSpawn = false
+                screenGui.Parent = player:WaitForChild("PlayerGui")
+
+                local label = Instance.new("TextLabel")
+                label.Name = "InfoLabel"
+                label.Size = UDim2.new(0, 260, 0, 40)
+                label.AnchorPoint = Vector2.new(0.5, 0)
+                label.Position = UDim2.new(0.5, 0, 0, 10)
+                label.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+                label.BackgroundTransparency = 0.1
+                label.TextColor3 = Color3.fromRGB(255, 255, 255)
+                label.TextScaled = true
+                label.Font = Enum.Font.GothamBold
+                label.Text = "Unknown"
+                label.TextXAlignment = Enum.TextXAlignment.Center
+                label.Parent = screenGui
+
+                local corner = Instance.new("UICorner")
+                corner.CornerRadius = UDim.new(0, 6)
+                corner.Parent = label
+
+                local stroke = Instance.new("UIStroke")
+                stroke.Color = Color3.fromRGB(60, 60, 60)
+                stroke.Thickness = 1
+                stroke.Parent = label
+                local player = game.Players.LocalPlayer
+                local char = player.Character or player.CharacterAdded:Wait()
+                local hrp = char:WaitForChild("HumanoidRootPart")
+
+                local count = 0
+
+                for _, v in ipairs(workspace:GetDescendants()) do
+                    if v.Name == "schetok" and v:IsA("Model") then
+                        local batr = v:FindFirstChild("batr")
+                        local batrx2 = v:FindFirstChild("batrx2")
+
+                        local skip = false
+
+                        if batr and batr:IsA("BasePart") and batr.Transparency == 0 then
+                            skip = true
+                        end
+
+                        if batrx2 and batrx2:IsA("BasePart") and batrx2.Transparency == 0 then
+                            skip = true
+                        end
+
+                        if not skip then
+                            count += 1
+
+                            label.Text = "Input: " .. count .. "/" .. maximum
+                            hrp.CFrame = v:FindFirstChild("Cube.001").CFrame
+                            task.wait(0.2)
+                            fireproximityprompt(v["Cube.001"].energy.ProximityPrompt)
+                            task.wait(1)
+
+                            if count >= maximum then
+                                for _, floor in ipairs(workspace:GetChildren()) do
+                                    if floor.Name == "floor_49" then
+                                        for _, obj in ipairs(floor:GetChildren()) do
+                                            local door = obj:FindFirstChild("door_zamok")
+                                            if door and door:IsA("BasePart") then
+                                                hrp.CFrame = door.CFrame
+                                                break
+                                            end
+                                        end
+                                    end
+                                end
+                                print("Reached maximum, stopping loop.")
+                                break
+                            end
+                        end
+                    end
+                end
+                wait(3)
+                screenGui:Destroy()
+
+                print("Finished. Total teleports:" .. count)
+            end)
+
+            AutoSection:NewButton("Teleport To Lobby", "To Cut Chains To Enable Power", function()
+                for _, v in pairs(workspace:GetChildren()) do
+                    if v.Name == "helper" then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    end
+                end
+            end)
+
+            AutoSection:NewButton("Teleport To Floor 50", "To Finish The Run", function()
+                for _, v in pairs(game.workspace:GetChildren()) do
+                    if v.Name == "floor_50" then
+                        for _, v2 in pairs(v:GetChildren()) do
+                            if v2:FindFirstChild("door_nachalo_eventa") then
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v2.door_nachalo_eventa.CFrame
+                            end
+                        end
+                    end
+                end
             end)
 
             local UI = Window:NewTab("UI Toggle")
