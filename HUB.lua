@@ -114,7 +114,8 @@ Yes.MouseButton1Click:Connect(function()
             game.StarterGui:SetCore("SendNotification", {Title = "Copied", Text = "Copied To Clipboard", Duration = 4,})
         end)
     
-        local OthersSection = Others:NewSection("Executors Used: Fluxus, Evon, VegaX, Valyse")
+        local OthersSection = Others:NewSection("OG Executors I've Used: Fluxus, VegaX, Valyse")
+        local OthersSection = Others:NewSection("Current Executor I Use: Potassium")
     
         OthersSection:NewButton("CMD Hub", "A Little Fun Project I Did", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/main/CMD%20Hub.lua"))()
