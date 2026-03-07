@@ -127,6 +127,10 @@ Yes.MouseButton1Click:Connect(function()
         OthersSection:NewButton("Lag Client", "How Much Can You Handle?", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/main/Lag%20Client.lua"))()
         end)
+
+        OthersSection:NewButton("Propety Fetcher", "Simplify The Coding Process", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/refs/heads/main/Property%20Fetcher.lua"))()
+        end)
     
         --Script Hub
         local Hub = Window:NewTab("Script Hub")
