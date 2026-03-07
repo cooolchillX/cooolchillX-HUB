@@ -30,7 +30,7 @@ MainSection:NewButton("Aimbot", "auto aim", function()
 end)
 
 
-Section:NewButton("No-clip", "clip walls", function()
+MainSection:NewButton("No-clip", "clip walls", function()
     local ScreenGui = Instance.new("ScreenGui")
     local OpenFrame = Instance.new("Frame")
     local TextButton = Instance.new("TextButton")
