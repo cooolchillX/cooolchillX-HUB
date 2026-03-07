@@ -4,3 +4,103 @@ fun in making scripts so i kept making more and more whenever i had free time. T
 intermediate when it comes to coding but far from a beginner. Cooolchill_X Hub was a dream come true and i'm glad i started making it as now im far into the coding world. I have noticeably slowed down on updates but never
 have i fully given up this project and i plan to keep going. Maybe one day i'll go to all my old scripts, archive them and refurbish them and call it Cooolchill_X Hub v2. But only time will tell. Thanks for ur time today
 and i'll see you later. (My discord is cooolchill_x if you got suggestions or anything idk lol)
+
+If you somehow don't believe i sucked or just want to see, here is the old "ArsenalHack.lua" file (don't actually execute this lol, old and unreviewed)
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("cooolchill_X hack", "Midnight")
+
+--MAIN
+local Main = Window:NewTab("Main")
+local Section = Main:NewSection("Main")
+
+
+MainSection:NewButton("Kill all", "kill all players", function()
+    while wait(0.5) do
+        for _,v(workspace:FindChild())
+            if v:FindFirstChild("Humanoid") and v.Name ~= "OnaKat" then
+                v.Head:Destroy()
+            end
+        end
+    end
+end)
+
+MainSection:NewButton("Aimbot", "auto aim", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/isakk12/Aimbot/main/AB'))()
+end)
+
+
+Section:NewButton("No-clip", "clip walls", function()
+    local ScreenGui = Instance.new("ScreenGui")
+    local OpenFrame = Instance.new("Frame")
+    local TextButton = Instance.new("TextButton")
+    local UICorner = Instance.new("UICorner")
+    local NoclipGUI = Instance.new("Frame")
+    local Title = Instance.new("TextLabel")
+    local TextLabel = Instance.new("TextLabel")
+    local X = Instance.new("TextButton")
+    local NoclipButton = Instance.new("TextButton")
+     
+    --Properties:
+     
+    ScreenGui.Parent = game.CoreGui
+     
+     
+    UICorner.Parent = TextButton
+     
+    NoclipGUI.Name = "NoclipGUI"
+    NoclipGUI.Parent = ScreenGui
+    NoclipGUI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    NoclipGUI.BackgroundTransparency = 0.350
+    NoclipGUI.Position = UDim2.new(0.348986119, 0, 0.369458109, 0)
+    NoclipGUI.Size = UDim2.new(0, 283, 0, 119)
+    NoclipGUI.Active = true
+    NoclipGUI.Draggable = true
+     
+    Title.Name = "Title"
+    Title.Parent = NoclipGUI
+    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Title.Size = UDim2.new(0, 283, 0, 19)
+    Title.Font = Enum.Font.SourceSans
+    Title.Text = "Noclip GUI | by brunkin"
+    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Title.TextSize = 14.000
+     
+    TextLabel.Parent = NoclipGUI
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.Position = UDim2.new(0, 0, 0.739495814, 0)
+    TextLabel.Size = UDim2.new(0, 283, 0, 31)
+    TextLabel.Font = Enum.Font.SourceSans
+    TextLabel.Text = "Click Noclip button. If you hold \"v\" it will be enabled!"
+    TextLabel.TextColor3 = Color3.fromRGB(89, 255, 0)
+    TextLabel.TextSize = 14.000
+    TextLabel.TextWrapped = true
+     
+    NoclipButton.Name = "NoclipButton"
+    NoclipButton.Parent = NoclipGUI
+    NoclipButton.BackgroundColor3 = Color3.fromRGB(26, 98, 255)
+    NoclipButton.BorderSizePixel = 0
+    NoclipButton.Position = UDim2.new(0.144876331, 0, 0.327731103, 0)
+    NoclipButton.Size = UDim2.new(0, 200, 0, 40)
+    NoclipButton.Font = Enum.Font.SourceSansBold
+    NoclipButton.Text = "Noclip"
+    NoclipButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NoclipButton.TextScaled = true
+    NoclipButton.TextSize = 14.000
+    NoclipButton.TextWrapped = true
+    NoclipButton.MouseButton1Click:Connect(function()
+        --v to noclip
+        local h,char,play
+        play = game.Players.LocalPlayer
+        local uis = game:getService("UserInputService")
+        game:getService("RunService"):BindToRenderStep("",0,function()
+            char = play.Character
+            if char then h = char:findFirstChildOfClass("Humanoid") end
+            if not h then return end
+            if uis:IsKeyDown(Enum.KeyCode.V) then
+                h:ChangeState(11)
+            end
+        end)
+    end)
+end)
