@@ -1684,15 +1684,30 @@ Yes.MouseButton1Click:Connect(function()
             game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer(unpack(args))
         end)
 
-        FishSection:NewButton("Delete Water", "Delete The Water, Good For Boating", function()
-            game.Workspace.OceanWaves:Destroy()
+        FishSection:NewButton("Delete Water (Loops So Only Click Once)", "Not Compatible With Walk On Water", function()
+            for _, v in pairs(game.Workspace:GetChildren()) do
+                if v.Name == "FlatPlane1" or v.Name == "FlatPlane2" or v.Name == "FlatPlane3" or v.Name == "FlatPlane4" then
+                    v:Destroy()
+                end
+            end
+            while wait(0.2) do
+                workspace.Terrain:Clear()
+            end
         end)
 
-        FishSection:NewToggle("Walk On Water (Sort Of)", "Jesus", function(state)
+        FishSection:NewToggle("Walk On Water (Jesus)", "Not Compatible With Delete Water", function(state)
             if state then
-                workspace.OceanWaves.Plane.CanCollide = true
+                for _, v in pairs(game.Workspace:GetChildren()) do
+                    if v.Name == "FlatPlane1" or v.Name == "FlatPlane2" or v.Name == "FlatPlane3" or v.Name == "FlatPlane4" then
+                        v.CanCollide = true
+                    end
+                end
             else
-                workspace.OceanWaves.Plane.CanCollide = false
+                for _, v in pairs(game.Workspace:GetChildren()) do
+                    if v.Name == "FlatPlane1" or v.Name == "FlatPlane2" or v.Name == "FlatPlane3" or v.Name == "FlatPlane4" then
+                        v.CanCollide = false
+                    end
+                end
             end
         end)
 
@@ -1874,6 +1889,19 @@ Yes.MouseButton1Click:Connect(function()
                         end
                     end
                 end
+            end
+        end)
+
+        local Visual = Window:NewTab("Visuals")
+        local VisualSection = Visual:NewSection("Change How Stuff Is Seen")
+
+        VisualSection:NewButton("Remove Clouds", "Deletes All Clouds", function()
+            game.Workspace.Terrain.Clouds:Destroy()
+        end)
+
+        VisualSection:NewButton("Remove Underwater And Other Visuals", "Removes All Other Visuals", function()
+            for _, v in pairs(game.Lighting:GetChildren()) do
+                v:Destroy()
             end
         end)
 
@@ -10201,15 +10229,30 @@ Yes.MouseButton1Click:Connect(function()
                 game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("processGameItemSold"):InvokeServer(unpack(args))
             end)
 
-            FishSection:NewButton("Delete Water", "Delete The Water, Good For Boating", function()
-                game.Workspace.OceanWaves:Destroy()
+            FishSection:NewButton("Delete Water (Loops So Only Click Once)", "Not Compatible With Walk On Water", function()
+                for _, v in pairs(game.Workspace:GetChildren()) do
+                    if v.Name == "FlatPlane1" or v.Name == "FlatPlane2" or v.Name == "FlatPlane3" or v.Name == "FlatPlane4" then
+                        v:Destroy()
+                    end
+                end
+                while wait(0.2) do
+                    workspace.Terrain:Clear()
+                end
             end)
 
-            FishSection:NewToggle("Walk On Water (Sort Of)", "Jesus", function(state)
+            FishSection:NewToggle("Walk On Water (Jesus)", "Not Compatible With Delete Water", function(state)
                 if state then
-                    workspace.OceanWaves.Plane.CanCollide = true
+                    for _, v in pairs(game.Workspace:GetChildren()) do
+                        if v.Name == "FlatPlane1" or v.Name == "FlatPlane2" or v.Name == "FlatPlane3" or v.Name == "FlatPlane4" then
+                            v.CanCollide = true
+                        end
+                    end
                 else
-                    workspace.OceanWaves.Plane.CanCollide = false
+                    for _, v in pairs(game.Workspace:GetChildren()) do
+                        if v.Name == "FlatPlane1" or v.Name == "FlatPlane2" or v.Name == "FlatPlane3" or v.Name == "FlatPlane4" then
+                            v.CanCollide = false
+                        end
+                    end
                 end
             end)
 
@@ -10277,7 +10320,7 @@ Yes.MouseButton1Click:Connect(function()
                 game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("DataStreams"):WaitForChild("TeleportRequestEvent"):FireServer(unpack(args))
             end)
 
-            TPSection:NewButton("Smuggler's Bay", "TP There", function()
+            TPSection:NewButton("Timeless Tides", "TP There", function()
                 local args = {
                 {
                     islandName = "SmugglersBay",
@@ -10391,6 +10434,19 @@ Yes.MouseButton1Click:Connect(function()
                             end
                         end
                     end
+                end
+            end)
+
+            local Visual = Window:NewTab("Visuals")
+            local VisualSection = Visual:NewSection("Change How Stuff Is Seen")
+
+            VisualSection:NewButton("Remove Clouds", "Deletes All Clouds", function()
+                game.Workspace.Terrain.Clouds:Destroy()
+            end)
+
+            VisualSection:NewButton("Remove Underwater And Other Visuals", "Removes All Other Visuals", function()
+                for _, v in pairs(game.Lighting:GetChildren()) do
+                    v:Destroy()
                 end
             end)
 
