@@ -3553,26 +3553,6 @@ Yes.MouseButton1Click:Connect(function()
             local World = Window:NewTab("World")
             local WorldSection = World:NewSection("Modify The Environment")
 
-            WorldSection:NewToggle("Walk/Drive On Water", "Walk And Drive On Water", function(state)
-                if state then
-                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
-                        if v.Name == "Tile" then
-                            v.Plane.CanCollide = true
-                        end
-                    end
-                else
-                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
-                        if v.Name == "Tile" then
-                            v.Plane.CanCollide = false
-                        end
-                    end
-                end
-            end)
-
-            WorldSection:NewButton("Delete Water", "Remove All Water", function()
-                workspace.MouseIgnore.Water:Destroy()
-            end)
-
             WorldSection:NewToggle("Toggle Crystalized Abyss Bridge", "Toggle If It Exists", function(state)
                 if state then
                     workspace.Map.Structures.LightBridge.Bridge.Transparency = 0.5
@@ -3585,161 +3565,6 @@ Yes.MouseButton1Click:Connect(function()
 
             WorldSection:NewButton("Delete Street Lamps", "Remove Them", function()
                 workspace.Map.Objects.Lamps:Destroy()
-            end)
-
-            local Teleport = Window:NewTab("Teleport")
-            local TeleportSection = Teleport:NewSection("Teleport To Places")
-
-            TeleportSection:NewButton("Teleport To Wizard", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Wizard.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To BlueCorridor", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.BlueCorridor.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Cat", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cat.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Cloudnite", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cloudnite.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Crystal", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Crystal.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Dealership", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Dealership.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To DuneAltar", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DuneAltar.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To DustyPassages", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DustyPassages.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Enchant", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Enchant.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Field", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Field.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Furniture", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Furniture.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Lab", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Lab.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LandAgency", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LandAgency.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Layer3", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Layer3.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LightBridge", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LightBridge.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Logics", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Logics.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LumenaTree", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LumenaTree.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LushAltar", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushAltar.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LushCave", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushCave.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LushShop", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushShop.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaCave", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaCave.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaDocks", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaDocks2", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks2.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaFerry", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaFerry.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Peak", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Peak.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Pond", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Pond.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To RoseFerry", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseFerry.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To RoseLift", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To RoseLift2", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift2.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Rosewell", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Rosewell.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Saltcave", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Saltcave.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Sarcophagos", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sarcophagos.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Sellary", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sellary.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Shack", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Shack.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Spawn", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Spawn.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Swamp", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Swamp.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Tutorial", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Tutorial.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To UCS", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.UCS.CFrame
             end)
 
             local ItemTeleport = Window:NewTab("Teleport Items")
@@ -3931,6 +3756,91 @@ Yes.MouseButton1Click:Connect(function()
                         local playername = v.Name
                         if v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
                             v.HumanoidRootPart.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Sea Monster ESP", "See Sea Monster Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.BigFish:GetChildren()) do
+                                local fishname = v.Name
+                                if not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.fromRGB(44, 133, 133)
+                                    textLabel.Text = fishname
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.BigFish:GetChildren()) do
+                        local fishname = v.Name
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Fishing Hotspot ESP", "See Hotspots Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.MouseIgnore.FishHotspots:GetChildren()) do
+                                local spotname = v.Name
+                                local luck = v:GetAttribute("Luck")
+                                local lucktext
+                                if luck == 0.5 then
+                                    lucktext = "50%"
+                                end
+                                if not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.fromRGB(85, 255, 255)
+                                    textLabel.Text = spotname .. " Luck: " .. lucktext
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.MouseIgnore.FishHotspots:GetChildren()) do
+                        local spotname = v.Name
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
                         end
                     end
                 end
@@ -8987,6 +8897,114 @@ Yes.MouseButton1Click:Connect(function()
                 Library:ToggleUI()
             end)
         end)
+
+        HubSection:NewButton("ROB IT", "Load The GUI", function()
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "ROB IT", Duration = 4,})
+
+            local Main = Window:NewTab("Main")
+            local MainSection = Main:NewSection("Common Things")
+
+            MainSection:NewSlider("WalkSpeed", "Move Faster", 200, 16, function(s) -- 200 (MaxValue) | 16 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+
+            MainSection:NewSlider("JumpPower", "Jump Higher", 200, 50, function(s) -- 200 (MaxValue) | 50 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+            end)
+
+            MainSection:NewButton("Tp To Van", "Teleport To It", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Map.CollectTruck.TouchPart.CFrame
+            end)
+
+            local Auto = Window:NewTab("Automation")
+            local AutoSection = Auto:NewSection("Automatically Do Stuff")
+
+            AutoSection:NewButton("Steal All Items", "Take Everything On The Map", function()
+                for _, v in pairs(workspace.Map.StealableItems:GetChildren()) do
+                    if v.Name ~= "Natural" then
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AutoGrabItems"):FireServer(v)
+                    end
+                end
+                for _, v2 in pairs(workspace.Map.StealableItems.Natural:GetChildren()) do
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AutoGrabItems"):FireServer(v2)
+                end
+            end)
+
+            AutoSection:NewButton("Attack All NPC's", "Hit Them All", function()
+                for _, v in pairs(game.Workspace.Map.NPCS:GetChildren()) do
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Tools"):WaitForChild("HitNPC"):FireServer(v, "Crowbar")
+                end
+            end)
+
+            AutoSection:NewButton("Lockpick All Doors", "Open All Doors", function()
+                for _, v in pairs(workspace.Map.Doors:GetChildren()) do
+                    if v.Name ~= "Vent" then
+                        for _, v2 in pairs(v:GetChildren()) do
+                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Utilities"):WaitForChild("LockpickMinigame"):FireServer(v2, true)
+                        end
+                    end
+                end
+            end)
+
+            local AutoSection = Auto:NewSection("Must Be On The Power Box")
+
+            AutoSection:NewButton("Tp To Power Box", "Go To It", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ElectricBox:GetPivot()
+            end)
+
+            AutoSection:NewButton("Hack Power Box", "Disable Cams", function()
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Utilities"):WaitForChild("HackPowerBox"):FireServer(true)
+            end)
+
+            local ESP = Window:NewTab("ESP")
+            local ESPSection = ESP:NewSection("See Things Through Walls")
+
+            ESPSection:NewButton("ATM ESP", "See All Hackable ATM's", function()
+                for _, v in pairs(workspace.Map.Others.ATM:GetChildren()) do
+                    for _, v2 in pairs(v:GetDescendants()) do
+                        if v2:IsA("ProximityPrompt") then
+                            local highlight = Instance.new("Highlight")
+                            highlight.Parent = v
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewButton("Vault ESP", "See All Vaults", function()
+                for _, v in pairs(workspace.Map.VaultsPositions:GetChildren()) do
+                    local highlight = Instance.new("Highlight")
+                    highlight.Parent = v
+                end
+            end)
+
+            ESPSection:NewButton("Printer ESP", "See All Printers", function()
+                for _, v in pairs(workspace.Map.Others.Printer:GetChildren()) do
+                    if v.Name == "Printer" then
+                        local highlight = Instance.new("Highlight")
+                        highlight.Parent = v
+                    end
+                end
+            end)
+
+            ESPSection:NewButton("Keycard Guard ESP", "See Guard With Keycard", function()
+                for _, v in pairs(workspace.Map.NPCS:GetChildren()) do
+                    if v:FindFirstChild("Keycard") then
+                        local highlight = Instance.new("Highlight")
+                        highlight.Parent = v
+                    end
+                end
+            end)
+
+            local UI = Window:NewTab("UI Toggle")
+            local UISection = UI:NewSection("Show/Hide")
+
+            UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+                Library:ToggleUI()
+            end)
+        end)
     end)
     
     AD.MouseButton1Click:Connect(function()
@@ -12068,26 +12086,6 @@ Yes.MouseButton1Click:Connect(function()
             local World = Window:NewTab("World")
             local WorldSection = World:NewSection("Modify The Environment")
 
-            WorldSection:NewToggle("Walk/Drive On Water", "Walk And Drive On Water", function(state)
-                if state then
-                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
-                        if v.Name == "Tile" then
-                            v.Plane.CanCollide = true
-                        end
-                    end
-                else
-                    for _, v in ipairs(workspace.MouseIgnore.Water:GetChildren()) do
-                        if v.Name == "Tile" then
-                            v.Plane.CanCollide = false
-                        end
-                    end
-                end
-            end)
-
-            WorldSection:NewButton("Delete Water", "Remove All Water", function()
-                workspace.MouseIgnore.Water:Destroy()
-            end)
-
             WorldSection:NewToggle("Toggle Crystalized Abyss Bridge", "Toggle If It Exists", function(state)
                 if state then
                     workspace.Map.Structures.LightBridge.Bridge.Transparency = 0.5
@@ -12100,161 +12098,6 @@ Yes.MouseButton1Click:Connect(function()
 
             WorldSection:NewButton("Delete Street Lamps", "Remove Them", function()
                 workspace.Map.Objects.Lamps:Destroy()
-            end)
-
-            local Teleport = Window:NewTab("Teleport")
-            local TeleportSection = Teleport:NewSection("Teleport To Places")
-
-            TeleportSection:NewButton("Teleport To Wizard", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Wizard.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To BlueCorridor", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.BlueCorridor.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Cat", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cat.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Cloudnite", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Cloudnite.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Crystal", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Crystal.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Dealership", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Dealership.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To DuneAltar", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DuneAltar.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To DustyPassages", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.DustyPassages.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Enchant", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Enchant.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Field", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Field.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Furniture", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Furniture.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Lab", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Lab.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LandAgency", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LandAgency.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Layer3", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Layer3.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LightBridge", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LightBridge.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Logics", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Logics.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LumenaTree", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LumenaTree.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LushAltar", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushAltar.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LushCave", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushCave.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To LushShop", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.LushShop.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaCave", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaCave.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaDocks", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaDocks2", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaDocks2.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To NovaFerry", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.NovaFerry.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Peak", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Peak.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Pond", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Pond.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To RoseFerry", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseFerry.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To RoseLift", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To RoseLift2", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.RoseLift2.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Rosewell", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Rosewell.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Saltcave", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Saltcave.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Sarcophagos", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sarcophagos.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Sellary", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Sellary.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Shack", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Shack.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Spawn", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Spawn.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Swamp", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Swamp.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To Tutorial", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.Tutorial.CFrame
-            end)
-
-            TeleportSection:NewButton("Teleport To UCS", "Teleport There", function()
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.MouseIgnore.Locations.UCS.CFrame
             end)
 
             local ItemTeleport = Window:NewTab("Teleport Items")
@@ -12446,6 +12289,91 @@ Yes.MouseButton1Click:Connect(function()
                         local playername = v.Name
                         if v.HumanoidRootPart:FindFirstChild("ESPBillboard") then
                             v.HumanoidRootPart.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Sea Monster ESP", "See Sea Monster Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.BigFish:GetChildren()) do
+                                local fishname = v.Name
+                                if not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.fromRGB(44, 133, 133)
+                                    textLabel.Text = fishname
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.BigFish:GetChildren()) do
+                        local fishname = v.Name
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewToggle("Fishing Hotspot ESP", "See Hotspots Names", function(state)
+                if state then
+                    i = true
+                    while wait(1) do
+                        if i == true then
+                            for _, v in ipairs(workspace.MouseIgnore.FishHotspots:GetChildren()) do
+                                local spotname = v.Name
+                                local luck = v:GetAttribute("Luck")
+                                local lucktext
+                                if luck == 0.5 then
+                                    lucktext = "50%"
+                                end
+                                if not v:FindFirstChild("ESPBillboard") then
+                                    local billboard = Instance.new("BillboardGui")
+                                    billboard.Name = "ESPBillboard"
+                                    billboard.Size = UDim2.new(0, 50, 0, 50)
+                                    billboard.StudsOffset = Vector3.new(0, 1, 0)
+                                    billboard.AlwaysOnTop = true
+                                    billboard.Parent = v
+
+                                    local textLabel = Instance.new("TextLabel")
+                                    textLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                                    textLabel.Position = UDim2.new(0, 0, 0, 0)
+                                    textLabel.BackgroundTransparency = 1
+                                    textLabel.TextColor3 = Color3.fromRGB(85, 255, 255)
+                                    textLabel.Text = spotname .. " Luck: " .. lucktext
+                                    textLabel.Parent = billboard
+                                end
+                            end
+                        elseif i == false then
+                            break
+                        end
+                    end
+                else
+                    i = false
+                    wait(1)
+                    for _, v in ipairs(workspace.MouseIgnore.FishHotspots:GetChildren()) do
+                        local spotname = v.Name
+                        if v:FindFirstChild("ESPBillboard") then
+                            v.ESPBillboard:Destroy()
                         end
                     end
                 end
@@ -17487,6 +17415,112 @@ Yes.MouseButton1Click:Connect(function()
                                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v2.door_nachalo_eventa.CFrame
                             end
                         end
+                    end
+                end
+            end)
+
+            local UI = Window:NewTab("UI Toggle")
+            local UISection = UI:NewSection("Show/Hide")
+
+            UISection:NewKeybind("Show/Hide GUI", "Toggle UI", Enum.KeyCode.RightShift, function()
+                Library:ToggleUI()
+            end)
+        elseif game.PlaceId == 96168869671905 then
+            local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+            local Window = Library.CreateLib("cooolchill_X GUI", "DarkTheme")
+
+            game.StarterGui:SetCore("SendNotification", {Title = "Loaded", Text = "ROB IT", Duration = 4,})
+
+            local Main = Window:NewTab("Main")
+            local MainSection = Main:NewSection("Common Things")
+
+            MainSection:NewSlider("WalkSpeed", "Move Faster", 200, 16, function(s) -- 200 (MaxValue) | 16 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+            end)
+
+            MainSection:NewSlider("JumpPower", "Jump Higher", 200, 50, function(s) -- 200 (MaxValue) | 50 (MinValue)
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+            end)
+
+            MainSection:NewButton("Tp To Van", "Teleport To It", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Map.CollectTruck.TouchPart.CFrame
+            end)
+
+            local Auto = Window:NewTab("Automation")
+            local AutoSection = Auto:NewSection("Automatically Do Stuff")
+
+            AutoSection:NewButton("Steal All Items", "Take Everything On The Map", function()
+                for _, v in pairs(workspace.Map.StealableItems:GetChildren()) do
+                    if v.Name ~= "Natural" then
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AutoGrabItems"):FireServer(v)
+                    end
+                end
+                for _, v2 in pairs(workspace.Map.StealableItems.Natural:GetChildren()) do
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AutoGrabItems"):FireServer(v2)
+                end
+            end)
+
+            AutoSection:NewButton("Attack All NPC's", "Hit Them All", function()
+                for _, v in pairs(game.Workspace.Map.NPCS:GetChildren()) do
+                    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Tools"):WaitForChild("HitNPC"):FireServer(v, "Crowbar")
+                end
+            end)
+
+            AutoSection:NewButton("Lockpick All Doors", "Open All Doors", function()
+                for _, v in pairs(workspace.Map.Doors:GetChildren()) do
+                    if v.Name ~= "Vent" then
+                        for _, v2 in pairs(v:GetChildren()) do
+                            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Utilities"):WaitForChild("LockpickMinigame"):FireServer(v2, true)
+                        end
+                    end
+                end
+            end)
+
+            local AutoSection = Auto:NewSection("Must Be On The Power Box")
+
+            AutoSection:NewButton("Tp To Power Box", "Go To It", function()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.ElectricBox:GetPivot()
+            end)
+
+            AutoSection:NewButton("Hack Power Box", "Disable Cams", function()
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Utilities"):WaitForChild("HackPowerBox"):FireServer(true)
+            end)
+
+            local ESP = Window:NewTab("ESP")
+            local ESPSection = ESP:NewSection("See Things Through Walls")
+
+            ESPSection:NewButton("ATM ESP", "See All Hackable ATM's", function()
+                for _, v in pairs(workspace.Map.Others.ATM:GetChildren()) do
+                    for _, v2 in pairs(v:GetDescendants()) do
+                        if v2:IsA("ProximityPrompt") then
+                            local highlight = Instance.new("Highlight")
+                            highlight.Parent = v
+                        end
+                    end
+                end
+            end)
+
+            ESPSection:NewButton("Vault ESP", "See All Vaults", function()
+                for _, v in pairs(workspace.Map.VaultsPositions:GetChildren()) do
+                    local highlight = Instance.new("Highlight")
+                    highlight.Parent = v
+                end
+            end)
+
+            ESPSection:NewButton("Printer ESP", "See All Printers", function()
+                for _, v in pairs(workspace.Map.Others.Printer:GetChildren()) do
+                    if v.Name == "Printer" then
+                        local highlight = Instance.new("Highlight")
+                        highlight.Parent = v
+                    end
+                end
+            end)
+
+            ESPSection:NewButton("Keycard Guard ESP", "See Guard With Keycard", function()
+                for _, v in pairs(workspace.Map.NPCS:GetChildren()) do
+                    if v:FindFirstChild("Keycard") then
+                        local highlight = Instance.new("Highlight")
+                        highlight.Parent = v
                     end
                 end
             end)
