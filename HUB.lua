@@ -132,6 +132,12 @@ Yes.MouseButton1Click:Connect(function()
         OthersSection:NewButton("Propety Fetcher", "Simplify The Coding Process", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/cooolchillX-HUB/refs/heads/main/Property%20Fetcher.lua"))()
         end)
+
+        local Status = Window:NewTab("Status")
+        local StatusSection = Status:NewSection("List Of Potentially Detected Scripts")
+        local StatusSection = Status:NewSection("If Your Script Isn't Here It Very Likely Is Safe To Use")
+        local StatusSection = Status:NewSection("Criminality Is Potentially Detected")
+        local StatusSection = Status:NewSection("LAST FLOOR Is Potentially Detected")
     
         --Script Hub
         local Hub = Window:NewTab("Script Hub")
@@ -224,6 +230,10 @@ Yes.MouseButton1Click:Connect(function()
         HubSection:NewButton("ROB IT", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/ROB%20IT.lua"))()
         end)
+
+        HubSection:NewButton("Mine A Mountain", "Load The GUI", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Mine%20A%20Mountain.lua"))()
+        end)
     end)
     
     AD.MouseButton1Click:Connect(function()
@@ -272,6 +282,8 @@ Yes.MouseButton1Click:Connect(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/LAST%20FLOOR.lua"))()
         elseif game.PlaceId == 96168869671905 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/ROB%20IT.lua"))()
+        elseif game.PlaceId == 125927821145949 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Mine%20A%20Mountain.lua"))()
         else
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Universal.lua"))()
         end
