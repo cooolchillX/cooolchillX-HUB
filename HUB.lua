@@ -234,6 +234,10 @@ Yes.MouseButton1Click:Connect(function()
         HubSection:NewButton("Mine A Mountain", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Mine%20A%20Mountain.lua"))()
         end)
+
+        HubSection:NewButton("CQB Hell", "Load The GUI", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/CQB%20Hell.lua"))()
+        end)
     end)
     
     AD.MouseButton1Click:Connect(function()
@@ -284,6 +288,8 @@ Yes.MouseButton1Click:Connect(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/ROB%20IT.lua"))()
         elseif game.PlaceId == 125927821145949 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Mine%20A%20Mountain.lua"))()
+        elseif game.PlaceId == 110911776337576 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/CQB%20Hell.lua"))()
         else
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Universal.lua"))()
         end
