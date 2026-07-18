@@ -146,11 +146,7 @@ Yes.MouseButton1Click:Connect(function()
         HubSection:NewButton("Sizzling Simulator", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Sizzling%20Sim.lua"))()
         end)
-    
-        HubSection:NewButton("Hotel Elephant", "Load The GUI", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Hotel%20Elephant.lua"))()
-        end)
-    
+
         HubSection:NewButton("Spider", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Spider.lua"))()
         end)
@@ -210,10 +206,6 @@ Yes.MouseButton1Click:Connect(function()
         HubSection:NewButton("Build A Boat For Treasure", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Build%20A%20Boat%20For%20Treasure.lua"))()
         end)
-    
-        HubSection:NewButton("Rob a Convenience Store Simulator", "Load The GUI", function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Rob%20a%20Convenience%20Store%20Simulator.lua"))()
-        end)
 
         HubSection:NewButton("Refinery Caves 2", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Refinery%20Caves%202.lua"))()
@@ -238,58 +230,59 @@ Yes.MouseButton1Click:Connect(function()
         HubSection:NewButton("CQB Hell", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/CQB%20Hell.lua"))()
         end)
+        HubSection:NewButton("Notoriety", "Load The GUI", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Notoriety.lua"))()
+        end)
     end)
     
     AD.MouseButton1Click:Connect(function()
         blur:Destroy()
         GUI:Destroy()
     
-        if game.PlaceId == 4572547530 then
+        if game.GameId == 1484372029 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Sizzling%20Sim.lua"))()
-        elseif game.PlaceId == 23578803 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Hotel%20Elephant.lua"))()
-        elseif game.PlaceId == 5118969548 then
+        elseif game.GameId == 1776914212 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Spider.lua"))()
-        elseif game.PlaceId == 155615604 then
+        elseif game.GameId == 73885730 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Prison%20Life.lua"))()
-        elseif game.PlaceId == 2866967438 then
+        elseif game.GameId == 1037979853 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Fishing%20Simulator.lua"))()
-        elseif game.PlaceId == 5049335549 then
+        elseif game.GameId == 1746011057 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Dawn%20Of%20Aurora.lua"))()
-        elseif game.PlaceId == 9415887955 then
+        elseif game.GameId == 3515656039 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/The%20Backrooms%20VR%20Escape.lua"))()
-        elseif game.PlaceId == 4924922222 then
+        elseif game.GameId == 1686885941 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/BrookHaven.lua"))()
-        elseif game.PlaceId == 662417684 then
+        elseif game.GameId == 279565647 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Lucky%20Blocks%20Battlegounds.lua"))()
-        elseif game.PlaceId == 20741661 then
+        elseif game.GameId == 19558208 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Epic%20Mining%202.lua"))()
-        elseif game.PlaceId == 2693739238 then
+        elseif game.GameId == 972796541 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Thief%20Life%20Simulator.lua"))()
-        elseif game.PlaceId == 13822889 then
+        elseif game.GameId == 2471084 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Lumber%20Tycoon%202.lua"))()
-        elseif game.PlaceId == 6182305461 then
+        elseif game.GameId == 2263267302 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Infamy.lua"))()
-        elseif game.PlaceId == 2413927524 then
+        elseif game.GameId == 847722000 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/The%20Rake.lua"))()
-        elseif game.PlaceId == 2768379856 then
+        elseif game.GameId == 1000233041 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/3008.lua"))()
-        elseif game.PlaceId == 537413528 then
+        elseif game.GameId == 210851291 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Build%20A%20Boat%20For%20Treasure.lua"))()
-        elseif game.PlaceId == 17326178227 then
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Rob%20a%20Convenience%20Store%20Simulator.lua"))()
-        elseif game.PlaceId == 12196278347 then
+        elseif game.GameId == 4298676072 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Refinery%20Caves%202.lua"))()
-        elseif game.PlaceId == 4588604953 then
+        elseif game.GameId == 1494262959 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Criminality.lua"))()
-        elseif game.PlaceId == 73030676751238 then
+        elseif game.GameId == 8278319159 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/LAST%20FLOOR.lua"))()
-        elseif game.PlaceId == 96168869671905 then
+        elseif game.GameId == 9472441390 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/ROB%20IT.lua"))()
-        elseif game.PlaceId == 125927821145949 then
+        elseif game.GameId == 10187294555 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Mine%20A%20Mountain.lua"))()
-        elseif game.PlaceId == 110911776337576 then
+        elseif game.GameId == 7375463456 then
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/CQB%20Hell.lua"))()
+        elseif game.GameId == 16680835 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Notoriety.lua"))()
         else
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Universal.lua"))()
         end
