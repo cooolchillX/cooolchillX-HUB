@@ -208,7 +208,7 @@ else
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Notoriety.lua"))()
         end)
 
-        HubSection:NewButton("Pressure", "Load The GUI", function()
+        Hub2Section:NewButton("Pressure", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Pressure.lua"))()
         end)
     else
