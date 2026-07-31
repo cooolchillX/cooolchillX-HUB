@@ -43,6 +43,8 @@ if _G.autodetect then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/CQB%20Hell.lua"))()
     elseif game.GameId == 16680835 then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Notoriety.lua"))()
+    elseif game.GameId == 4367208330 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Pressure.lua"))()
     else
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Universal.lua"))()
     end
@@ -205,6 +207,10 @@ else
         Hub2Section:NewButton("Notoriety", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Notoriety.lua"))()
         end)
+
+        HubSection:NewButton("Pressure", "Load The GUI", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Pressure.lua"))()
+        end)
     else
         local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
         local Window = Library.CreateLib("cooolchill_X HUB", "DarkTheme")
@@ -332,6 +338,7 @@ else
         HubSection:NewButton("Build A Boat For Treasure", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Build%20A%20Boat%20For%20Treasure.lua"))()
         end)
+
         HubSection:NewButton("Refinery Caves 2", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Refinery%20Caves%202.lua"))()
         end)
@@ -358,6 +365,10 @@ else
 
         HubSection:NewButton("Notoriety", "Load The GUI", function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Notoriety.lua"))()
+        end)
+
+        HubSection:NewButton("Pressure", "Load The GUI", function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Pressure.lua"))()
         end)
     end
 end
