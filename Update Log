@@ -202,3 +202,6 @@ Pressure Added
 
 7/31/2026
 Pressure Updated (added Disarm Nearby Tripwires, Disarm Nearby Landmines, Remove Imaginary Friends, Trigger All Landmines, Notification Sound, Notify Node Monster In Chat, Notify Entity In Chat, updated TP Walk, Asset ESP, Door ESP, Keycard ESP, Item ESP, Locker ESP, NeoStyk ESP, Fake Door ESP, Tripwire ESP, Landmine ESP, Node Monster ESP, Entity ESP, Generator ESP, Grab All Assets Near You, Grab All Keycards Near You, Grab All Items Near You, Grab All NeoStyks Near You, Entity Notifications, No Locker Claustrophobia, Make Subspace Tripmines Visible, removed Subspace ESP)
+
+8/1/2026
+Pressure Updated (added Player ESP, Battery ESP, Bruteforce Keypad 0000-9999 Method, Bruteforce Keypad Randomized Method, updated Item ESP, Node Monster ESP, Node Monster Notifications, Notify Node Monster In Chat, Entity ESP, Entity Notification, Notify Entity In Chat, Remove Imaginary Friends)
