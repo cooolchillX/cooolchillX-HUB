@@ -205,3 +205,6 @@ Pressure Updated (added Disarm Nearby Tripwires, Disarm Nearby Landmines, Remove
 
 8/1/2026
 Pressure Updated (added Player ESP, Battery ESP, Bruteforce Keypad 0000-9999 Method, Bruteforce Keypad Randomized Method, updated Item ESP, Node Monster ESP, Node Monster Notifications, Notify Node Monster In Chat, Entity ESP, Entity Notification, Notify Entity In Chat, Remove Imaginary Friends)
+
+8/2/2026
+Pressure Updated (added Ammo ESP, Grab All Ammo Near You, Zombie ESP, updated Entity ESP)
