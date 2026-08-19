@@ -217,13 +217,16 @@ Pressure Updated (updated Asset ESP, Grab All Assets Near You, Notification Soun
 
 8/15/2026
 Refinery Caves 2 Updated (added TP Tree Keybind, TP Stone Keybind, updated Create TP Point, Ore ESP, Tree ESP, Player ESP, Sea Monster ESp, Fishing Hotspot ESP)
-Pressure Updated (added Manual Avoid Active Angler, Avoid Active Angler, Water Puddle ESP, Freeze Current Fov, No Slipping On Water Puddles, updated Entity ESP, Item ESP, Entity Notifications, Notify Entity In Chat, removed Tp Up, Tp Down)
+Pressure Updated (added Manual Avoid Active Angler, Avoid Node Monsters, Water Puddle ESP, Freeze Current Fov, No Slipping On Water Puddles, updated Entity ESP, Item ESP, Entity Notifications, Notify Entity In Chat, removed Tp Up, Tp Down)
 
 8/16/2026
 Pressure Updated (added Set Speed, Infinite Jump, Noclip, Walk On Landmines, Generator Auto Complete, updated Tripwire ESP, Landmine ESP, Remove Fog From Modifiers)
 
 8/17/2026
-Pressure Updated (added TP Walk With Better Swimming, Counter Entities Using Raycast, Grab Assets Through Walls, Grab Keycards Through Walls, Grab Neostyks Through Walls, Grab Batteries Through Walls, Disable All Drawer And Item Locker Prompts, See Through View Model, See Through Held Item, Remove Abomination Fans, Input Code From Password, Deactivate Turrets, Complete Searchlights Ending After Cannons, updated Avoid Active Angler, Generator ESP, Freeze Current Fov, Generator Auto Complete)
+Pressure Updated (added TP Walk With Better Swimming, Counter Entities Using Raycast, Grab Assets Through Walls, Grab Keycards Through Walls, Grab Neostyks Through Walls, Grab Batteries Through Walls, Disable All Drawer And Item Locker Prompts, See Through View Model, See Through Held Item, Remove Abomination Fans, Input Code From Password, Deactivate Turrets, Complete Searchlights Ending After Cannons, updated Avoid Node Monsters, Generator ESP, Freeze Current Fov, Generator Auto Complete)
 
 8/18/2026
 Pressure Updated (added Room Counter)
+
+8/19/2026
+Pressure Updated (added Anti Eyefestation, Anti Pandemonium, Anti Pipsqueak, Anti Harbinger, Anti Witching Hour, Bruteforce Door, updated Asset ESP, Door ESP, Item ESP, Node Monster ESP, Node Monster Notification, Notify Node Monster In Chat, Room Counter, removed Manual Avoid Active Angler, Make Subspace Tripmines Visible, Input Code From Password, Bruteforce Keypad 0000-9999 Method, Bruteforce Keypad Randomized Method)
