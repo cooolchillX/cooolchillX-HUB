@@ -216,7 +216,7 @@ Pressure Updated (updated Ammo ESP, Grab All Ammo Near You, Zombie ESP)
 Pressure Updated (updated Asset ESP, Grab All Assets Near You, Notification Sound)
 
 8/15/2026
-Refinery Caves 2 Updated (added TP Tree Keybind, TP Stone Keybind, updated Create TP Point, Ore ESP, Tree ESP, Player ESP, Sea Monster ESp, Fishing Hotspot ESP)
+Refinery Caves 2 Updated (added TP Tree Keybind, TP Stone Keybind, updated Create TP Point, Ore ESP, Tree ESP, Player ESP, Sea Monster ESP, Fishing Hotspot ESP)
 Pressure Updated (added Manual Avoid Active Angler, Avoid Node Monsters, Water Puddle ESP, Freeze Current Fov, No Slipping On Water Puddles, updated Entity ESP, Item ESP, Entity Notifications, Notify Entity In Chat, removed Tp Up, Tp Down)
 
 8/16/2026
@@ -232,8 +232,11 @@ Pressure Updated (added Room Counter)
 Pressure Updated (added Fly, Anti Eyefestation, Anti Pandemonium, Anti Pipsqueak, Anti Harbinger, Anti Witching Hour, Bruteforce Door, updated Asset ESP, Door ESP, Item ESP, Node Monster ESP, Node Monster Notification, Notify Node Monster In Chat, Room Counter, removed Manual Avoid Active Angler, Make Subspace Tripmines Visible, Input Code From Password, Bruteforce Keypad 0000-9999 Method, Bruteforce Keypad Randomized Method)
 
 8/20/2026
-Fishing Simulator Updated (added Catch Wanted Fish, Catch Wanted Fish With Specific Size, Catch Wanted Fish With Specific Mutation, Nidhogg's Reach, Cyber City, Sakura Cove, FullBright, updated TP to Shipwreck, TP To Shark Loot, ESP Sea Creatures)
+Fishing Simulator Updated (added Catch Desired Fish, Catch Desired Fish With Specific Size, Catch Desired Fish With Specific Mutation, Nidhogg's Reach, Cyber City, Sakura Cove, FullBright, updated TP to Shipwreck, TP To Shark Loot, ESP Sea Creatures)
 
 8/21/2026
 Fishing Simulator Updated (added Catch Any Fish With Specific Size, Catch Any Fish With Specific Mutation, Catch Any Fish With A Mutation, Fish Status)
 Pressure Updated (added Anti Coagulate, Anti Skinless, Anti Eden Trees, Anti Bobber Fish, Anti GOM, updated Item ESP, Grab All Items Near You, Grab Items Through Walls, Anti Witching Hour)
+
+8/25/2026
+Fishing Simulator Updated (added Hit Nearest Sea Creature, Hit All Nearby Sea Creature, updated Sea Creature ESP)
