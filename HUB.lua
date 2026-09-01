@@ -110,6 +110,7 @@ else
     local StatusSection = Status:NewSection("If Your Script Isn't Here It Very Likely Is Safe To Use")
     local StatusSection = Status:NewSection("Criminality Is Potentially Detected")
     local StatusSection = Status:NewSection("LAST FLOOR Is Potentially Detected")
+    local StatusSection = Status:NewSection("Refinery Caves 2 Is Potentially Detected")
 
     local Hub = Window:NewTab("Script Hub")
     local HubSection = Hub:NewSection("Choose A Game")
