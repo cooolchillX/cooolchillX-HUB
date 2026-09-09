@@ -47,6 +47,8 @@ if _G.autodetect then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Pressure.lua"))()
     elseif game.GameId == 3326279937 then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Blackout%20Revival.lua"))()
+    elseif game.GameId == 7585140258 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/RUNAWAYS.lua"))()
     else
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Universal.lua"))()
     end
@@ -213,5 +215,9 @@ else
 
     HubSection:NewButton("Blackout Revival", "Load The GUI", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Blackout%20Revival.lua"))()
+    end)
+
+    HubSection:NewButton("RUNAWAYS", "Load The GUI", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/RUNAWAYS.lua"))()
     end)
 end
