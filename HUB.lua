@@ -1,5 +1,5 @@
 if _G.AlternateHub == "cooolchill_X HUB" then
-    if _G.Project ~= false then
+    if _G.Project == false then
         if _G.autodetect then
             if game.GameId == 1484372029 then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/cooolchillX/ScriptHubSources/refs/heads/main/Sizzling%20Sim.lua"))()
