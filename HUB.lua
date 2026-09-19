@@ -90,6 +90,17 @@ if _G.AlternateHub == "cooolchill_X HUB" then
                 game.StarterGui:SetCore("SendNotification", {Title = "Copied", Text = "Copied To Clipboard", Duration = 4,})
             end)
 
+            local OthersSection = Others:NewSection("Bryce Hub (My Third Student)")
+
+            OthersSection:NewButton("Bryce Hub", "Load His Hub", function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/brycerespass7854/Bryce-Hub/refs/heads/main/Bryce%20Hub.lua"))()
+            end)
+
+            OthersSection:NewButton("Copy Bryce Hub Link", "Go To His Github Page", function()
+                setclipboard("https://github.com/brycerespass7854/Bryce-Hub/blob/main/Bryce%20Hub.lua")
+                game.StarterGui:SetCore("SendNotification", {Title = "Copied", Text = "Copied To Clipboard", Duration = 4,})
+            end)
+
             local OthersSection = Others:NewSection("OG Executors I've Used: Fluxus, VegaX, Valyse")
             local OthersSection = Others:NewSection("Current Executor I Use: Potassium")
 
@@ -237,5 +248,5 @@ elseif _G.AlternateHub == "Hyper Hub" then
 elseif _G.AlternateHub == "Lazy_X Hub" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/JustMilk123/Lazy_X/main/Lazy_X.lua"))()
 elseif _G.AlternateHub == "Bryce Hub" then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/brycerespass7854/Bryce-Hub/refs/heads/main/Bryce%20HUB%20WIP.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/brycerespass7854/Bryce-Hub/refs/heads/main/Bryce%20Hub.lua"))()
 end
